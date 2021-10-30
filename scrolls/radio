@@ -1,0 +1,22 @@
+## [HOME](scrolls/home)
+
+# RADIO SPECTRUM
+ 
+## What  is  the  electromagnetic  spectrum?
+
+There  is  not  a  simple  definition  of  the  spectrum.  From  the  technical 
+viewpoint the spectrum is simply the range of electromagnetic waves that 
+can be used to transmit information, but from the practical viewpoint the 
+economic and  political aspects, as well as the technology actually used to 
+convey the information by means of these waves, play pivotal roles.
+As an example, when Marconi in 1902 first spanned the Atlantic with his 
+“wireless telegraph message”, he  used the whole spectrum available at the 
+time to send a few bits/s over an area of thousands of square kilometres.
+With the spark transmitter used for this achievement that occupied all the 
+frequencies that the existing receivers were able to understand, nobody else 
+could use  radio for communications on a  radius  of  some 3500 km  from 
+the  transmitting  station  in  England. So,  if  other  users  wanted  to  send 
+messages  in  the  same  area,  they  would  need  to  coordinate  their 
+transmissions in different “time slots” in order to share the medium. This 
+technique is called “**TDMA**”, Time Division Multiple Access.
+

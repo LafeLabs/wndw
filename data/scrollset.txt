@@ -6,6 +6,7 @@
         "markdown",
         "physics",
         "pi",
+        "radio",
         "telecommunications",
         "web"
     ]
