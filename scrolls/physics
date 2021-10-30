@@ -29,7 +29,7 @@ examples of oscillations.
 
 What they have in common is that something, some medium or object, is 
 swinging in a periodic manner, with a certain number of cycles per unit of 
-time. Tis kind of wave is sometimes called a mechanical  wave, since it is 
+time. This kind of wave is sometimes called a mechanical  wave, since it is 
 defined by the motion of an object or its propagating medium.
 
 When  such  oscillations travel  (that  is,  when the  swinging does  not  stay 
@@ -65,7 +65,7 @@ $$1 metre/second =  5 cycles/second *W$$
 $$W = 1 / 5 metres$$
 $$ W = 0.2 metres =  20 cm$$
 
-Waves also have a property called amplitude. Tis is the distance from 
+Waves also have a property called amplitude. This is the distance from 
 the centre of the wave to the extreme of one of its peaks, and can be 
 thought of as the “height” of a water wave. Frequency, wavelength, and 
 amplitude are shown in Figure RP 1.
@@ -79,3 +79,281 @@ across the water over time. In the case of electromagnetic waves, the part
 that might be hardest to understand is: “What is it that is oscillating?”
 In  order  to  understand  that,  you  need  to  understand  electromagnetic 
 forces.
+
+## Electromagnetic forces
+
+Electromagnetic  forces  are  the  forces  between  electrical  charges  and 
+currents. Our most direct access to those is when our hand touches a door 
+handle  after  walking  on  synthetic  carpet,  or  brushing  up  against  an 
+electrical fence. 
+
+A more powerful example of electromagnetic forces is the lightning we see 
+during thunderstorms.
+
+Electromagnetic  forces  are  the  forces  between  electrical  charges  and 
+currents. Our most direct access to those is when our hand touches a door 
+handle  after  walking  on  synthetic  carpet,  or  brushing  up  against  an 
+electrical fence. 
+
+A more powerful example of electromagnetic forces is the lightning we see 
+during thunderstorms.
+
+The ***electrical force*** is the force between electrical charges.
+
+The ***magnetic force*** is the force between electrical currents.
+
+Electrons  are  particles  that  carry  a  negative  electrical  charge.  There  are 
+other charged particles too, but it is the electrons that are responsible for 
+most of what we need to know about how radio behaves.
+
+Let  us  look at what  is happening in a  piece of  straight vertical wire,  in 
+which  we  push  the  electrons  from  one  end  to  the  other  and  back, 
+periodically. At one moment, the top of the wire is negatively charged - all 
+the negative electrons are gathered there. This creates an electric field from 
+the positively charged end to the negatively charged one along the wire. 
+The next moment, the electrons have all been driven to the other side, and 
+the electric  field points  the other way. As this  happens again and  again, 
+the electric  field  vectors  (represented  by arrows from  plus to minus) are 
+leaving the wire, so to speak, and are radiated out into the space around 
+the wire.
+
+What we  have  just  described  is  known  as  a  dipole (because of  the  two 
+differently charged poles, plus and minus, that are created in the straight 
+vertical wire), or more commonly a ***dipole antenna***. 
+
+This  is  the  simplest  form  of  an  omnidirectional  antenna.  The  moving 
+electric field is commonly referred to as an electromagnetic wave because 
+there is also an associated magnetic field. A moving electric field, such as a 
+wave, always comes together with a magnetic field - you will not find one 
+with out the other. Why is this the case?
+
+An electric field is caused by electrically charged objects.
+
+A moving electric field is produced by moving electrically charged objects, 
+such as we have just described above in a dipole antenna.
+
+Wherever electrical charges are moving, they induce a magnetic field. 
+Mathematically, this is formulated in Maxwell's equations: 
+
+[[Wikipedia link]](https://en.wikipedia.org/wiki/Electromagnetic_field#Mathematical_description)
+
+Since the  electrical and magnetic  components are tied  together in this 
+way,  we  speak of an electromagnetic field.
+
+In practical wireless networking, we focus in the electrical component but 
+there be always a magnetic component as well.
+
+Let us come back to the relation:
+
+$$
+Speed = Frequency \times Wavelength
+$$
+
+In the case of electromagnetic waves, the speed is c, the speed of light.
+
+$$
+c  \approx  300,000 km/s  =  300,000,000 m/s  =  3\times 10^8 m/s
+$$
+
+$$
+c = f\times\lambda
+$$
+
+Electromagnetic waves differ from  mechanical waves in that they require 
+no  medium  in  which  to  propagate. Electromagnetic  waves  will even 
+propagate through perfect vacuum.
+
+The  light  from  the  stars  is  a  good  example:  it  reaches  us  through  the 
+vacuum of space.
+
+
+## Symbols of the international system of units
+
+In physics, maths, and engineering, we often express numbers by powers 
+of ten.
+
+We will meet these terms again, and the symbols used to represent them, 
+e.g. gigahertz ($GHz$), centimetres ($cm$), microseconds ($\mu s$), and so on.
+
+These  symbols  are  part  of  the  international  system  of measurement  SI 
+[(bipm.org)](http://www.bipm.org/utils/common/pdf/si_brochure_8_en.pdf),  they  are not abbreviations and should not be changed.
+
+The case is significant and should not be altered.
+
+![](imageserver/uploadimages/image2.png)
+
+Knowing the speed of light, we can calculate the wavelength for a given 
+frequency. Let us take the example  of  the frequency of 802.11b wireless 
+networking, which is:
+
+$$
+f  = 2.4 GHz = 2,400,000,000 cycles  / second
+$$
+$$
+wavelength (\lambda) = c / f = 3\times 10^8  / 2.4\times 10^9 
+$$
+$$
+= 1.25\times10^{-1}  m = 12.5 cm
+$$
+
+Frequency and therefore wavelength determine most of an electromagnetic 
+wave’s behaviour. It governs the dimensions of the antennas that we build 
+as  well  as  the  effect  of  the  interactions  with  objects  that  are  in  the 
+propagation path, including the biological effects in living beings.
+
+Wireless  standards  of  course  are  distinguished  by  more  than  just  the 
+frequency they are working at - for example, 802.11b, 802.11g, 802.11n 
+and  802.16 can  all work at 2.4 GHz -, yet they are very different  from 
+one another.
+
+The  chapter  called  ***Telecommunications  Basics***  will  discuss  modulation 
+techniques, media access techniques, and other relevant features of wireless 
+communications  standards.   However,  the  basic  capabilities  of 
+electromagnetic  waves to  penetrate objects,  to  go long  distances, and  so 
+forth  -  these are determined by physics alone. The electromagnetic  wave 
+"does not know or care" what modulation or standard or technique you 
+put on top of it. So, while different  standards may implement advanced 
+techniques  to  deal  with  NLOS  (Non  Line  of  Sight),  multipath  and  so 
+forth  -  they  still cannot make a  wave go through a  wall,  if that wall  is 
+absorbing the respective frequency. Therefore, an understanding of the basic 
+ideas of frequency and wavelength helps a lot in practical wireless work.
+
+## Phase
+
+Later  in  this  chapter,  we  will  talk  about  concepts  like  interference, 
+multipath and Fresnel zones. In order to understand these, we will need 
+to know  about  the  ***phase*** of  a  wave,  or  rather,  ***phase  differences***  between waves. Look at the sine wave shown in Fig RP 1 - now imagine we have two such waves moving. These can be in exactly the same position: Where the one has its peak, the other one also has a peak. Then, we would say, they are in phase, or, their phase difference is zero. But  one  wave could also be displaced from the other, for example it could have its peak where the other wave is at zero. In  this  case,  we have  a  phase  difference. This phase difference can be expressed in fractions of the wavelength, e.g. $\lambda/4$, or in degrees, e.g. 90 degrees - with one full cycle of the wave being 360 degrees. A phase difference of 360 degrees is the same as that of 0 degrees: no phase difference.
+
+![](imageserver/uploadimages/image3.png)
+
+## Polarization
+
+Another  important  quality  of  electromagnetic  waves  is  ***polarization***.  Polarization describes the direction of the electrical field vector.
+
+If  you imagine  a  vertically  aligned  dipole antenna (the straight piece of 
+wire), electrons can only move up and down, not sideways (because there 
+is no room to move) and thus electrical fields only ever point up or down, 
+vertically. Te field leaving  the wire and  traveling as a  wave has a  strict 
+linear (and in this case, vertical) polarization. If we put the antenna flat on 
+the ground, we would find horizontal linear polarization.
+
+![](imageserver/uploadimages/image4.png)
+
+Linear polarization is just one special case, and is never quite so perfect: in general, we will always have some component of the field pointing in
+other directions too. If we combine two equal dipoles fed with the same signal, we can generate a circularly polarized wave, in which the electric
+field vector keeps rotating perpendicularly to the wave's trajectory. 
+
+The most general case is elliptical polarization, in which the electric field vector maximum value  is not  the same in the vertical and horizontal
+direction. As one can imagine, polarization becomes important when
+aligning antennas. If you ignore polarization, you might have very little signal even though you have the best antennas. We call this polarization mismatch.
+
+Much in the same way, polarization may also be used in a smart way, to 
+keep two wireless links independent and without interference, even
+though they might use the same end points (or even share a common reflector) and therefore the same trajectory: if one link is polarized vertically and the other horizontally, they will not "see" each other. This is a convenient way to  double data rates over one link using a single frequency.
+
+The antennas used in this kind of application must be carefully built in order to reject the "unwanted" polarization, i.e. an antenna meant for vertical  polarization must not receive or transmit any horizontally polarized signal, and vice versa. We say they must have a high "cross polarization" rejection.
+
+## The electromagnetic  spectrum
+
+Electromagnetic waves span a wide range of frequencies (and, accordingly, 
+wavelengths).  This range of  frequencies or wavelengths is called the 
+***electromagnetic  spectrum***.  The  part  of  the  spectrum  most  familiar to humans  is  probably  light, the visible  portion  of  the  electromagnetic 
+spectrum. Light lies roughly between the frequencies of $7.5\times 10^{14} Hz$ and $3.8\times10^{14}  Hz$,  corresponding  to  wavelengths  from  circa  400  nm (violet/blue) to 800 nm (red).
+
+We  are  also  regularly  exposed  to  other  regions  of  the  electromagnetic 
+spectrum, including Alternating Current (***AC***) or grid electricity at 50/60 Hz, AM and  FM  radio, Ultraviolet  (at frequencies higher than those of 
+visible light), Infrared (at frequencies lower than those of visible light), 
+X-Ray radiation, and many others.
+
+Radio is the term used for the portion of the electromagnetic spectrum in 
+which  waves  can  be  transmitted  by  applying  alternating  current  to an 
+antenna. This is true for the range from 30 kHz to 300 GHz, but in the 
+more narrow sense of the term, the upper frequency limit would be about 
+1 GHz, above which we talk of microwaves and millimetric waves.
+
+When talking about radio, many people think of FM radio, which uses a 
+frequency around  100 MHz. In  between  radio and  infrared we find the 
+region of microwaves - with frequencies from about 1 GHz to 300 GHz, 
+and wavelengths from 30 cm to 1 mm.
+
+The most popular use of microwaves might be the microwave oven, which 
+in fact works in exactly the same region as the wireless standards we are 
+dealing with. These regions lie within the bands that are being kept open for general unlicensed use. This  region is called the ***ISM band***, which stands for Industrial, Scientific, and Medical.
+
+Most other parts of the electromagnetic spectrum are tightly controlled by 
+licensing legislation, with license values being a huge economic factor. In 
+many countries the right to use portions of the spectrum have been sold 
+to communications companies for millions of dollars. In most countries, 
+the ISM bands have been reserved for unlicensed use and therefore do not 
+have to be paid for when used.
+
+![](imageserver/uploadimages/image5.png)
+
+The frequencies most interesting to us are 2.400 - 2.495 GHz, which is 
+used by the 802.11b and 802.11g standards (corresponding to wavelengths 
+of about 12.5 cm), and 5.150 - 5.850 GHz (corresponding to wavelengths 
+of about 5 to 6 cm), used by 802.11a. Te 802.11n standard can work in 
+either of these bands.
+
+See the Chapter called ***WiFi Family*** for an overview of standards and 
+frequencies. In addition you can find out more about the Radio portion of 
+the electromagnetic spectrum in the Chapter called ***Radio Spectrum***.
+
+## Bandwidth
+
+A term you will meet  often in radio physics is ***bandwidth***. Bandwidth is simply a measure of frequency range. If a range of 2.40 GHz to 2.48 GHz
+is used by a device, then the bandwidth would be 0.08 GHz (or more commonly stated as 80 MHz).
+
+It is easy to see that the bandwidth we define here is closely related to the 
+amount of data you can transmit within it - the more room in frequency 
+space,  the  more  data  you  can  fit  in  at  a  given  moment.  The  term 
+bandwidth is often used for something we should rather call data rate, as 
+in  “my Internet connection  has  1 Mbps  of  bandwidth”, meaning  it can 
+transmit data at 1 megabit per second. How much exactly you can fit into 
+a  physical  signal  will  depend  on  the  modulation,  encoding  and  other 
+techniques. For  example,  802.11g uses the same bandwidth as 802.11b, however it fits more data into those same frequency ranges transmitting up 
+to 5 times more bits per second.
+
+Another example we have mentioned: you may double your data rate by 
+adding a second link at perpendicular polarization to an existing radio link. Here, frequency and bandwidth have not changed, however the data rate is doubled.
+
+## Frequencies and channels
+
+Let us look a bit closer at how the 2.4 GHz band is used in 802.11b. The spectrum is divided into evenly sized pieces distributed over the band as individual channels. Note that channels are 22 MHz wide, but are only
+separated by 5 MHz. 
+
+This means that adjacent channels overlap, and can interfere with each other. This is represented visually in Figure RP 5.
+
+![](imageserver/uploadimages/image6.png)
+
+## Behaviour of radio waves
+
+There are a few simple rules of thumb that can prove extremely useful when making first plans for a wireless network:
+
+ - *the longer the wavelength, the further it goes;*
+ - *the longer the wavelength, the better it travels through and  around things;*
+ - *the shorter the wavelength, the more data it can transport.*
+
+All of these rules, simplified as they may be, are rather easy to understand by example.
+
+**Longer waves travel further**
+
+Waves  with  longer  wavelengths  tend  to  travel  further  than  waves  with 
+shorter  wavelengths.  As  an  example,  AM  radio  stations  have  a  much 
+greater range than FM stations, which use a frequency 100 times higher. 
+Lower  frequency transmitters  tend  to  reach  much  greater  distances than 
+high frequency transmitters at the same power.
+
+**Longer waves pass around obstacles**
+
+A wave on water which is 5 metres long will not be affected by a 5 mm 
+piece of wood floating on the water. If instead the piece of wood were 50 
+metres big (e.g. a ship), it would modify the behavior of the wave. 
+
+The distance a wave can travel depends on the relationship between the
+wavelength  of  the  wave  and  the  size  of  obstacles  in  its  path  of 
+propagation. It is harder to visualize waves moving “through” solid objects, 
+but this  is the case with electromagnetic  waves. Longer wavelength (and 
+therefore  lower  frequency)  waves  tend  to  penetrate  objects  better  than 
+shorter wavelength (and therefore higher frequency) waves.
+
