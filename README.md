@@ -1,5 +1,8 @@
 ## [home](scrolls/home)
 
+## [image server](imageserver/)
+
+
 #  [Free Net](https://github.com/LafeLabs/freenet/)
 
  - *get free stuff*
@@ -9,6 +12,8 @@
  - *tell a story about free net*
  - *hear a story about free net*
  - *replicate and share the system*
+
+
 
 To replicate, buy a domain name, get a hosting account, and set up a raspberry pi web server to edit the code on.  Get an email address at your domain operator@[domain].  
 

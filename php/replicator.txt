@@ -15,11 +15,12 @@ mkdir("data");
 mkdir("php");
 mkdir("scrolls");
 mkdir("iconsymbols");
-mkdir("codeserver");
+mkdir("imageserver");
 
 
 copy("https://raw.githubusercontent.com/LafeLabs/wndw/main/php/replicator.txt","replicator.php");
 
+copy("https://raw.githubusercontent.com/LafeLabs/wndw/main/imageserver/php/replicator.txt","imageserver/replicator.php");
 
 foreach($dna->html as $value){
     

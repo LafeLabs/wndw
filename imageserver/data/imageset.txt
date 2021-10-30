@@ -1,5 +1,5 @@
 {
-    "server": "https://https://raw.githubusercontent.com/LafeLabs/wndw/main/imageserver/",
+    "server": "https://raw.githubusercontent.com/LafeLabs/wndw/main/imageserver/",
     "images": [
         "image1.png",
         "image10.png",

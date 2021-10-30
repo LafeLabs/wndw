@@ -1,5 +1,5 @@
 {
-    "server": "https://raw.githubusercontent.com/LafeLabs/wndw/",
+    "server": "https://raw.githubusercontent.com/LafeLabs/wndw/main/",
     "scrolls": [
         "home",
         "licensing",
