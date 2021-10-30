@@ -1,6 +1,6 @@
 ## [home](scrolls/home)
 
-# Physics
+# 1. RADIO PHYSICS
  
 Wireless  communications  make  use  of  electromagnetic  waves  to  send 
 signals  across  long  distances.   From  a  user’s  perspective,  wireless 
@@ -233,7 +233,7 @@ Another  important  quality  of  electromagnetic  waves  is  ***polarization***.
 If  you imagine  a  vertically  aligned  dipole antenna (the straight piece of 
 wire), electrons can only move up and down, not sideways (because there 
 is no room to move) and thus electrical fields only ever point up or down, 
-vertically. Te field leaving  the wire and  traveling as a  wave has a  strict 
+vertically. The field leaving  the wire and  traveling as a  wave has a  strict 
 linear (and in this case, vertical) polarization. If we put the antenna flat on 
 the ground, we would find horizontal linear polarization.
 
@@ -292,7 +292,7 @@ have to be paid for when used.
 The frequencies most interesting to us are 2.400 - 2.495 GHz, which is 
 used by the 802.11b and 802.11g standards (corresponding to wavelengths 
 of about 12.5 cm), and 5.150 - 5.850 GHz (corresponding to wavelengths 
-of about 5 to 6 cm), used by 802.11a. Te 802.11n standard can work in 
+of about 5 to 6 cm), used by 802.11a. The 802.11n standard can work in 
 either of these bands.
 
 See the Chapter called ***WiFi Family*** for an overview of standards and 
@@ -525,7 +525,7 @@ using the same word.
 
 A  physicist  and  a  telecommunications  engineer  will  use  the  word 
 "Interference"  in  very   different  ways.   The  physicists'  view  will  be 
-concerned  with  the  "behaviour  of  waves".  Te  telecommunications 
+concerned  with  the  "behaviour  of  waves".  The  telecommunications 
 engineer will talk about “... any noise that gets in the way”.
 
 Both views are relevant in wireless, and it is important to be able to know 
@@ -700,7 +700,7 @@ Any electromagnetic wave carries energy - we can feel that when we enjoy
 (or suffer from) the warmth of the sun.
 
 The amount of energy divided by the time during which we measure it is 
-called  power.  Te  power  P  is  measured  in  W  (watts) and  is  of  key importance  for  a wireless  links  to  work:  you  need  a  certain  minimum power in order for a receiver to make sense of the signal.
+called  power.  The  power  P  is  measured  in  W  (watts) and  is  of  key importance  for  a wireless  links  to  work:  you  need  a  certain  minimum power in order for a receiver to make sense of the signal.
 
 We  will  come  back  to  details  of  transmission  power,  losses,  gains  and 
 radio sensitivity in the chapter called *Antennas/Transmission  Lines*.
@@ -711,4 +711,83 @@ power contained within it is proportional to the square of the electric field:
 $$
 P \propto E^2
 $$
+
+Practically,  we  measure  the  power  in  watts  by  means  of  some  form  of receiver,  e.g.  an  antenna  and  a  voltmetre,  power  metre,  oscilloscope, spectrum analyser or even a radio card and laptop. Looking at the signal’s power directly means looking at the square of the signal in volts and dividing by the electrical resistance.
+
+**Calculating with dB**
+
+By far the most important technique when calculating power is calculating 
+with decibels (dB). Tere  is no new physics hidden in this  - it is just  a 
+convenient method which makes calculations a lot simpler.
+
+The  decibel  is  a  dimensionless  unit,  that  is,  it  defines  a  relationship 
+between two measurements of power. It is defined by:
+
+$$
+dB = 10\Log_{10}\left(\frac{P_1}{P_0}\right)
+$$
+
+where  $P_1$ and $P_0$ can be whatever two values you want to compare. 
+Typically, in our case, this will be some amount of power.
+
+Why are decibels so handy to use? Many phenomena in nature happen to 
+behave in a way we call exponential.
+
+For example, the human ear senses a sound to be twice as loud as another 
+one if it has ten times the physical signal power.
+
+Another  example,  quite  close  to  our  field  of  interest,  is  absorption. 
+Suppose a wall is in the path of our wireless link, and each metre of wall 
+takes away half of the available signal. Te result would be:
+
+$$0 meters  = 1(full signal)$$
+$$1 meters  = 1/2$$
+$$2 meters  = 1/4$$
+$$3 meters  = 1/8$$
+$$4 meters  = 1/16$$
+$$n meters  = 1/2^n = 2^{-n}$$
+
+This is exponential behaviour.
+
+But once we have used the trick of applying the logarithm (log), things 
+become a lot easier: instead of taking a value to the n-th power, we just 
+multiply by n. Instead of multiplying values, we just add.
+
+Here are some commonly used values that are important to remember:
+
+$$+3 dB = double power$$
+$$-3 dB = half the power$$
+$$+10 dB = order of magnitude (10 times power)$$
+$$-10 dB = one tenth power$$
+
+In addition to dimensionless dB, there are a number of definitions that are 
+based on a certain base value $P_0$. The most relevant ones for us are:
+
+$$dBm relative to P_0 = 1 mW$$
+$$dBi relative to an ideal isotropic antenna$$
+
+An  isotropic  antenna  is  a  hypothetical  antenna  that  evenly  distributes 
+power in all directions.
+
+It is approximated by a dipole, but a perfect isotropic antenna cannot be 
+built  in  reality. The  isotropic  model  is  useful  for  describing  the  relative 
+power gain of a real world antenna.
+
+Another  common  (although  less  convenient)  convention  for  expressing 
+power  is  in  milliwatts. Here  are  equivalent  power  levels  expressed  in 
+milliwatts and dBm:
+
+$$ 1 mW =  0 dBm $$
+$$ 2 mW =  3 dBm $$
+$$ 100 mW = 20 dBm $$
+$$ 1 W = 30 dBm $$
+
+For more details on dB refer to the dB math lecture of the Wireless 
+Training kit:
+
+[link to ip address of wireless training kit(dead link was provided in original pdf)](http://140.105.28.115/groups/wtkit/wiki/820cb/download_page.html) 
+
+## Physics in the real world
+
+Don’t  worry  if  the  concepts  in  this  chapter  seem  challenging. Understanding  how  radio  waves  propagate  and  interact  with  the environment is a complex field of study in itself. Most people  find  it difficult  to  understand  phenomenon  that they can’t even see with their own eyes. By now  you  should  understand  that  radio  waves  don’t  travel  only  in  a straight, predictable path. To  make  reliable communication  networks,  you will need  to  be  able  to calculate how much power is needed to cross a given distance, and predict how the waves will travel along the way.
 

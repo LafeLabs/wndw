@@ -18,9 +18,8 @@ mkdir("iconsymbols");
 mkdir("codeserver");
 
 
-copy("https://raw.githubusercontent.com/LafeLabs/freenet/main/php/replicator.txt","replicator.php");
+copy("https://raw.githubusercontent.com/LafeLabs/wndw/main/php/replicator.txt","replicator.php");
 
-copy("https://raw.githubusercontent.com/LafeLabs/codeserver/main/php/replicator.txt","codeserver/replicator.php");
 
 foreach($dna->html as $value){
     

@@ -1,0 +1,25 @@
+## [HOME](scrolls/home)
+
+# 2. TELECOMMUNICATIONS BASICS
+
+The purpose  of  any  telecommunications  system  is  to  transfer  information 
+from the sender to the receiver by a means of a communication channel.
+The information  is  carried  by a  signal, which  is  certain  physical  quantity 
+that changes with time.
+
+The  signal  can  be  a  voltage  proportional  to the  amplitude  of  the  voice, 
+like in a simple telephone, a sequence of pulses of light in an optical fibre, 
+or a radio-electric wave irradiated by an antenna.
+
+For  analog  signals,  these  variations  are  directly  proportional  to  some 
+physical  variable  like  sound,  light,  temperature,  wind  speed,  etc.  The 
+information can also be transmitted by digital binary signals, that will have 
+only two values, a  digital ***one*** and  a  digital ***zero***. Any analog signal  can  be converted  into a  digital signal  by appropriately  ***sampling*** and  then coding it. The sampling frequency must be at least twice the maximum frequency present  in  the  signal  in  order  to  carry  ***all***  the  information  contained herein.  Random  signals  are  the  ones  that  are unpredictable  and  can  be described only by statistical means.
+
+Noise  is  a  typical  random  signal,  described  by  its  mean  power  and 
+frequency distribution. A signal can be characterised by its behaviour over 
+time or by its frequency components, which constitute its spectrum. Some 
+examples of signals are shown in Figure TB 1.
+
+![](imageserver/uploadimages/image13.png)
+

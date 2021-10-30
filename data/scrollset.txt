@@ -1,13 +1,11 @@
 {
-    "server": "https://raw.githubusercontent.com/LafeLabs/freenet/",
+    "server": "https://raw.githubusercontent.com/LafeLabs/wndw/",
     "scrolls": [
-        "freestuff",
-        "help",
         "home",
         "markdown",
         "physics",
         "pi",
-        "stories",
+        "telecommunications",
         "web"
     ]
 }
