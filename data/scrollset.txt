@@ -2,6 +2,7 @@
     "server": "https://raw.githubusercontent.com/LafeLabs/wndw/",
     "scrolls": [
         "home",
+        "licensing",
         "markdown",
         "physics",
         "pi",

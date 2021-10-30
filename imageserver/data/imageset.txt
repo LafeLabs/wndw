@@ -1,5 +1,5 @@
 {
-    "server": "http://localhost/",
+    "server": "https://https://raw.githubusercontent.com/LafeLabs/wndw/main/imageserver/",
     "images": [
         "image1.png",
         "image10.png",
@@ -11,7 +11,9 @@
         "image16.png",
         "image17.png",
         "image18.png",
+        "image19.png",
         "image2.png",
+        "image20.png",
         "image3.png",
         "image4.png",
         "image5.png",
