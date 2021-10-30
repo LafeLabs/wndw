@@ -1,0 +1,81 @@
+## [home](scrolls/home)
+
+# Physics
+ 
+Wireless  communications  make  use  of  electromagnetic  waves  to  send 
+signals  across  long  distances.   From  a  user’s  perspective,  wireless 
+connections  are  not  particularly  different  from  any  other  network 
+connection: your  web browser, email, and  other applications  all work as 
+you  would  expect. But  radio  waves  have  some  unexpected  properties 
+compared  to  Ethernet  cable. For  example,  it’s  very  easy  to  see  the  path 
+that  an  Ethernet  cable  takes:   locate  the  plug  sticking  out  of  your 
+computer, follow the cable to the other end, and you’ve found it! You can 
+also be confident that running many Ethernet cables alongside each other 
+won’t  cause  problems,  since  the  cables  effectively  keep  their   signals 
+contained within the wire itself.
+
+But  how  do  you  know  where  the  waves  emanating  from  your  wireless 
+device are going? What happens when these waves bounce off objects in 
+the room or other buildings in an outdoor link? How can several wireless 
+cards be used in the same area without interfering with each other?
+In  order  to  build  stable  high-speed  wireless  links,  it  is  important  to 
+understand how radio waves behave in the real world. 
+
+# What is a wave?
+
+We  are  all  familiar  with  vibrations  or  oscillations  in  various  forms:  a 
+pendulum, a tree swaying in the wind, the string of a guitar - these are all 
+examples of oscillations.
+
+What they have in common is that something, some medium or object, is 
+swinging in a periodic manner, with a certain number of cycles per unit of 
+time. Tis kind of wave is sometimes called a mechanical  wave, since it is 
+defined by the motion of an object or its propagating medium.
+
+When  such  oscillations travel  (that  is,  when the  swinging does  not  stay 
+bound to  one  place)  then  we  speak  of  waves propagating  in  space. For 
+example, a singer singing  creates periodic oscillations in his or her vocal 
+cords. Tese oscillations periodically compress and decompress the air, and 
+this  periodic  change  of  air  pressure  then  leaves  the  singers  mouth  and 
+travels, at the speed of sound. 
+
+A  stone  plunging  into  a  lake causes  a  disturbance,  which  then  travels 
+across the lake as a ***wave***.
+
+A wave has a certain ***speed***, ***frequency***, and ***wavelength***.
+
+These are connected by a simple relation:
+
+$$
+Speed = Frequency * Wavelength
+$$
+
+The  wavelength  (sometimes  referred  to  as  ***lambda***, $\lambda$)  is  the  distance measured from a point on one wave to the equivalent part of the next (or, 
+in a more technical way, to the next point that is in the same phase), for 
+example from the top of one peak to the next.
+
+The frequency is the number of whole waves that pass a fixed point in a 
+period of time. Speed is measured in metres/second, frequency is measured 
+in  cycles per  second  (or  Hertz,  represented  by  the  symbol  Hz),  and 
+wavelength is measured in metres. For example, if a wave on water travels 
+at one metre per second, and it oscillates five times per second, then each 
+wave will be twenty centimetres long:
+
+$$1 metre/second =  5 cycles/second *W$$
+$$W = 1 / 5 metres$$
+$$ W = 0.2 metres =  20 cm$$
+
+Waves also have a property called amplitude. Tis is the distance from 
+the centre of the wave to the extreme of one of its peaks, and can be 
+thought of as the “height” of a water wave. Frequency, wavelength, and 
+amplitude are shown in Figure RP 1.
+
+![](imageserver/uploadimages/image1.png)
+
+Waves in water are easy to visualize. 
+
+Simply drop a stone into the lake and you can see the waves as they move 
+across the water over time. In the case of electromagnetic waves, the part 
+that might be hardest to understand is: “What is it that is oscillating?”
+In  order  to  understand  that,  you  need  to  understand  electromagnetic 
+forces.
