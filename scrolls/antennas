@@ -351,3 +351,138 @@ Types of directive antennas are the **Yagi**, the **biquad**, the **horn**, the
 
 ![](imageserver/uploadimages/image37.png)
 
+**Physical construction.**
+
+Antennas can be constructed in many diEerent ways, ranging from  simple wires, to parabolic dishes, to coffee cans. 
+
+When considering antennas suitable for 2.4 GHz WLAN use, another classification can be used: 
+
+**Application.**
+
+Access points tend to make point-to-multipoint networks, while remote links or backbones are point-to-point. Each of these suggest different types of antennas for their purpose. Nodes that are used for multipoint access will likely use omni antennas which radiate equally in all directions, or several sectorial antennas each focusing into a small area. In the point-to-point case, antennas are used to connect two single locations together. Directive antennas are the primary choice for this application.
+
+A brief list of common type of antennas for the 2.4 GHz frequency is presented now, with a short description and basic information about their characteristics.
+
+**1/4 wavelength ground plane.**
+
+The 1/4 wavelength ground plane antenna is very simple in its construction and is useful for communications when size, cost and ease of construction are important. This antenna is designed to transmit a vertically polarized signal. It consists of a 1/4 wavelength element as active element and three or four 1/4 wavelength ground elements bent 30 to 45 degrees down. This set of elements, called radials, is known as a ground plane.
+
+![](imageserver/uploadimages/image38.png)
+
+This is a simple and effective antenna that can capture a signal equally from  all directions. The gain of this antenna is in the order of 2 - 4 dBi.
+
+**Yagi-Uda antenna**
+
+A basic Yagi or more properly Yagi-Uda antenna consists of a certain number of straight elements, each measuring approximately half wavelength. The driven or active element of a Yagi is the equivalent of a centre-fed, half-wave dipole antenna.
+
+Parallel to the driven element, and approximately 0.2 to 0.5 wavelength on either side of it, are straight rods or wires called reflectors and directors, or simply passive elements.
+
+A reflector  is placed behind the driven element and is slightly longer than half wavelength; directors are placed in front of the driven element and are slightly shorter than half wavelength. A typical Yagi has one reflector  and one or more directors.
+
+The antenna propagates electromagnetic field energy in the direction running from  the driven element toward the directors, and is most sensitive to incoming electromagnetic field energy in this same direction. The more directors a Yagi has, the greater the gain.
+
+Following is the photo of a Yagi antenna with 5 directors and one reflector. Yagi antennas are often enclosed in a cylindrical radome to afford protection from the weather.
+
+![](imageserver/uploadimages/image39.png)
+
+Yagi antennas are used primarily for Point-to-Point links, have a gain from 10 to 20 dBi and a horizontal beamwidth of 10 to 20 degrees.
+
+**Horn**
+
+The horn antenna derives its name from  the characteristic flared 
+appearance. The flared portion can be square, rectangular, cylindrical or conical.  The direction of maximum radiation corresponds with the axis of the horn.
+It is easily fed with a waveguide, but can be fed with a coaxial cable and a 
+proper transition. While it is cumbersome to make a horn antenna at home, a cylindrical can with proper dimensions will have similar characteristics.
+
+![](imageserver/uploadimages/image40.png)
+
+Horn antennas are commonly used as the active element in a dish antenna. The horn is pointed toward the centre of the dish reflector.  The use of a horn, rather than a dipole antenna or any other type of antenna, at the focal point of the dish minimizes loss of energy around the edges of the dish reflector.  At 2.4 GHz, a simple horn antenna made with a tin can has a gain in the order of 10 dBi.
+
+**Parabolic Dish**
+
+Antennas based on parabolic reflectors are the most common type of directive antennas when a high gain is required.  The main advantage is that they can be made to have gain and directivity as large as required.  The  main disadvantage is that big dishes are difficult to mount and are likely to have a large wind load. 
+Randomes can be used to reduce the wind load or windage, as well as for 
+weather protection.
+
+![](imageserver/uploadimages/image41.png)
+
+Dishes up to one metre are usually made from  solid material. Aluminum is frequently used for its weight advantage, its durability and good electrical characteristics.  Windage increases rapidly with dish size and soon becomes a severe problem. Dishes which have a reflecting surface  that uses an open mesh 
+are frequently used.  These have a poorer front-to-back ratio, but are safer to use and easier to build.  Copper, aluminum, brass, galvanized steel and steel are suitable mesh materials.
+
+**BiQuad**
+
+The BiQuad antenna is simple to build and others good directivity and gain for Point-to-Point communications. It consists of a two squares of the same size of 1/4 wavelength as a radiating element and of a metallic plate or grid as reflector. This antenna has a beamwidth of about 70 degrees and a gain in the order of 10-12 dBi. It can be used as stand-alone antenna or as feeder for a Parabolic Dish. 
+The polarization is such that looking at the antenna from  the front, if the squares are placed side by side the polarization is vertical.
+
+![](imageserver/uploadimages/image42.png)
+
+**Log Periodic Antennas**
+
+Log periodic antennas have moderate gain over a wide frequency band, they are often used in spectrum  analysers for testing purposes and are also popular as TV receiving antennas since they can efficiently  cover from  channel 2 up to channel 14. These antennas are used in White space devices that require the ability to work in widely different channels.
+
+![](imageserver/uploadimages/image43.png)
+
+**Other Antennas**
+
+Many other types of antennas exist and new ones are created following advances in technology. Sector or Sectorial antennas: they are widely used in cellular telephony infrastructure and are usually built adding a reAective  plate to one or more phased dipoles. Their horizontal beamwidth can be as wide as 180 degrees, or as narrow as 60 degrees, while the vertical is usually much narrower. Composite antennas can be built with many Sectors to cover a wider horizontal range (multisectorial antenna). Panel or Patch antennas: they are solid Aat panels used for indoor coverage, with a gain up to 23 dBi.
+
+## Reflector theory
+
+
+The basic property of a perfect parabolic reflector  is that it converts a spherical wave irradiating from  a point source placed at the focus into a plane wave. Conversely, all the energy received by the dish from  a distant source is reflected  to a single point at the focus of the dish. The position of the focus, or focal length, is given by:
+
+$$
+f = \frac{D^2}{16c},
+$$
+
+where D is the dish diameter and c is the depth of the parabola at its centre.
+
+The size of the dish is the most important factor since it determines the maximum gain that can be achieved at the given frequency and the resulting beamwidth. The gain and beamwidth obtained are given by:
+
+$$
+ Gain = \left(\frac{(\pi D)^2}{\lambda^2}\right)\eta
+$$
+$$
+Beamwidth = \frac{70\lambda}{D},
+$$
+
+where D is the dish diameter and $\eta$ is the efficiency. The efficiency  is determined mainly by the effectiveness of illumination of the dish by the feed, but also by other factors. Each time the diameter of a dish is doubled, the gain is four times or 6 dB greater. If both stations double the size of their dishes, signal strength can be increased by 12 dB, a very substantial gain. An efficiency of 50%  can be assumed when hand-building antennas.
+
+
+The ratio f/D (focal length/diameter of the dish) is the fundamental factor governing the design of the feed for a dish. The ratio is directly related to the beamwidth of the feed necessary to illuminate the dish effectively. Two dishes of the same diameter but different focal lengths require diEerent design of feed if both are to be illuminated efficiently.  The value of 0.25 corresponds to the common focal-plane dish in which the focus is in the same plane as the rim  of the dish. The optimum  illumination of a dish is a compromise between maximising the gain and minimising the sidelobes.
+
+## Amplifiers
+
+As mentioned earlier, antennas do not actually create power. They simply direct all available power into a particular pattern. By using a power amplifier, you can use DC power to augment your available signal. An amplifier connects between the radio transmitter and the antenna, and has an additional cable that connects to a power source. 
+
+Amplifiers are available that work at 2.4 GHz, and can add several Watts of power to your transmission. These devices sense when an attached radio is transmitting, and quickly power up and amplify the signal. They then switch oE again when transmission ends. When receiving, they also add amplification to the signal before sending it to the radio.  Unfortunately, simply adding amplifiers will not magically solve all of your networking problems.
+
+We do not discuss power amplifiers at length in this book because there are a number of significant drawbacks to using them:
+
+ - They are expensive. Amplifiers must work at relatively wide bandwidths at 2.4 GHz, and must switch quickly enough to work for Wi- Fi applications.
+ - They provide no additional directionality. High gain antennas not only improve the available amount of signal, but tend to reject noise from other directions. Amplifiers blindly amplify both desired and interfering signals, and can make interference problems worse. 
+ - Amplifiers generate noise for other users of the band. By increasing your output power, you are creating a louder source of noise for other users of the unlicensed band. 
+ - Conversely, adding antenna gain will improve your link and can actually decrease the noise level for your neighbours.
+ - Using amplifiers is often illegal. Every country imposes power limits on use of unlicensed spectrum. Adding an antenna to a highly amplified signal will likely cause the link to exceed legal limits.
+
+Antennas cost far less than amps, and can improve a link simply by changing the antenna on one end. Using more sensitive radios and good quality cable also helps significantly on long distance wireless links. 
+These techniques are unlikely to cause problems for other users of the band, and so we recommend pursuing them  before adding amplifiers. Many manufacturers oEer high power versions of their WiFi radios at both 2 and 5 GHz, which have a built in amplifiers.  These are better than external amplifiers, but do not assume that it is always smart to use the high power version, for many application the standard power coupled with a high gain antenna is actually better.
+
+##  Practical antenna designs
+
+The cost of 2.4 GHz antennas has fallen dramatically with the increased popularity of WiFi. Innovative designs use simpler parts and fewer materials to achieve impressive gain with relatively little machining. Unfortunately, availability of good antennas is still limited in some areas of the world, and importing them  can be expensive. While actually designing an antenna can be a complex and error-prone process, constructing antennas from  locally available components is very straightforward, and can be a lot of fun. 
+
+In **Appendix A** called Antenna Construction we present some practical antenna designs that can be built for very little money.
+
+## Antenna  measurements
+
+Precise antenna instruments require expensive instruments and installations. It is therefore advisable to obtain the antenna parameters values directly from  a reputable manufacturer.  An anechoic chamber is needed to perform accurate antenna measurements, otherwise the reflections will cause false readings.
+Ice affects the performance of all antennas to some degree and the problem gets more serious at higher frequencies. The  impedance of free space is 377 ohms. If the air immediately surrounding the dipole elements is replaced by ice which has a lower impedance than air, then the impedance match and radiation patterns of the antenna will change. 
+
+These changes become progressively worse as the ice loading increases.  Antenna elements are usually encased in a plastic protective housing (radome).
+
+This provides an air space between the elements and ice casing so that the lower impedance of the ice layer has only a small effect on the radiators.  Detuning is greatly reduced but radiation pattern distortion may still be encountered (detuning reduces usable antenna bandwidth). For a given ice thickness, deviation from  nominal performance values become worse as frequency increases.
+
+In areas where severe icing and wet snow  are common, it is prudent to install a full radome over solid parabolic antennas, to use panel antennas instead of corner reflectors, and to stay away from  grid parabolics.
+
+![](imageserver/uploadimages/image44.png)

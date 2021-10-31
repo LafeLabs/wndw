@@ -5,6 +5,7 @@
         "home",
         "licensing",
         "markdown",
+        "networking",
         "physics",
         "pi",
         "radio",
