@@ -36,6 +36,7 @@
         "user.txt"
     ],
     "scrolls": [
+        "antennas",
         "home",
         "licensing",
         "markdown",

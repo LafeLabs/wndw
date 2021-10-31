@@ -1,0 +1,18 @@
+## [HOME](scrolls/home)
+
+# ANTENNAS / TRANSMISSION LINES
+ 
+The transmitter that generates the RF power to drive the antenna is usually located at some distance from  the antenna terminals. The connecting link between the two is the ***RF transmission line***. Its purpose is to carry RF power from  one place to another, and to do this as efficiently  as possible. From the receiver side, the antenna is responsible for picking up any radio signals in the air and passing them  to the receiver with the minimum amount of distortion and maximum efficiency, so that the radio has its best chance to decode the signal. For these reasons, the RF cable has a very important role in radio systems: it must maintain the integrity of the signals in both directions.
+ 
+![](imageserver/uploadimages/image27.png)
+
+The simplest transmission line one can envisage is the bifilar or twin lead, 
+consisting of two conductors separated by a dielectric or insulator. The  
+dielectric can be air or a plastic like the one used for flat transmission lines 
+used in TV antennas. A bifilar transmission line open at one end will not 
+radiate because the current in each wire has the same value but opposite 
+direction, so that the fields created on a given point at some distance from  
+the line cancel.
+
+![](imageserver/uploadimages/image28.png)
+
