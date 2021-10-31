@@ -346,13 +346,13 @@ But  what  if  hosts A,  B,  and  C  want  to  reach hosts  D,   E,  and  Fi  Th
 In Linux,  this  can  be accomplished  with  the  following  command:
 
 ```
-# ip  -€ route add 2001:db8.2..I€J  via 2001:db8:1.. I
+ip  -6 route add 2001:db8.2..I€J  via 2001:db8:1.. I
 ```
 
 ...and  hosts  D-F   would  add  the  following:
 
 ```
-# ip  -6  route add 2001:db8. 1..164  via 2001:db8.2.. 4
+ip  -6  route add 2001:db8. 1..164  via 2001:db8.2.. 4
 ```
 
 ![](imageserver/uploadimages/image59.png)
@@ -383,687 +383,230 @@ longest  match  to  the  destination,   in  Figure  NG    11  eth0  will  be  us
 
 ![](http://localhost/imageserver/uploadimages/image61.png)
 
-A  route  tells  the  OS   that  the  desired  network  doesn't  lie on  the  immediate link-local  
- network,   and  it  must  forward   the  traffic  through  the  specified router.
+A  route  tells  the  OS   that  the  desired  network  doesn't  lie on  the  immediate link-local  network,   and  it  must  forward   the  traffic  through  the  specified router.
 
 If  host  A  wants  to  send  a  packet  to  host  F,  it  would  first  send  it  to  node
-G.  Node  G would  then  look  up host  F in  its  routing  table,  and  see  that  it has a direct 
- connection  to host  F's  network.
-Finally,  host  G  would  resolve  the  hardware  (MAC)  address  of  host  F  and forward  the  
-packet  to it.
+G.  Node  G would  then  look  up host  F in  its  routing  table,  and  see  that  it has a direct  connection  to host  F's  network.  Finally,  host  G  would  resolve  the  hardware  (MAC)  address  of  host  F  and forward  the  packet  to it.
 
-Routes   can   be   updated   manually,   or  can   dynamically   react   to  network outages  and  
-other events.
-Some  examples  of popular  dynamic  routing protocols  are RIP,  OSPF,  BGP.
+Routes   can   be   updated   manually,   or  can   dynamically   react   to  network outages  and  other events. Some  examples  of popular  dynamic  routing protocols  are RIP,  OSPF,  BGP.
 
-26             6. NETWORKING
-
-Configuring   dynamic  routing  is  beyond   the  scope  of  this  book,  but  for further  reading 
- on the subject,  see  the resources  in Appendix  F.
-IPv4  behaves  exactly  the same way as  depicted  in figure  NG    12.
+Configuring   dynamic  routing  is  beyond   the  scope  of  this  book,  but  for further  reading on the subject,  see  the resources  in Appendix  F.
+IPv4  behaves  exactly  the same way as  depicted  in figure  NG  12.
 
 
+![](imageserver/uploadimages/image63.png)
+
+As  noted  before,  most   networks  and   the  Internet   are  dual-stack  and  all hosts  and  routers  have  both  IPv4  and  IPv6  addresses,  this  also  means  that
+the  nodes  will  have  routes  for  IPv4  and  routes  for  IPv6.  For  instance,  the set  of all routes  on node  G   of the previous  figures  will be:
+
+![](imageserver/uploadimages/image64.png)
 
 
+**Network Address Translation  (NAT) for IPv4**
 
-
-Node A
-192. I6B. I. I
-
-
-Node B
-192. I6B. I.2
-
-
-Node C
-192. I 6B. I.3
-Interface
-eth0
-2001 :dbB: I::4
-
-
-Node G Internal  router
-
-
-Interface
-eth I
-2001 :dbB:2::4
-192. 168.L I
-Internet   rsuter
-
-
-
-Node E
-192. 168.L2
-
-
-Node F 192. 168.L3
-
-Routing table for internal router G # netstat -rn -A izet4
-Destination     Gateway         Genmask         Iface
-192.168.1.0     0.0.0.0         255.255.255.0   eth0
-192.168.2.0     0.0.0.0         255.255.255.0   ethl
-0.0.0.0        192.168.2.1     0.0.0.0        ethl
-Pigure NG    12:  Node  G  is the Internet  router  on this  IPv4 network.
-As  noted  before,  most   networks  and   the  Internet   are  dual-stack  and  all hosts  and  
-routers  have  both  IPv4  and  IPv6  addresses,  this  also  means  that
-the  nodes  will  have  routes  for  IPv4  and  routes  for  IPv6.  For  instance,  the set  of all 
-routes  on node  G   of the previous  figures  will be:
-
-
-# nctstat -rn -A  incts Destination 2001:db8. 1./G4
-2001:db8.2.IG4
-:10
-
-Next  Hop
-
-
-2001.db8:2::1
-iJ
-eth0 eth1 eth1
-
-
-# netstat  -rn -A  inet4
-Destination            Gateway                  Genmask
-192. 1G8. 1.0       0.0.0.0                  255.255.255. 0
-192. 1G8.2. 0       0.0.0.0                 255.255.255. 0
-0.0.0.0                 192. 168.2. 1        0.0.0.0
-
-
-eth0 eth1 eth1
-
-S.The Internet Protocols      27
-Network Address Translation  (NAT) for IPv4
 In   order   to   reach   hosts   on   the   Internet,   private   addresses    must    be 
-converted  to  global,  publicly  routable  IPv4  addresses.
-This  is  achieved  using a  technique  known  as  Network  Address  Translation,
-or NAT.
-A  NAT  device  is  a  router  that  manipulates  the  addresses  of packets  instead of simply  
-forwarding  them.
-On   a  NAT    router,   the  Internet  connection   uses  one  (or  more)   globally routed  IPv4  
- addresses,   while   the  private  network   uses   an   IPv4   address from  the RFC1918  private 
- address  range.
-The  NAT   router  allows  the  global  address(es)  to  be  shared  with  all  of  the inside  
-users,  who  all use private  addresses.
-It  converts   the  packets  from  one  form  of  addressing   to  the  other  as  the packets   
-pass   through   it.   As  far   as   the   network   users   can   tell,   they   are directly   
-connected   to   the   Internet   and   require   no   special   software   or drivers.
-They  simply   use   the  NAT    router   as   their   default   gateway,   and   address packets  
-as  they  normally  would.
-The   NAT    router    translates   outbound   packets   to   use   the   global   IPv4 address  as 
- they  leave  the  network,  and  translates  them  back  again  as  they are  received  from  the 
-Internet.
+converted  to  global,  publicly  routable  IPv4  addresses. This  is  achieved  using a  technique  known  as  Network  Address  Translation, or NAT.
 
-The  major  consequence  of  using  NAT  is  that  machines  from  the  Internet cannot   easily   
-reach  servers   within   the  organisation   without   setting   up explicit  forwarding  rules  
-on the router.
+A  NAT  device  is  a  router  that  manipulates  the  addresses  of packets  instead of simply  forwarding  them. On   a  NAT    router,   the  Internet  connection   uses  one  (or  more)   globally routed  IPv4 addresses,   while   the  private  network   uses   an   IPv4   address from  the RFC1918  private address  range.
 
-Connections  initiated  from  within  the  private  address space  generally  have no trouble,  
-although some applications  (such  as Voice  over  IPv4  and  some VPN  software)  can  have  
-difficulty  dealing with  NAT.
+The  NAT   router  allows  the  global  address(es)  to  be  shared  with  all  of  the inside  users,  who  all use private  addresses. It  converts   the  packets  from  one  form  of  addressing   to  the  other  as  the packets pass   through   it.   As  far   as   the   network   users   can   tell,   they   are directly connected   to   the   Internet   and   require   no   special   software   or drivers. They  simply   use   the  NAT    router   as   their   default   gateway,   and   address packets as  they  normally  would.  The   NAT    router    translates   outbound   packets   to   use   the   global   IPv4 address  as  they  leave  the  network,  and  translates  them  back  again  as  they are  received  from  the Internet.
 
-28             6. NETWORKING
+The  major  consequence  of  using  NAT  is  that  machines  from  the  Internet cannot   easily   reach  servers   within   the  organisation   without   setting   up explicit  forwarding  rules  on the router.
+
+Connections  initiated  from  within  the  private  address space  generally  have no trouble,  although some applications  (such  as Voice  over  IPv4  and  some VPN  software)  can  have  difficulty  dealing with  NAT.
 
 
+![](imageserver/uploadimages/image65.png)
 
+Depending  on  your  point  of  view,  this  can  be  considered  a  bug  (since  it makes  it harder  to  set  up  two-way  communication) or  a  feature.  RFC1918 addresses   should   be   filtered   on   the   edge   of   your   network   to   prevent accidental  or  malicious  RFC1918  traffic  entering  or  leaving  your  network.
 
+While  NAT  performs  some  firewall-like  functions,  it is  not  a  replacement  for a  real firewall  as  most  of  the  attacks  happen  now when  an  internal  user  visits some web sites with  hostile  content  (called  malware  for  malevolent  software).
 
-To 10.1.1.3
+##     Internet Protocol Suite
 
-69.90.235.226
+Machines  on  the  Internet  use  the  Internet  Protocol  (IP)  to  reach  each  other, even  when separated  by many  intermediary  machines.
 
-192.0.2.1
-10.1.1.1        NAT router
+There  are  a  number  of  protocols  that  are  run  in  conjunction  with  IP  that provide  features  which  are  as  critical  to  normal  operations  as  IP  itself.  Every packet  specifies  a  protocol  number  that  identifies  the  packet  as  one  of  these protocols.
 
+The most  commonly  used  protocols  are  the Transmission  Control  Protocol (TCP,  number  6),   User  Datagram  Protocol  (UDP,  number  17),  and  the Internet   Control   Message   Protocol  (ICMP,   number   1   for   IPv4   and number  58  for  IPv6).  Taken  as  a  group,  these  protocols  (and  others)  are known  as  the Internet  Protocol  Suite, or simply TCP/IP  for short.
 
+The  TCP   and   UDP   protocols   introduce   the  concept  of  port  numbers. Port  numbers  allow  multiple  services  to  be  run  on  the  same  IP  address, and  still  be  distinguished  from  each  other.  Every  packet  has  a  source  and destination  port  number.  Some  port  numbers  are  well-defined  standards, used   to  reach  well-known   services  such   as  email  and  web  servers.   For example,  web  servers  normally  listen  on  TCP  port  80  for  insecure traffic and  on TCP  port 443 for encrypted/secure traffic,  NTP   time servers  listen on  UDP port  123,  DNS  domain  name  servers  listen  on  UDP  port  53, and SMTP email servers listen  on TCP  port 25.
 
+When  we say  that a service  "listens"  on a  port  (such  as  port  80),  we mean that  it will  accept  packets  that  use  its  IP as  the destination  IP  address,  and 80 as  the destination port.
 
-10.1.1.2                   10.1.1.3                   10.1.1.4
-Figure VG    13:  Network  AddFPSS  TrffHslation allows  you  to Shab6 a Sf H  IP      H address  
-with  many  internal hOStS,  but can  make  it difficult for some services  to work properly.
+Servers  usually  do  not  care  about  the  source  IP  or  source  port,  although sometimes they will  use them  to establish  the identity of the other side.  When  sending a  response  to such packets,  the server  will  use  its  own  IP  as the source IP, and  80 as  the source  port.
 
-Depending  on  your  point  of  view,  this  can  be  considered  a  bug  (since  it makes  it  
-harder  to  set  up  two-way  communication) or  a  feature.  RFC1918 addresses   should   be   
-filtered   on   the   edge   of   your   network   to   prevent accidental  or  malicious  RFC1918  
-traffic  entering  or  leaving  your  network.
-
-While  NAT  performs  some  firewall-like  functions,  it is  not  a  replacement  for a  real 
-firewall  as  most  of  the  attacks  happen  now when  an  internal  user  visits some web sites 
-with  hostile  content  (called  malware  for  malevolent  software).
-
-6.     Internet Protocol Suite
-Machines  on  the  Internet  use  the  Internet  Protocol  (IP)  to  reach  each  other, even  when 
-separated  by many  intermediary  machines.
-
-There  are  a  number  of  protocols  that  are  run  in  conjunction  with  IP  that provide  
-features  which  are  as  critical  to  normal  operations  as  IP  itself.  Every packet  
-specifies  a  protocol  number  that  identifies  the  packet  as  one  of  these protocols.
-
-S.The Internet Protocols      29
-
-The most  commonly  used  protocols  are  the Transmission  Control  Protocol (TCP,  number  6),  
-User  Datagram  Protocol  (UDP,  number  17),  and  the Internet   Control   Message   Protocol   
-(ICMP,   number   1   for   IPv4   and number  58  for  IPv6).  Taken  as  a  group,  these  
-protocols  (and  others)  are known  as  the Internet  Protocol  Suite, or simply TCP/IP  for 
-short.
-
-The  TCP   and   UDP   protocols   introduce   the  concept  of  port  numbers. Port  numbers  
-allow  multiple  services  to  be  run  on  the  same  IP  address, and  still  be  distinguished  
-from  each  other.  Every  packet  has  a  source  and destination  port  number.  Some  port  
-numbers  are  well-defined  standards, used   to  reach  well-known   services  such   as  email  
-and  web  servers.   For example,  web  servers  normally  listen  on  TCP  port  80  for  insecure 
- trafhc and  on TCP  port 443 for encrypted/secure traffic,  NTP   time servers  listen on  UDP   
-port  123,  DNS  domain  name  servers  listen  on  UDP  port  53, and SMTP email servers listen  
-on TCP  port 25.
-
-When  we say  that a service  "listens"  on a  port  (such  as  port  80),  we mean that  it will  
-accept  packets  that  use  its  IP as  the destination  IP  address,  and 80 as  the destination  
-port.
-Servers  usually  do  not  care  about  the  source  IP  or  source  port,  although sometimes  
-they will  use them  to establish  the identity of the other side.
-When  sending a  response  to such packets,  the server  will  use  its  own  IP  as the source IP, 
- and  80 as  the source  port.
-When  a  client  connects  to  a  service,  it  may  use  any  source  port  number on  its  side  
-that  is  not  already  in  use,  but  it  must  connect  to  the  proper port on the server  (e.g. 
- 80 for web,  25 for email).
+When  a  client  connects  to  a  service,  it  may  use  any  source  port  number on  its  side  that  is  not  already  in  use,  but  it  must  connect  to  the  proper port on the server  (e.g. 80 for web,  25 for email).
 
 TCP   is  a  session-oriented  protocol  with  guaranteed  and  ordered  delivery and   
 transmission   control   features   (such  as  detection   and   mitigation   of network 
 congestion,  retries,  packet  reordering  and  reassembly,  etc.).
 
-UDP  is  designed  for  connectionless  streams  of  information,  and  does  not guarantee  
-delivery  at  all,  or  in  any  particular  order  but  can  be  faster  so  it is often  used for 
- real-time  protocols  such  as  for  timing, voice or  video.
+UDP  is  designed  for  connectionless  streams  of  information,  and  does  not guarantee delivery  at  all,  or  in  any  particular  order  but  can  be  faster  so  it is often  used for  real-time  protocols  such  as  for  timing, voice or  video.
 
-The  ICMP  protocol  is  designed  for  debugging  and  maintenance  on  the Internet.
-Rather  than  port  numbers,  it  has  message  types,  which  are also  numbers. Different   
-message   types   are   used   to   request   a   simple   response   from
+The  ICMP  protocol  is  designed  for  debugging  and  maintenance  on  the Internet. Rather  than  port  numbers,  it  has  message  types,  which  are also  numbers. Different  message   types   are   used   to   request   a   simple   response   from another  computer  (echo  request),  notify  the  sender  of another  packet  of  a possible  routing  loop  (time  exceeded),  or  inform  the  sender  that  a  packet that   could   not   be  delivered   due   to   firewall   rules   or   other   problems (destination  unreachable).
 
-30            6. NETWORKING
+By  now  you  should  have  a  solid  understanding  of  how  computers  on  the network    are   addressed,    and   how   information    flows   on   the   network between  them.
 
-another  computer  (echo  request),  notify  the  sender  of another  packet  of  a possible  
-routing  loop  (time  exceeded),  or  inform  the  sender  that  a  packet that   could   not   be  
- delivered   due   to   firewall   rules   or   other   problems (destination  unreachable).
-By  now  you  should  have  a  solid  understanding  of  how  computers  on  the network    are   
-addressed,    and   how   information    flows   on   the   network between  them.
+Now  let's  take  a  brief  look  at  the physical  hardware  that  implements  these network  protocols.
 
-Now  let's  take  a  brief  look  at  the physical  hardware  that  implements  these network  
-protocols.
+##     Physical  hardware
 
-7.     Physical  hardware
+**Ethernet**
 
-Ethernet
-Ethernet    is   the   name   of   the   most   popular   standard    for   connecting together  
-computers  on  a  Local  Area  Network  (LAN).  It  is  sometimes  used to  connect  individual  
-computers  to  the  Internet,  via  a  router,  ADSL  modem, or  wireless  device.
-However,  if  you  connect  a  single  computer  to  the  Internet,  you  may  not  use Ethernet  
-at  all.
-The  name   comes   from   the  physical   concept   of  the  ether,   the   medium which   was  
-once   supposed   to  carry  light   waves   through  free  space.   The official  standard  is 
-called  IEEE 802.3.
+Ethernet    is   the   name   of   the   most   popular   standard    for   connecting together  computers  on  a  Local  Area  Network  (LAN).  It  is  sometimes  used to  connect  individual  computers  to  the  Internet,  via  a  router,  ADSL  modem, or  wireless  device. However,  if  you  connect  a  single  computer  to  the  Internet,  you  may  not  use Ethernet   at  all.
 
-One  widely  deployed  Ethernet  standard  is  called   l00baseT  also  known  as Fast  Ethernet.
-This   defines   a   data   rate  of   100  Megabits   per   second   (hence   the   100), running  
- over   twisted   (hence   the   T)    pair   wires,   with   modular   RJ-45 connectors  on  the 
-end.
+The  name   comes   from   the  physical   concept   of  the  ether,   the   medium which   was  once   supposed   to  carry  light   waves   through  free  space.   The official  standard  is called  IEEE 802.3.
 
-The network  topology  is  a  star,  with  switches  or  hubs  at  the centre  of each star,  and  
-end  nodes  (devices  and  additional  switches)  at  the  edges.  Servers are  also  connected   
-using  Gigabit  Ethernet   with  a  rate  of  1   Gigabit  per second.
-Increasingly  Gigabit  Ethernet  is  replacing  Fast  Ethernet  in  many  networks these  days   as 
-  demand   for  high   volume   video   and   other  high  data  rate applications  become  more 
-prevalent.
+One  widely  deployed  Ethernet  standard  is  called   l00baseT  also  known  as Fast  Ethernet.   This   defines   a   data   rate  of   100  Megabits   per   second   (hence   the   100), running  over   twisted   (hence   the   T)    pair   wires,   with   modular   RJ-45 connectors  on  the end.
 
-6. Internet Protocol Suite      3 I
+The network  topology  is  a  star,  with  switches  or  hubs  at  the centre  of each star,  and  end  nodes  (devices  and  additional  switches)  at  the  edges.  Servers are  also  connected using  Gigabit  Ethernet   with  a  rate  of  1   Gigabit  per second.
 
-Medium Access Control  (MAC)  addresses
-Every   device  connected   to  an  Ethernet   or  WiFi  network   has   a   unique MAC    address, 
- assigned  by  the  manufacturer  of  the  network  card.  It serves as  a  unique  identifier  
-that  enables  devices  to  talk  to  each  other.  However, the  scope  of  a  MAC     address  is 
- limited  to  a  broadcast  domain,  which  is defined  as  all  the  computers  connected  
-together  by  wires,  hubs,  switches, and  bridges,  but  not  crossing  routers  or  Internet  
-gateways.
-MAC      addresses   are   never   used   directly   on   the   Internet,   and   are   not 
-transmitted  across  routers.
-MAC    addresses  for  Ethernet  and  IEEE  802.11  WiFi  networks  are  48  bits long  and  look  
-like  this  -  00:1 c:c0:17:78:8c  or  40:6c:8f:52:59:41;  for  the latter  MAC    address,  the  
-first  24  bits  40:6c:8f  indicates  that  Apple  assigned this  address.
+Increasingly  Gigabit  Ethernet  is  replacing  Fast  Ethernet  in  many  networks these  days   as demand   for  high   volume   video   and   other  high  data  rate applications  become  more prevalent.
 
-Hubs
-Ethernet   hubs   connect   multiple   twisted-pair   Ethernet   devices   together. They  work  at 
- the  physical  layer  (the  lowest  or  first  layer).  They  repeat  the signals   received   by  
-each   port   out   to   all  of   the   other   ports.   Hubs   can therefore  be  considered  to  
-be  simple  repeaters.
+**Medium Access Control  (MAC)  addresses**
+
+
+Every   device  connected   to  an  Ethernet   or  WiFi  network   has   a   unique MAC    address,  assigned  by  the  manufacturer  of  the  network  card.  It serves as  a  unique  identifier  that  enables  devices  to  talk  to  each  other.  However, the  scope  of  a  MAC     address  is limited  to  a  broadcast  domain,  which  is defined  as  all  the  computers  connected  together  by  wires,  hubs,  switches, and  bridges,  but  not  crossing  routers  or  Internet  gateways.  MAC      addresses   are   never   used   directly   on   the   Internet,   and   are   not transmitted  across  routers.  MAC    addresses  for  Ethernet  and  IEEE  802.11  WiFi  networks  are  48  bits long  and  look like  this  -  00:1 c:c0:17:78:8c  or  40:6c:8f:52:59:41;  for  the latter  MAC    address,  the  first  24  bits  40:6c:8f  indicates  that  Apple  assigned this  address.
+
+**Hubs**
+
+Ethernet   hubs   connect   multiple   twisted-pair   Ethernet   devices   together.  They  work  at the  physical  layer  (the  lowest  or  first  layer).  They  repeat  the signals   received   by  each   port   out   to   all  of   the   other   ports.   Hubs   can therefore  be  considered  to  be  simple  repeaters.
+
 Due  to  this  design,  only  one  port  can  successfully  transmit  at  a  time.  If two    
 devices    transmit    at    the    same    time,    they    corrupt    each    other's 
-transmissions,  and  both  must  back  off  and  retransmit  their  packets  later. This   is   
-known   as   a   collision,   and   each   host   remains   responsible   for detecting  and  
-avoiding  collisions   before  transmitting,   and   retransmitting its  own  packets  when  
-needed.
+transmissions,  and  both  must  back  off  and  retransmit  their  packets  later. This   is   known   as   a   collision,   and   each   host   remains   responsible   for detecting  and  avoiding  collisions   before  transmitting,   and   retransmitting its  own  packets  when  needed.
 
-When  problems  such  as  excessive  collisions  are  detected  on  a  port,  some hubs  can  
-disconnect  (partition)  that  port  for  a while  to  limit  its impact  on the  rest  of the  
-network.
+When  problems  such  as  excessive  collisions  are  detected  on  a  port,  some hubs  can  disconnect  (partition)  that  port  for  a while  to  limit  its impact  on the  rest  of the  network.
 
-While   a  port  is  partitioned,   devices  attached   to  it  cannot   communicate with  the rest 
- of  the  network.
-Hubs  are  limited  in  their  usefulness,  since  they  can  easily  become  points of  congestion 
- on  busy  networks  so  they  are  no  longer  normally  deployed in  networks  nowadays.  Its 
-only  important  to  note  that  a  WiFi  access  point acts  as  a hub on the  radio side.
+While   a  port  is  partitioned,   devices  attached   to  it  cannot   communicate with  the rest of  the  network. Hubs  are  limited  in  their  usefulness,  since  they  can  easily  become  points of  congestion on  busy  networks  so  they  are  no  longer  normally  deployed in  networks  nowadays.  Its only  important  to  note  that  a  WiFi  access  point acts  as  a hub on the  radio side.
 
-32         6. NETWORKING
-Switches
+
+**Switches**
+
 A   switch   is   a   device  which   operates   much   like  a   hub,   but   provides   a
 dedicated  (or  switched)  connection  between  ports.
-Rather   than   repeating   all   traffic   on   every   port,   the   switch   determines which  
-ports  are  communicating   directly  and   temporarily   connects   them together.   There   can   
-be  several   such   temporary   port   connections   at   the same  time.
-Switches  generally  provide  much  better  performance  than  hubs,  especially on   busy   
-networks   with   many   computers.    They   are   not    much   more expensive  than  hubs,  and  
-are  replacing  them  in  most  situations.
-Switches  work  at  the  data  link  layer  (the  second  layer),   since  they  interpret and  act 
- upon  the  MAC     address  in  the  packets  they  receive.   When  a  packet arrives  at  a  
-port  on  a  switch,   it  makes  a  note  of   the  source  MAC     address, which   it  
-associates  with   that  port.   It  stores   this   information   in  an   internal MAC    table  
-often  known  as  Content  Addressable  Memory  (CAM)  table.  The switch   then  looks  up  the  
-destination   MAC     address  in  its  MAC     table,   and transmits   the   packet   only   on   
-the   matching   port.   If   the   destination   MAC address  is  not  found  in  the  MAC     
-table,  the  packet  is  then  sent  to  all  of  the connected  interfaces  hoping  to  reach  the 
- right  MAC.
 
-Hubs vs. Switches
+Rather   than   repeating   all   traffic   on   every   port,   the   switch   determines which  ports  are  communicating   directly  and   temporarily   connects   them together.   There   can be  several   such   temporary   port   connections   at   the same  time.
+
+Switches  generally  provide  much  better  performance  than  hubs,  especially on   busy  networks   with   many   computers.   They   are   not    much   more expensive  than  hubs,  and  are  replacing  them  in  most  situations.
+
+Switches  work  at  the  data  link  layer  (the  second  layer),   since  they  interpret and  act upon  the  MAC     address  in  the  packets  they  receive.   When  a  packet arrives  at  a port  on  a  switch,   it  makes  a  note  of   the  source  MAC     address, which   it associates  with   that  port.   It  stores   this   information   in  an   internal MAC    table  often  known  as  Content  Addressable  Memory  (CAM)  table.  The switch   then  looks  up  the  destination   MAC     address  in  its  MAC     table,   and transmits   the   packet   only   on   the   matching   port.   If   the   destination   MAC address  is  not  found  in  the  MAC  table,  the  packet  is  then  sent  to  all  of  the connected  interfaces  hoping  to  reach  the right  MAC.
+
+**Hubs vs. Switches**
+
+
 Hubs   are   considered    to   be   fairly   unsophisticated   devices,   since   they 
-inefficiently  rebroadcast  all  traffic  on  every  port.  This  simplicity  introduces both  a  
-performance   penalty  and  a  security  issue.  Overall  performance   is slower,   since  the  
-available   bandwidth   must   be  shared  between   all  ports. Since  all  traffic   is  seen  by 
- all  ports,  any  host  on  the  network  can  easily monitor  all of the network  traffic.
-Switches   create    temporary    virtual   connections    between    receiving    and transmitting 
-  ports.  This   yields   better  performance   because   many   virtual connections   can   be   
-made   simultaneously.  More   expensive   switches   can switch   traffic   by  inspecting  
-packets  at   higher   levels   (at   the   transport   or application   layer),   allowing   the   
-creation   of  VLANs,   and   implementing other  advanced  features.
+inefficiently  rebroadcast  all  traffic  on  every  port.  This  simplicity  introduces both  a  performance   penalty  and  a  security  issue.  Overall  performance   is slower,   since  the  available   bandwidth   must   be  shared  between   all  ports. Since  all  traffic   is  seen  by all  ports,  any  host  on  the  network  can  easily monitor  all of the network  traffic.  
 
-A   hub  can  be  used  when  repetition  of  trafhc  on  all  ports  is  desirable;  for example,  
-when  you  want  to  explicitly  allow  a  monitoring  machine  to  see all  of   the   trafhc   on 
-  the   network.   Most   switches   provide   monitor   port functionality  that  enables  
-repeating  on  an  assigned  port specifically  for  this purpose.
+Switches   create    temporary    virtual   connections    between    receiving    and transmitting ports.  This   yields   better  performance   because   many   virtual connections   can   be made  simultaneously.  More   expensive   switches   can switch   traffic   by  inspecting  packets  at   higher   levels   (at   the   transport   or application   layer),   allowing   the   creation   of  VLANs,   and   implementing other  advanced  features.
 
-7.  Physical  hardware                     33
-Hubs  were  once  cheaper  than  switches.  However,  the  price of switches  has reduced  
-dramatically  over  the  years.  Therefore,   old  network  hubs  should be  replaced  whenever  
-possible  with  new  switches.
+A   hub  can  be  used  when  repetition  of  traffic  on  all  ports  is  desirable;  for example,  when  you  want  to  explicitly  allow  a  monitoring  machine  to  see all  of   the   traffic   on the   network.   Most   switches   provide   monitor   port functionality  that  enables repeating  on  an  assigned  port specifically  for  this purpose.
+
+Hubs  were  once  cheaper  than  switches.  However,  the  price of switches  has  reduced dramatically  over  the  years.  Therefore,   old  network  hubs  should be  replaced  whenever  possible  with  new  switches.
+
+![](imageserver/uploadimages/image66.png)
+
+Both  hubs  and  switches  may  offer  managed  services. Some  of  these  services  include  the  ability  to  set  the  link  speed  (l0baseT, l00baseT, l000baseT,   full or   half-duplex)   per   port,   enable   triggers   to watch  for  network events  (such  as  changes  in  MAC    address  or  malformed packets),     and     usually include     port     counters     for    easy     bandwidth accounting.
+
+A  managed  switch  that  provides   upload  and  download   byte  counts  for every  physical  port  can  greatly simplify  network  monitoring.  These  services  are  typically  available  via  SNMP,  or  they  may  be  accessed via  telnet, ssh, a web interface,  or a custom  configuration  tool.
+
+**Routers  and Firewalls**
+
+While    hubs    and    switches    provide    connectivity    on   a   local    network segment, a  router's   job  is  to  forward  packets  between  different   network segments.  A  router  typically  has  two or  more physical  network  interfaces.
 
 
-
-MAC 00.00.00:AA:AA:AA            MAC 00. %:00:BB:BB:BB
-
+It   may   include   support   for   different   types   of   network   media,   such  as Ethernet,  WiFi,  optical  fibre,  DSL,  or  dial-up.
 
 
+Routers  can  be  dedicated  hardware  devices  or  they  can  be  made  from  a standard  PC with multiple  network  cards  and  appropriate  software.
+Routers  sit  at  the  edge  of  two  or  more  networks.  By  definition,  they  have one connection   to  each  network,   and  as  border  machines  they  may  take on  other  responsibilities  as   well   as   routing.   Many   routers   have   firewall capabilities   that  provide  a  mechanism  to  filter  or  redirect  packets  that  do not  fit  security  or  access  policy  requirements.  They  may  also  provide  Network  Address  Translation   (NAT)  services   for IPv4.
 
+Routers  vary  widely  in cost  and  capabilities.  The  lowest  cost  and  least  flexible  are  simple,  dedicated  hardware  devices, often   with   NAT     functionality,   used   to   share   an   Internet   connection between  a  few  computers; well  known  brands  include   Linksys,   D-Link, Netgear.
 
-To %
+The   next  step   up   is   a   software   router,   which   consists   of  an   operating system   running   on   a   standard   PC    with   multiple   network   interfaces. Standard  operating  systems  such  as  Microsoft  Windows,  Linux,  and  BID are  all  capable  of  routing,   and  are much  more  flexible  than  the  low-cost hardware  devices;  it  is often called  Internet Connection  Sharing.
 
+However,  they  suffer  from  the  same  problems  as  conventional  PCs,  with high   power consumption,   a   large   number   of   complex   and   potentially unreliable parts,  and  more involved  configuration.
 
-HUB
-
-
-
-
-
-MAC 00 00 00 CC:CC:CC           MAC 00 00:00:DD:DD:DD
-
-
-MAC @.CO.@:AA.AA.AA          MAC @:HQ:@:BB:BB:BB
-
-
-
-
-To &
-
-
-SWITCH
-
-
-
-
-MAC 6.6.6.CC-CC-CC          MAC @.@.@.DD:DD:DD
-
-
-
-Figure VG     14:  A  hub Simply  repeats  all tra    c  on every port,  while a SWltch makes  a  
-temporary,  dedicated  connection  between  the ports  that need  to communicate.
-
-Both  hubs  and  switches  may  offer  managed  services.
-Some  of  these  services  include  the  ability  to  set  the  link  speed  (l0baseT, l00baseT,   
-l000baseT,   full   or   half-duplex)   per   port,   enable   triggers   to watch  for  network  
-events  (such  as  changes  in  MAC    address  or  malformed packets),     and     usually     
-include     port     counters     for    easy     bandwidth accounting.
-
-A  managed  switch  that  provides   upload  and  download   byte  counts  for every  physical  
-port  can  greatly simplify  network  monitoring.
-These  services  are  typically  available  via  SNMP,  or  they  may  be  accessed via  telnet, 
-ssh, a web interface,  or a custom  configuration  tool.
-
-Routers  and Firewalls
-While    hubs    and    switches    provide    connectivity    on   a   local    network segment,   
-a  router's   job  is  to  forward  packets  between  different   network segments.
-A  router  typically  has  two or  more physical  network  interfaces.
-
-34        6. NETWORKING
-It   may   include   support   for   different   types   of   network   media,   such  as Ethernet, 
- WiFi,  optical  fibre,  DSL,  or  dial-up.
-Routers  can  be  dedicated  hardware  devices  or  they  can  be  made  from  a standard  PC   
-with multiple  network  cards  and  appropriate  software.
-Routers  sit  at  the  edge  of  two  or  more  networks.  By  definition,  they  have one  
-connection   to  each  network,   and  as  border  machines  they  may  take on  other   
-responsibilities  as   well   as   routing.   Many   routers   have   firewall capabilities   that  
-provide  a  mechanism  to  filter  or  redirect  packets  that  do not  fit  security  or  access  
-policy  requirements.
-They  may  also  provide  Network  Address  Translation   (NAT)  services   for IPv4.
-
-Routers  vary  widely  in cost  and  capabilities.
-The  lowest  cost  and  least  flexible  are  simple,  dedicated  hardware  devices, often   with   
-NAT     functionality,   used   to   share   an   Internet   connection between  a  few  computers; 
-  well  known  brands  include   Linksys,   D-Link, Netgear.
-
-The   next  step   up   is   a   software   router,   which   consists   of  an   operating system  
- running   on   a   standard   PC    with   multiple   network   interfaces. Standard  operating  
-systems  such  as  Microsoft  Windows,  Linux,  and  BID are  all  capable  of  routing,   and  are 
- much  more  flexible  than  the  low-cost hardware  devices;  it  is often called  Internet  
-Connection  Sharing.
-
-However,  they  suffer  from  the  same  problems  as  conventional  PCs,  with high   power   
-consumption,   a   large   number   of   complex   and   potentially unreliable  parts,  and  more  
-involved  configuration.
-
-The   most   expensive   devices   are   high-end   dedicated   hardware   routers, made  by 
-companies  like Cisco  and  Juniper.
-They  tend  to  have  much  better   performance,   more  features,   and  higher reliability  than 
-software  routers  on PCs.
-It  is  also  possible  to  purchase  technical  support  and maintenance  contracts for  them.
+The   most   expensive   devices   are   high-end   dedicated   hardware   routers, made  by companies  like Cisco  and  Juniper.  They  tend  to  have  much  better   performance,   more  features,   and  higher reliability  than software  routers  on PCs.  It  is  also  possible  to  purchase  technical  support  and maintenance  contracts for  them.
 
 Most     modern     routers     offer     mechanisms     to     monitor     and     record 
-performance    remotely,    usually    via   the   Simple    Network   Management Protocol   
-(SNMP),   although   the   least   expensive   devices   often   omit   this feature.
-
-7. Physical  hardware                   3S
-
-Other equipment
+performance    remotely,    usually    via   the   Simple    Network   Management Protocol (SNMP),   although   the   least   expensive   devices   often   omit   this feature.
 
 
+![](imageserver/uploadimages/image67.png)
 
-
-
-DSL  /\/todem
-
-
-
-Cable
-Modem
-
-
-
-CSU/DSU
-
-
-
-VSAT
-Terminal
-Ethernet
-Switch
-
-
-Ethernet
-Switch
-
-
-Ethernet Switch
-
-
-Ethernet
-Switch
-
-
-Figure VG     15:  Many  DSL   mO   PWS,  cdblP  modems,  wireless  access points,  and
-VSAT terminals  terminate  at an Ethernet  jack.
-
-Each  physical  network  has  an  associated  piece  of  terminal  equipment.  For example,   VSAT  
- connections   consist   of  a  satellite   dish   connected   to   a terminal  that  either  plugs 
- into  a  card  inside  a  PC,  or  ends  at  a  standard Ethernet   connection.   DSL   lines   
-use   a   DSL   modem   that   bridges   the telephone  line  to  a  local  device,  either  an  
-Ethernet  network  or  a  single computer  via  USB.  Cable  modems  bridge  the  television  cable 
- to Ethernet, or  to an  internal  PC card  bus.
+Each  physical  network  has  an  associated  piece  of  terminal  equipment.  For example,   VSAT  connections   consist   of  a  satellite   dish   connected   to   a terminal  that  either  plugs into  a  card  inside  a  PC,  or  ends  at  a  standard Ethernet   connection.   DSL   lines  use   a   DSL   modem   that   bridges   the telephone  line  to  a  local  device,  either  an  Ethernet  network  or  a  single computer  via  USB.  Cable  modems  bridge  the  television  cable to Ethernet, or  to an  internal  PC card  bus.
 
 Standard    dialup    lines    use    modems    to    connect    a    computer    to    the 
-telephone,   usually  via  a  plug-in  card  or  serial  port.  And  there  are  many different  
-kinds  of wireless  networking  equipment  that  connect  to  a  variety of  radios   and  
-antennas,   but  nearly  always   end  at  an  Ethernet   jack.   The functionality      of      
-these      devices      can      vary      significantly      between manufacturers.   Some   
-provide   mechanisms   for   monitoring   performance, while  others  may  not.
+telephone,   usually  via  a  plug-in  card  or  serial  port.  And  there  are  many different  kinds  of wireless  networking  equipment  that  connect  to  a  variety of  radios   and  antennas,   but  nearly  always   end  at  an  Ethernet   jack.   The functionality      of   these      devices      can      vary      significantly      between manufacturers.   Some   provide   mechanisms   for   monitoring   performance, while  others  may  not.
 
-36        6. NETWORKING
-Since   your   Internet   connection   ultimately   comes   from   your   ISP,   you should   
-follow   their   recommendations   when   choosing   equipment    that bridges  their  network  to 
-your  Ethernet  network.
 
-8.     Putting it all together
+Since   your   Internet   connection   ultimately   comes   from   your   ISP,   you should   follow   their   recommendations   when   choosing   equipment    that bridges  their  network  to  your  Ethernet  network.
 
+##   Putting it all together
 
+![](imageserver/uploadimages/image68.png)
 
+Once  all  network  nodes  have  an  IP  address,  they  can  send  data  packets  to the   IP  address   of   any   other   node.   Through   the   use   of   routing   and forwarding,  these  packets   can   reach   nodes   on   networks   that   are   not physically  connected  to  the  originating  node.  This  process  describes  much of what  “happens”  on  the Internet.
 
+In  this  example,  you  can  see  the  path  that  the  packets  take  as  Alice  chats with  Bob  using an  instant  messaging  service. Each  dotted line represents  an  Ethernet  cable,  a  wireless  link,  or  any  other kind  of   physical  network.  The  cloud  symbol  is  commonly  used  to  stand  in  for  “The  Internet”,  and represents  any  number  of intervening  IP  networks.
 
+Neither  Alice  nor  Bob  need   to  be  concerned  with  how   those  networks operate,  as  long   as   the   routers   forward   IP   traffic   towards   the   ultimate destination.  If  it  weren't  for  Internet  protocols  and  the  cooperation  of everyone  on  the net,  this kind  of communication  would  be  impossible.
 
+In  Figure  NG  16,  Alice  is  dual-stack  and  has  IPv4  and  IPv6  addresses, and  as  Bob  has  only  IPv6  addresses,  they will  communicate  by  using IPv6 which  is  the common  IP version  between  them.
 
+##   Designing  the physical  network
 
+It  may  seem  odd  to  talk  about  the  “physical”   network  when   building wireless  networks.  After  all,  where  is  the  physical  part  of  the  network?  In  wireless  networks, the  physical     medium     we    use    for    communication     is    obviously electromagnetic energy.  But  in  the  context   of  this  chapter,  the  physical   network  refers  to  the mundane  topic   of   where   to   put   things.   How   do   you   arrange   the equipment  so  that you  can  reach your wireless clients?  Whether  they  fill  an  office  building  or  stretch  across  many  miles,  wireless networks are   naturally   arranged   in   these   three   logical   configurations: point-to-point links,    point-to-multipoint  links,   and multipoint-to- multipoint   clouds.   While   different    parts   of   your   network   can   take advantage  of  all  three  of  these configurations,  any  individual  link  will  fall into one  of these topologies.
 
+**Point-to-point**
 
+Point-to-point  links  typically  provide  an  Internet  connection  where  such access  isn't   otherwise  available.  One side of  a  point-to-point link will have an  Internet  connection,  while  the other uses  the link to  reach the Internet.
 
+For  example,  a  university may have  a fast  frame  relay or VSAT connection in  the  middle  of  campus,  but  cannot  afford  such  a  connection   for  an important    building    just   off   campus.   If   the   main   building   has   an unobstructed  view  of  the  remote  site,  a  point-to-point connection  can  be used  to  link  the  two  together.  This  can  augment  or even  replace  existing dial-up  links.  With  proper  antennas  and  clear  line  of sight,  reliable  point- to-point links  in excess of thirty kilometres  are possible.
 
-2001 :db8:cafe:: I 83.82.BI .BO
-2001:db8: I 00::2
-172, I 6.7J.2
+![](imageserver/uploadimages/image69.png)
 
 
+Of   course,  once  a  single  point-to-point  connection  has  been  made,  more can  be  used  to extend  the  network  even  further.  If  the  remote  building  in our   example   is   at   the  top   of   a   tall   hill,   it   may   be   able   to   see   other important  locations  that  can't  be  seen  directly  from  the  central  campus.  By installing  another  point-to-point  link  at  the  remote  site,  another  node  can join  the network  and  make  use  of  the central Internet  connection.
 
-:db8   bb     I
-2  :d 82  2
+Point-to-point   links   don't   necessarily    have    to   involve   Internet   access. Suppose   you   have   to   physically   drive   to   a   remote   weather   monitoring station,  high  in  the  hills,  in  order  to  collect  the  data  which  it  records  over time.  You  could  connect the  site  with  a  point-to-point  link,  allowing  data collection   and   monitoring   to happen   in   realtime,   without   the   need   to actually  travel  to  the  site.
 
+Wireless  networks  can  provide  enough  bandwidth  to  carry  large  amounts of   data  (including  audio  and  video)  between  any  two  points  that  have  a connection   to   each  other,   even   if   there   is   no  direct   connection   to   the Internet.
 
+**Point-to-multipoint**
 
+The   next    most    commonly    encountered    network    layout    is   point-to- multipoint.   Whenever   several   nodes   are   talking   to   a   central   point   of access,  this  is  a  point-to-multipoint  application.  The  typical  example  of  a point-to-multipoint   layout   is   the   use   of   a   wireless   access   point   that provides  a  connection  to several  laptops.  The laptops  do not  communicate with  each  other  directly,  but  must  be  in  range  of  the  access  point  in  order to  use  the  network.
 
+![](imageserver/uploadimages/image70.png)
 
+Point-to-multipoint  networking  can  also  apply  to  our  earlier  example  at the university.   Suppose  the  remote  building  on  top  of  the  hill  is connected to  the central  campus  with a  point-to-point  link.  Rather   than   setting   up   several   point-to-point   links   to   distribute    the Internet  connection,   a  single   antenna  could  be  used  that  is  visible  from several   remote buildings.   This  is  a  classic  example  of  a  wide  area  point (remote   site   on   the hill)   to   multipoint   (many   buildings   in   the   valley below)  connection.
 
+Note  that  there  are  a  number  of  performance  issues  with  using  point-to- multipoint  over  very  long  distance,  which  will  be  addressed  in  the chapter called  Deployment  Planning.  Such  links  are  possible  and  useful  in  many circumstances,  but   don't   make   the  classic mistake   of  installing   a  single high  powered  radio  tower  in  the  middle  of  town  and  expecting  to  be  able to  serve  thousands  of  clients,  as  you  would  with  an  FM   radio  station.  As we  will  see,  two-way  data  networks  behave  very  differently  than  broadcast radio.
 
+**Multipoint-to-multipoint**
 
-Alice
-2001 dD8 1::2
-192.168.1.2
-Bob
-2001.db6:2::2
-NO I Pv4 address
+The  third  type  of  network  layout  is  multipoint-to-multipoint,  which   is also   referred to   as   an   ad-hoc   or   mesh   network.   In   a   multipoint-to- multipoint   network, there  is   no  central   authority.   Every   node   on   the network   carries   the   traffic  of   every   other   as   needed,   and   all   nodes communicate  with  each  other directly.
 
-Figure VG    1€:  Internet  networking.  Each network  segment  has  a router  with two  IP  
-addresses,  making  it  “link  local” to  two  different  networks.  Packets  are forwarded  
-between  routers  until they  reach  their  ultimate  destination.
+![](imageserver/uploadimages/image71.png)
 
-Once  all  network  nodes  have  an  IP  address,  they  can  send  data  packets  to the   IP   
-address   of   any   other   node.   Through   the   use   of   routing   and forwarding,    these  
- packets   can   reach   nodes   on   networks   that   are   not physically  connected  to  the  
-originating  node.  This  process  describes  much of what  “happens”  on  the Internet.
+The  benefit  of  this  network  layout  is  that  even  if  none  of  the  nodes  are  in range  of  a   central   access   point,   they   can   still   communicate   with  each other.  Good  mesh  network  implementations  are  self-healing,   which  means  that they   automatically detect   routing   problems   and   fix   them   as   needed. Extending  a  mesh network  is  as simple  as  adding  more nodes.
+If   one  of  the  nodes   in  the  ”cloud"   happens   to  be  an  Internet  gateway, then  that  connection  can  be  shared  among  all of the clients.
 
-In  this  example,  you  can  see  the  path  that  the  packets  take  as  Alice  chats with  Bob  
-using an  instant  messaging  service.
-Each  dotted line represents  an  Ethernet  cable,  a  wireless  link,  or  any  other kind  of  
-physical  network.
-The  cloud  symbol  is  commonly  used  to  stand  in  for  “The  Internet”,  and represents  any  
-number  of intervening  IP  networks.
-
-7. Physical  hardware                   37
-
-Neither  Alice  nor  Bob  need   to  be  concerned  with  how   those  networks operate,   as   
-long   as   the   routers   forward   IP   traffic   towards   the   ultimate destination.
-If  it  weren't  for  Internet  protocols  and  the  cooperation  of everyone  on  the net,  this  
-kind  of communication  would  be  impossible.
-
-In  Figure  NG  16,  Alice  is  dual-stack  and  has  IPv4  and  IPv6  addresses, and  as  Bob  has 
- only  IPv6  addresses,  they will  communicate  by  using IPv6 which  is  the common  IP version  
-between  them.
-
-9.     Designing  the physical  network
-It  may  seem  odd  to  talk  about  the  “physical”   network  when   building wireless  networks.
-After  all,  where  is  the  physical  part  of  the  network?  In  wireless  networks, the    
-physical     medium     we    use    for    communication     is    obviously electromagnetic 
-energy.
-But  in  the  context   of  this  chapter,  the  physical   network  refers  to  the mundane   
-topic   of   where   to   put   things.   How   do   you   arrange   the equipment  so  that you 
-can  reach your wireless clients?
-Whether  they  fill  an  office  building  or  stretch  across  many  miles,  wireless networks   
-are   naturally   arranged   in   these   three   logical   configurations: point-to-point    
-links,    point-to-multipoint    links,    and    multipoint-to- multipoint   clouds.   While   
-different    parts   of   your   network   can   take advantage  of  all  three  of  these  
-configurations,  any  individual  link  will  fall into one  of these topologies.
-
-Point-to-point
-Point-to-point  links  typically  provide  an  Internet  connection  where  such access  isn't  
-otherwise  available.  One side of  a  point-to-point link will have an  Internet  connection,  
-while  the other uses  the link to  reach the Internet.
-
-For  example,  a  university may have  a fast  frame  relay or VSAT connection in  the  middle  of  
-campus,  but  cannot  afford  such  a  connection   for  an important    building    just   off   
-campus.   If   the   main   building   has   an unobstructed  view  of  the  remote  site,  a  
-point-to-point connection  can  be used  to  link  the  two  together.  This  can  augment  or  
-even  replace  existing dial-up  links.  With  proper  antennas  and  clear  line  of sight,  
-reliable  point- to-point links  in excess of thirty kilometres  are possible.
-
-38        6. NETWORKING
-
-
-
-
-
-VSAT
-
-
-
-
-
-Pigure VG     lZ:   A point-to-point link allows  a remote  Site  tO  Share a central Internet  
-connection.
-
-Of   course,  once  a  single  point-to-point  connection  has  been  made,  more can  be  used  to 
- extend  the  network  even  further.  If  the  remote  building  in our   example   is   at   the  
- top   of   a   tall   hill,   it   may   be   able   to   see   other important  locations  that  
-can't  be  seen  directly  from  the  central  campus.  By installing  another  point-to-point  
-link  at  the  remote  site,  another  node  can join  the network  and  make  use  of  the central 
- Internet  connection.
-Point-to-point   links   don't   necessarily    have    to   involve   Internet   access. Suppose   
-you   have   to   physically   drive   to   a   remote   weather   monitoring station,  high  in  
-the  hills,  in  order  to  collect  the  data  which  it  records  over time.  You  could  connect 
- the  site  with  a  point-to-point  link,  allowing  data collection   and   monitoring   to   
-happen   in   realtime,   without   the   need   to actually  travel  to  the  site.
-Wireless  networks  can  provide  enough  bandwidth  to  carry  large  amounts of   data  
-(including  audio  and  video)  between  any  two  points  that  have  a connection   to   each   
-other,   even   if   there   is   no  direct   connection   to   the Internet.
-
-Point-to-multipoint
-The   next    most    commonly    encountered    network    layout    is   point-to- multipoint.   
-Whenever   several   nodes   are   talking   to   a   central   point   of access,  this  is  a  
-point-to-multipoint  application.  The  typical  example  of  a point-to-multipoint   layout   is   
-the   use   of   a   wireless   access   point   that provides  a  connection  to several  laptops. 
- The laptops  do not  communicate with  each  other  directly,  but  must  be  in  range  of  the  
-access  point  in  order to  use  the  network.
-
-8. Putting it all together        39
-Omnidirecfional
-antenna
-
-
-
-
-
-
-
-
-VSAT
-
-
-
-
-Figure VG     18.   ltte central  VSAT iS  now  Shdred  by  multiplc  remote  SiteS.  All three 
-sit€S  can  alSO  Communicate  directly  at speeds  much faster than  VSAT.
-
-Point-to-multipoint  networking  can  also  apply  to  our  earlier  example  at the  university.  
-Suppose  the  remote  building  on  top  of  the  hill  is connected to  the central  campus  with  
-a  point-to-point  link.
-Rather   than   setting   up   several   point-to-point   links   to   distribute    the Internet  
-connection,   a  single   antenna  could  be  used  that  is  visible  from several   remote   
-buildings.   This  is  a  classic  example  of  a  wide  area  point (remote   site   on   the   
-hill)   to   multipoint   (many   buildings   in   the   valley below)  connection.
-
-Note  that  there  are  a  number  of  performance  issues  with  using  point-to- multipoint  over 
- very  long  distance,  which  will  be  addressed  in  the chapter called  Deployment  Planning.  
-Such  links  are  possible  and  useful  in  many circumstances,  but   don't   make   the  classic 
-  mistake   of  installing   a  single high  powered  radio  tower  in  the  middle  of  town  and  
-expecting  to  be  able to  serve  thousands  of  clients,  as  you  would  with  an  FM   radio  
-station.  As we  will  see,  two-way  data  networks  behave  very  differently  than  broadcast 
-radio.
-
-Multipoint-to-multipoint
-The  third  type  of  network  layout  is  multipoint-to-multipoint,  which   is also   referred   
-to   as   an   ad-hoc   or   mesh   network.   In   a   multipoint-to- multipoint   network,   
-there  is   no  central   authority.   Every   node   on   the network   carries   the   traffic   
-of   every   other   as   needed,   and   all   nodes communicate  with  each  other directly.
-
-40        6. NETWORKING
-
-
-
-
-
-
-Figure VG    19.’  A  multipoint-to -multipoint  mesh.  Every point  can  reach  even other  at  
-very  high Speed,  or  any  of them  can  use the  central access point for a VSAT connection  to  
-the Internet.
-
-The  benefit  of  this  network  layout  is  that  even  if  none  of  the  nodes  are  in range   
-of  a   central   access   point,   they   can   still   communicate   with  each other.
-Good  mesh  network  implementations  are  self-healing,   which  means  that they   automatically  
-  detect   routing   problems   and   fix   them   as   needed. Extending  a  mesh network  is  as  
-simple  as  adding  more nodes.
-If   one  of  the  nodes   in  the  ”cloud"   happens   to  be  an  Internet  gateway, then  that  
-connection  can  be  shared  among  all of the clients.
-
-Several  disadvantages   of  this   topology   include   increased   complexity   and lower  
-performance.
+Several  disadvantages   of  this   topology   include   increased   complexity   and lower  performance.
 
 Security   in   such   a   network   is   also   a   concern,   since   every   participant 
-potentially  carries  the  traffic  of every  other.
-Multipoint-to-multipoint   networks   tend   to   be   difhcult   to   troubleshoot, due  to  the  
-large  number  of  changing  variables  as  nodes  join  and  leave  the network.
-Multipoint-to-multipoint  clouds  typically  have  reduced  capacity  compared to  point-to-point  
-or  point-to-multipoint  networks,  due  to  the  additional overhead   of  managing   the  network 
-  routing   and  increased  contention   in the  radio  spectrum.
+potentially  carries  the  traffic  of every  other.  Multipoint-to-multipoint   networks   tend   to   be   difhcult   to   troubleshoot, due  to  the  large  number  of  changing  variables  as  nodes  join  and  leave  the network.  Multipoint-to-multipoint  clouds  typically  have  reduced  capacity  compared to  point-to-point  or  point-to-multipoint  networks,  due  to  the  additional overhead   of  managing   the  network  routing   and  increased  contention   in the  radio  spectrum.
 
-Nevertheless,  mesh  networks  are  useful  in  many circumstances.
-For  more  information   about   them  please  read  the  chapter   called  Mesh
-Networking.
+Nevertheless,  mesh  networks  are  useful  in  many circumstances.  For  more  information   about   them  please  read  the  chapter   called  **Mesh Networking**.
 
-9. Designing the physical network        4 I
+**Use the  technology  that fits**
 
-Use the  technology  that fits
-All  of  these  network  designs  can  be  used  to  complement   each  other  in  a large  
-network,   and   additionally   they  can   make  use  of  traditional   wired networking  
-techniques  whenever  possible.  Wired  networks  still  often  have higher   bandwidth   capacity  
- than   wireless   so   should   be   used   whenever appropriate  or  affordable.
-But  looking  at  the  wireless,  it  is  a  common  practice,  for  example,  to  use  a long  
-distance  wireless  link  to  provide  Internet  access  to  a  remote  location, and   then   set  
- up   an   access   point   on   the   remote   side   to   provide   local wireless   access.   
-One    of   the  clients  of   this  access  point  may  also  act  as  a mesh  node,   allowing   
-the  network   to  spread   organically   between   laptop users  who  all  ultimately  use  the  
-original  point-to-point  link  to  access  the Internet.
+All  of  these  network  designs  can  be  used  to  complement   each  other  in  a large  network,   and   additionally   they  can   make  use  of  traditional   wired networking  techniques  whenever  possible.  Wired  networks  still  often  have higher   bandwidth   capacity   than   wireless   so   should   be   used   whenever appropriate  or  affordable.   
 
-This   is   just   one   common   scenario   for   wireless   deployments,   there   are many  
-others.
+But  looking  at  the  wireless,  it  is  a  common  practice,  for  example,  to  use  a long  distance  wireless  link  to  provide  Internet  access  to  a  remote  location, and   then   set  up   an   access   point   on   the   remote   side   to   provide   local wireless   access.   One    of   the  clients  of   this  access  point  may  also  act  as  a mesh  node,   allowing   the  network   to  spread   organically   between   laptop users  who  all  ultimately  use  the  original  point-to-point  link  to  access  the Internet.
 
-Now   that   we  have   a   clear   idea  of  how  wireless   networks   are   typically arranged,  
-we  can  begin  to  understand  how  communication  is  possible  over such  networks.
+This   is   just   one   common   scenario   for   wireless   deployments,   there   are many  others.
+
+Now   that   we  have   a   clear   idea  of  how  wireless   networks   are   typically arranged, we  can  begin  to  understand  how  communication  is  possible  over such  networks.
