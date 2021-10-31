@@ -60,7 +60,16 @@
         "image60.png",
         "image61.png",
         "image62.png",
+        "image63.png",
+        "image64.png",
+        "image65.png",
+        "image66.png",
+        "image67.png",
+        "image68.png",
+        "image69.png",
         "image7.png",
+        "image70.png",
+        "image71.png",
         "image8.png",
         "image9.png"
     ]
