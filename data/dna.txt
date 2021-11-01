@@ -40,12 +40,14 @@
         "home",
         "licensing",
         "markdown",
+        "mesh",
         "networking",
         "physics",
         "pi",
         "radio",
         "telecommunications",
-        "web"
+        "web",
+        "wifi"
     ],
     "iconsymbols": [
         "chaos.svg",

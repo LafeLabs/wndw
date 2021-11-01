@@ -70,6 +70,10 @@
         "image7.png",
         "image70.png",
         "image71.png",
+        "image72.png",
+        "image73.png",
+        "image74.png",
+        "image75.png",
         "image8.png",
         "image9.png"
     ]
