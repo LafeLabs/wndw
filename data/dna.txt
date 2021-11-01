@@ -45,6 +45,7 @@
         "physics",
         "pi",
         "radio",
+        "security",
         "telecommunications",
         "web",
         "wifi"
