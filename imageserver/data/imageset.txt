@@ -74,7 +74,20 @@
         "image73.png",
         "image74.png",
         "image75.png",
+        "image76.png",
+        "image77.png",
+        "image78.png",
+        "image79.png",
         "image8.png",
+        "image80.png",
+        "image81.png",
+        "image82.png",
+        "image83.png",
+        "image84.png",
+        "image85.png",
+        "image86.png",
+        "image87.png",
+        "image88.png",
         "image9.png"
     ]
 }
