@@ -3,6 +3,8 @@
 ## [image server](imageserver/)
 
 
+Self-replicating document swarm of open source book Wireless Networking in the Developing World.
+
 #  [Free Net](https://github.com/LafeLabs/freenet/)
 
  - *get free stuff*
