@@ -88,6 +88,8 @@
         "image86.png",
         "image87.png",
         "image88.png",
-        "image9.png"
+        "image89.png",
+        "image9.png",
+        "image90.png"
     ]
 }

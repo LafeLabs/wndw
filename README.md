@@ -2,6 +2,8 @@
 
 ## [image server](imageserver/)
 
+#  [Wireless Networking in the Developing World](http://wndw.net/book.html#readBook)
+
 
 Self-replicating document swarm of open source book Wireless Networking in the Developing World.
 
