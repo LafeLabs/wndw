@@ -37,6 +37,8 @@
     ],
     "scrolls": [
         "antennas",
+        "deployment",
+        "hardware",
         "home",
         "licensing",
         "markdown",
