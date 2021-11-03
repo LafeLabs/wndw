@@ -2,7 +2,10 @@
     "server": "https://raw.githubusercontent.com/LafeLabs/wndw/main/",
     "scrolls": [
         "antennas",
+        "deployment",
+        "hardware",
         "home",
+        "indoor",
         "licensing",
         "markdown",
         "mesh",

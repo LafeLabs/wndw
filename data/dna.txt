@@ -40,6 +40,7 @@
         "deployment",
         "hardware",
         "home",
+        "indoor",
         "licensing",
         "markdown",
         "mesh",
