@@ -20,6 +20,7 @@
         "image113.png",
         "image114.png",
         "image115.png",
+        "image116.png",
         "image12.png",
         "image13.png",
         "image14.png",
