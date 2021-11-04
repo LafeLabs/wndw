@@ -45,6 +45,7 @@
         "markdown",
         "mesh",
         "networking",
+        "offgrid",
         "outdoor",
         "physics",
         "pi",
