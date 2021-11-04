@@ -1,6 +1,5 @@
 ## [HOME](scrolls/home)
 
-
 # OUTDOOR  INSTALL
 
 Although   WiFi   technology   was   designed   for   local   area   networks,   its impact   in   developing    countries   is   more   dramatic   in   long-distance applications.
@@ -51,194 +50,56 @@ In  general,   it  is  better   to  use  high  gain  antennas   than  high  tran
 
 ##     Antenna  alignment
 
-For   short   distances,    when   the   corresponding    antenna   is   visible,    the antenna   
-alignment   procedure   reduces   to   pointing    the   antenna   in   the direction  of  the 
-correspondent, both  in  the horizontal  plane  (azimuth)  and in   the   vertical   plane   
-(elevation).    This   should   suffice   to   establish   the connection.   Once   the   
-connection   is   attained   a   fine   adjustment   can   be made  by  reading  the  RSSL  
-(Receiver   Signal  Strength  Level)  in  the  local radio.   This   value   is   provided   by   
-the   user   interface,   and   can   also   be obtained    from    programs    like   
-netstffmbler.   The   procedure    consists    of moving  the  antenna  in  the  horizontal  plane  
-in  small  steps  while  reading the  RSSL.  Do  not  touch  the  antenna  when  reading,  since  
-your  body  will affect  the  measurement.  Once  satisfied  that  a  maximum  value  is  obtained, 
-the  procedure  is  repeated  in  the  vertical  plane,  moving  the antenna  first  up and  then  
-down  until  a  maximum  value  of  received  power  is  obtained,   at which  point  the  bolts  
-that  secure  the  antenna  are tightened.  This  is  all  that is  needed  to  aim  a  client  
-device  at  an  Access  Point  or  Base  Station.  If  you have  a  point  to  point  link,  the  
-same  procedure  should  be  repeated  at  the other end  of the link.
+For   short   distances,    when   the   corresponding    antenna   is   visible,    the antenna   alignment   procedure   reduces   to   pointing    the   antenna   in   the direction  of  the  correspondent, both  in  the horizontal  plane  (azimuth)  and in   the   vertical   plane   (elevation).    This   should   suffice   to   establish   the connection.   Once   the   connection   is   attained   a   fine   adjustment   can   be made  by  reading  the  RSSL  (Receiver   Signal  Strength  Level)  in  the  local radio.   This   value   is   provided   by   the   user   interface,   and   can   also   be obtained    from    programs    like   *netstumbler*.   The   procedure    consists    of moving  the  antenna  in  the  horizontal  plane  in  small  steps  while  reading the  RSSL.  Do  not  touch  the  antenna  when  reading,  since  your  body  will affect  the  measurement.  Once  satisfied  that  a  maximum  value  is  obtained, the  procedure  is  repeated  in  the  vertical  plane,  moving  the antenna  first  up and  then  down  until  a  maximum  value  of  received  power  is  obtained,   at which  point  the  bolts  that  secure  the  antenna  are tightened.  This  is  all  that is  needed  to  aim  a  client  device  at  an  Access  Point  or  Base  Station.  If  you have  a  point  to  point  link,  the  same  procedure  should  be  repeated  at  the other end  of the link.
 
-For  long  distances  and  when  the  other  end  of  the  link  is  not  visible,  some extra  
-steps  are  required.  First,  the  horizontal  direction  (bearing)  to aim  the antenna  must  be 
- obtained  from  the  coordinates  of  the  end  points.  Then  a compass   is  used  to  determine 
- the  direction  in  which  the  antenna  should be  aimed.
-Keep  in  mind  that  in  general   there  is  a  difference  between   the  magnetic
-bearing  measured   by  the  compass   and   the  geographical  bearing  obtained
+For  long  distances  and  when  the  other  end  of  the  link  is  not  visible,  some extra  steps  are  required.  First,  the  horizontal  direction  (bearing)  to aim  the antenna  must  be obtained  from  the  coordinates  of  the  end  points.  Then  a compass   is  used  to  determine the  direction  in  which  the  antenna  should be  aimed.
 
-6                13. OUTDOOR  INSTALL
+Keep  in  mind  that  in  general   there  is  a  difference  between   the  *magnetic*
+bearing  measured   by  the  compass   and   the  *geographical*  bearing  obtained from  the coordinates  of  the  end  points  or  from  a  map. This  difference  is  called  the  *magnetic  declination*,  it  can  be  very  significant in  some  places  and  must   be  accounted  for  to  properly  aim  the  antenna. Fig.  OI   2  shows  the  10$^{\circ}$  difference  between  the  magnetic  north  shown  by the  compass   and   the  geographical or   true  north   indicated   by  the  brass plate.
 
-from  the coordinates  of  the  end  points  or  from  a  map.
-This  difference  is  called  the  magnetic  declination,  it  can  be  very  significant in  some  
-places  and  must   be  accounted  for  to  properly  aim  the  antenna. Fig.  OI   2  shows  the  
-10°  difference  between  the  magnetic  north  shown  by the  compass   and   the  geographical   
-or   true  north   indicated   by  the  brass plate.
+![](imageserver/uploadimages/image117.png)
 
 
+Keep  in  mind  that  iron  and  other  magnetic  metals  will  affect  the  reading of   the  compass,  so  stay  away  from  those  when  making  the  measurement. If  the  antenna  is  to  be mounted  in  an  steel  tower,  it  might  be  impossible to  get  an  accurate  reading  near  it.  Instead,  one  must  walk  away  a  certain distance,  use  the  compass  to  determine  the  direction  the  antenna  must  be aimed  and  then  try  to  locate  some  easily  recognisable  object  that  can  be used  as  a  reference  for  pointing  the  antenna  at  later.  Since  the  beamwidth of  a  highly  directive  antenna  might  be  just  a  few  degrees,  after  pointing  with the compass  we need  to do some  fine adjustment  for  the proper  aiming  of  the antenna  by measuring  the  strength  of  the  received  signal.
+
+Unfortunately  the  RSSL  indicated  by  the radio  software  will  only  work  after  a proper  packet  has  been  satisfactorily  received  and  decoded,  and  this  will  only happen  when  the  antenna is well  aimed.
+
+So  we  need   an   instrument   that   can   reveal   the  strength   of   the  received signal  independently  from  the modulation  that  it  might  have. The instrument needed  for  this  task  is  the Spectrum  Analyser.  There   are   a  great   variety  of   spectrum   analysers   on  the  market,   some  of them  costing   thousands  of  dollars,   but   if  we  are  only  interested   in  the WiFi  bands   we  can   make   do  with  some   inexpensive   solutions   like   the following:
+
+"RF  Explorer"  offers  inexpensive  devices  for several  frequency  bands. The "RF  Explorer  model 2.4G"  costs  155$ from [https://www.seeedstudio.com/RF-Explorer-model-2-4G-p-924.html](https://www.seeedstudio.com/RF-Explorer-model-2-4G-p-924.html) and   is  a  stand  alone   unit   that   can   measure   signals   from   2.4   to  2.485 GHz,  with  a  sensitivity  of  -105  dBm.  It  has  an  SMA    connector   for  the antenna  and  therefore  is well  suited  for  antenna  alignment.
+
+"WiSpy"  is  a spectrum  analyser  in  a  USB   dongle  that  attaches  to  a  laptop. You  will  need  the  models  with  SMA   RP  connector,   there  is  one  for  2.4 GHz   moderately  priced  and  another  one  that  covers  both  the  2.4  and  the 5 GHz    bands  sold  for 600$  at  [https://www.metageek.com/indexb/](https://www.metageek.com/indexb/).
+
+"Ubiquiti  Networks"  ,  [https://www.ui.com/](https://www.ui.com/),  used  to  sell  USB    dongle  spectrum analysers  for 2.4 GHz   at  70$.
+
+Unfortunately     they    seem    to    have    discontinued     this    product    after incorporating  the spectrum  analyser  capability  in  their  M   series  radios.  So  when   using   these  radios   you  can  take   advantage   of  their   "airView" alignment   tool.   In   principle   one   of   these   inexpensive   radios   like   the "Bullet  M"   which  comes  with  a  N   Male  connector   can  also  be  used  to align  antennas  for other  radios  in  both  the 2.4 and  5 GHz    bands.
+Unfortunately  the  digitally  modulated  signal  transmitted  by WiFi  radios  is not  well  suited  for  antenna  alignment,  since  its  power  is  spread  over  the 20  MHz    bandwidth.    For   antenna   alignment   a  single   frequency  with   a stable  output  power  is  required.  This  type  of  signal  is  produced  by  a  microwave  signal  generator,  but  they are  quite  expensive.  The  "RF  Explorer  model  2.4G"  incorporates   a 2.4  GHz   signal  generator, but   the  maximum  output   power  of  1   dBm   is  not  well  suited   for  long distance   antenna   pointing.  Instead,   we   have   repurposed    devices   called "video    senders",    meant    for   transmitting    video   signals,    which   act   as powerful  microwave  single frequency signal  
+sources  when  no modulation  is  applied.  They  are  available  for  both  the  2.4  GHz  and  the  5  GHz   bands  with output  power  up  to  33  dBm.  For  our  purposes  it  is  necessary  to  buy  a model with an  antenna connector,   so  that we can  attach  our own  antenna. There are many vendors  to choose  from,  see for  
+instance: [https://www.lightinthebox.com(search for wifi video transmitter)](https://www.lightinthebox.com)
+
+As  an  example  of  long  distance  link  using  modified  WiFi  devices,  we  can mention  an  experiment  performed  in  April  2005  in  Venezuela  between Pico  del Aguila  (8.832746$^{\circ}$  N,  70.830745$^{\circ}$W, 4100  m elevation)  and El Bau1 (8.957667$^{\circ}$ N, 68.297528$^{\circ}$ W, 155 m elevation).
+
+Using  the  Radio  Mobile  software,  we  find  that  the  distance  to  El  Bau1  is 280  km,  the  azimuth  is 97$^{\circ}$,  the  antenna  elevation  angle  is  -2.0$^{\circ}$,  and  the place   at  which   the  beam   is  closest   to  the  ground   happens   at  246  km, where   it   clears    l.7     times  the   first   Fresnel   zone   at   the   2.412   GHz frequency.
 
 
+![](imageserver/uploadimages/image118.png)
+
+Notice   that   the   earth   curvature    is   quite   apparent,   and   was   overcome because  one  of  the  stations  was at  4100 m  altitude  and  the  other  at
+155  m.  Frequency  was  2412  MHz,  output  power  100  mW,  antenna  gain around  30  dBi.   Streaming   video  was  successfully   transmitted  despite   the limited  bandwidth.
+
+A   year  later   the  experiment   was  repeated   with   the  same  WiFi  gear   but with  commercial   32  dBi  antennas  at  both  ends  and  similar   results  were obtained.  Then,  another  type  of firmware  developed  by  the [TIER  group  at University of California Berkeley](https://dil.berkeley.edu/data-analytics-toolkits/mezuri-platform/tier/)  that     implements     TDD       (Time     Division Duplexing)  was  tried  which  showed  a  remarkable  bidirectional  throughput of 6 Mbit/s  with  standard  802.11b hardware. Moving    the    remote    site    to    a    1400    m    high    hill    called    Platillon (9.889053$^{\circ}$ N, 67.505524$^{\circ}$ W), provided  a 380 km  testbed  over  which the  experiment   was  again  successfully   repeated   as  described   in  the  Case Studies  section  in  this  book. This   can   be   illustrated   by   using   an   on-line   version   of   Radio   Mobile,   available  at  [http://radiomobile.pe1mew.nl/](http://radiomobile.pe1mew.nl/),  which  is  simpler  to use,  although  it  has  some  limitation  as  compared  with  the  downloadable version.  One   must  register  in  
+the  site,  enter  the  coordinates  of  the  points over  which  the  radio  link  has  to  be  established,   the  power  values  for  the radios  and  the  antennas  gains  and  height,  and  the  software  will  fetch  the relevant  elevation  data required  to  perform  the simulation  of the link.
+
+Keep  in  mind  that  only  radio  amateurs  frequency  are supported  in  the web version,  so  2.3  GHz   should  be  used  instead  of  2.4  GHZ,  but  the  results are close enough  and  where validated  by the experiment  on the  field. In  Figure  OI   4  we  show  the  output  of  the  Radio  Mobile  on-  line  for  this experiment  that  can  be  replicated  by the reader  as  an  exercise.
 
 
+![](imageserver/uploadimages/image119.png)
 
-
-
-
-
-
-
-
-
-Figure  OI  2:  Difference  between  Magnetic  and Geographical  North at El
-Baul,  Venezuela  in  2006.
-
-Keep  in  mind  that  iron  and  other  magnetic  metals  will  affect  the  reading of   the  
-compass,  so  stay  away  from  those  when  making  the  measurement. If  the  antenna  is  to  be 
- mounted  in  an  steel  tower,  it  might  be  impossible to  get  an  accurate  reading  near  
-it.  Instead,  one  must  walk  away  a  certain distance,  use  the  compass  to  determine  the  
-direction  the  antenna  must  be aimed  and  then  try  to  locate  some  easily  recognisable  
-object  that  can  be used  as  a  reference  for  pointing  the  antenna  at  later.  Since  the  
-beamwidth of  a  highly  directive  antenna  might  be  just  a  few  degrees,  after  pointing  
-with the compass  we need  to do some  fine adjustment  for  the proper  aiming  of  the antenna  
-by measuring  the  strength  of  the  received  signal.
-Unfortunately  the  RSSL  indicated  by  the radio  software  will  only  work  after  a proper  
-packet  has  been  satisfactorily  received  and  decoded,  and  this  will  only happen  when  the 
- antenna is well  aimed.
-So  we  need   an   instrument   that   can   reveal   the  strength   of   the  received
-
-2.Antenna alignment            7
-
-signal  independently  from  the modulation  that  it  might  have. The instrument  needed  for  
-this  task  is  the Spectrum  Analyser.
-There   are   a  great   variety  of   spectrum   analysers   on  the  market,   some  of them  
-costing   thousands  of  dollars,   but   if  we  are  only  interested   in  the WiFi  bands   we  
-can   make   do  with  some   inexpensive   solutions   like   the following:
-
-"RF  Explorer"  offers  inexpensive  devices  for several  frequency  bands. The "RF  Explorer  
-model 2.4G"  costs  120$ from http://www.seeedstudio.com/depot/-p-924.htm1icPath-174
-and   is  a  stand  alone   unit   that   can   measure   signals   from   2.4   to  2.485
-GHz,  with  a  sensitivity  of  -105  dBm.  It  has  an  SMA    connector   for  the antenna  and  
-therefore  is well  suited  for  antenna  alignment.
-
-"WiSpy"  is  a spectrum  analyser  in  a  USB   dongle  that  attaches  to  a  laptop. You  will  
-need  the  models  with  SMA   RP  connector,   there  is  one  for  2.4 GHz   moderately  priced  
-and  another  one  that  covers  both  the  2.4  and  the 5 GHz    bands  sold  for 600$  at  
-www.metageek.net.
-
-"Ubiquiti  Networks"  ,  www.ubnt.com,  used  to  sell  USB    dongle  spectrum analysers  for 2.4 
-GHz   at  70$.
-
-Unfortunately     they    seem    to    have    discontinued     this    product    after 
-incorporating  the spectrum  analyser  capability  in  their  M   series  radios.
-So  when   using   these  radios   you  can  take   advantage   of  their   "airView" alignment   
-tool.   In   principle   one   of   these   inexpensive   radios   like   the "Bullet  M"   which  
-comes  with  a  N   Male  connector   can  also  be  used  to align  antennas  for other  radios  
-in  both  the 2.4 and  5 GHz    bands.
-Unfortunately  the  digitally  modulated  signal  transmitted  by WiFi  radios  is not  well  
-suited  for  antenna  alignment,  since  its  power  is  spread  over  the 20  MHz    bandwidth.   
-For   antenna   alignment   a  single   frequency  with   a stable  output  power  is  required.
-This  type  of  signal  is  produced  by  a  microwave  signal  generator,  but  they are  quite 
-expensive.
-The  "RF  Explorer  model  2.4G"  incorporates   a 2.4  GHz   signal  generator, but   the  maximum 
-  output   power  of  1   dBm   is  not  well  suited   for  long distance   antenna   
-pointing.Instead,   we   have   repurposed    devices   called "video    senders",    meant    for  
- transmitting    video   signals,    which   act   as powerful  microwave  single frequency signal  
-sources  when  no modulation  is
-
-8              l3. OUTDOOR  INSTALL
-
-applied.
-They  are  available  for  both  the  2.4  GHz  and  the  5  GHz   bands  with output  power  up  
-to  33  dBm.  For  our  purposes  it  is  necessary  to  buy  a model with an  antenna connector,  
-so  that we can  attach  our own  antenna. There are many vendors  to choose  from,  see for  
-instance: http://www.lightinthebox.com/Popular/WifipVideopTransmitter.html
-
-As  an  example  of  long  distance  link  using  modified  WiFi  devices,  we  can mention  an  
-experiment  performed  in  April  2005  in  Venezuela  between Pico  del Aguila  (8.83274638°  N,  
-70.83074570‘W,4100  m elevation)  and El Bau1 (8.957667‘ N, 68.297528‘ W, 155 m elevation).
-
-Using  the  Radio  Mobile  software,  we  find  that  the  distance  to  El  Bau1  is 280  km,  the 
- azimuth  is 97‘,  the  antenna  elevation  angle  is  -2.0°,  and  the place   at  which   the   
-beam   is  closest   to  the  ground   happens   at  246  km, where   it   clears    l.7     times  
- the   first   Fresnel   zone   at   the   2.412   GHz frequency.
-
-Fig.  OI 3 shows the output of the  program:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure  015: Profile  ofa   280 km path over  which  standard Wiki gear  with OpenWRT firmware  
-which allows for the ACKtimeout  increase was used to transfer flew at about  GS kb/s in  April 
-200a between  Pico  del Aguila and El  Baul in  Venezuela.
-
-2.Antenna alignment            9
-
-
-Notice   that   the   earth   curvature    is   quite   apparent,   and   was   overcome because  
-one  of  the  stations  was at  4100 m  altitude  and  the  other  at
-155  m.  Frequency  was  2412  MHz,  output  power  100  mW,  antenna  gain around  30  dBi.  
-Streaming   video  was  successfully   transmitted  despite   the limited  bandwidth.
-
-A   year  later   the  experiment   was  repeated   with   the  same  WiFi  gear   but with  
-commercial   32  dBi  antennas  at  both  ends  and  similar   results  were obtained.  Then,  
-another  type  of firmware  developed  by  the TIER  group  at UC       Berkeley     University     
-that     implements     TDD       (Time     Division Duplexing)  was  tried  which  showed  a  
-remarkable  bidirectional  throughput of 6 Mbit/s  with  standard  802.11b hardware.
-Moving    the    remote    site    to    a    1400    m    high    hill    called    Platillon 
-(9.88905350°N, 67.50552400°W), provided  a 380 km  testbed  over  which the  experiment   was  
-again  successfully   repeated   as  described   in  the  Case Studies  section  in  this  book.
-This   can   be   illustrated   by   using   an   on-line   version   of   Radio   Mobile, 
-available  at  http://www.cplus.org/rmw/rmonline.html,  which  is  simpler  to use,  although  it  
-has  some  limitation  as  compared  with  the  downloadable version.  One   must  register  in  
-the  site,  enter  the  coordinates  of  the  points over  which  the  radio  link  has  to  be  
-established,   the  power  values  for  the radios  and  the  antennas  gains  and  height,  and  
-the  software  will  fetch  the relevant  elevation  data required  to  perform  the simulation  of 
- the link.
-Keep  in  mind  that  only  radio  amateurs  frequency  are supported  in  the web version,  so  
-2.3  GHz   should  be  used  instead  of  2.4  GHZ,  but  the  results are close enough  and  where 
- validated  by the experiment  on the  field.
-In  Figure  OI   4  we  show  the  output  of  the  Radio  Mobile  on-  line  for  this
-experiment  that  can  be  replicated  by the reader  as  an  exercise.
-
-
-
-
-
-
-
-Pigure  OI   I:   Profle  ofa  380 km test  at 2.4 GHG performed  in April and August  2007,  
-Venezuela.
-
-IO            l3. OUTDOOR  INSTALL
-
-
-Notice  that  the  earth  curvature  is  even  more  noticeable  over  the  380  km path,  but  the 
-height of the end  points  combined  with flat land  in between allows for ample clearance  of the 
-first Fresnel  zone.
+Notice  that  the  earth  curvature  is  even  more  noticeable  over  the  380  km path,  but  the  height of the end  points  combined  with flat land  in between allows for ample clearance  of the  first Fresnel  zone.
 
 Figure  OI  5  shows   the  numerical  values  of  the  Radio   Mobile   on-line simulation:
 
-
-
-
+![](imageserver/uploadimages/image120.png)
 
 
 
