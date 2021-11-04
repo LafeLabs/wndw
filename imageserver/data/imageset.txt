@@ -26,6 +26,8 @@
         "image119.png",
         "image12.png",
         "image120.png",
+        "image121.png",
+        "image122.png",
         "image13.png",
         "image14.png",
         "image15.png",

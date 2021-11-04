@@ -5,6 +5,10 @@
 #  [Wireless Networking in the Developing World](http://wndw.net/book.html#readBook)
 
 
+![](imageserver/uploadimages/image122.png)
+![](imageserver/uploadimages/image121.png)
+
+
 Self-replicating document swarm of open source book Wireless Networking in the Developing World.
 
 #  [Free Net](https://github.com/LafeLabs/freenet/)
