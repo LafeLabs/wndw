@@ -4,415 +4,128 @@
 
 ##     Solar Power
 
-This    chapter    provides    an    introduction    to    standalone    photovoltaic systems.   Standalone   systems  work  without  connection   to  an  established power  grid.  This  chapter   
-presents   the  basic  concepts  of  the  generation and  storage  of  photovoltaic  solar  energy. 
- We  will  also  provide  a  method for   designing   a   solar   system   with   limited   access  
- to   information   and resources.    This    chapter    only    discusses    solar    systems    
-for    the   direct production  of electricity  (photovoltaic  solar  energy).  Thermal  solar  
-energy systems  are  beyond  the scope  of this  chapter.
+This    chapter    provides    an    introduction    to    standalone    photovoltaic systems.   Standalone   systems  work  without  connection   to  an  established power  grid.  This  chapter   presents   the  basic  concepts  of  the  generation and  storage  of  photovoltaic  solar  energy.   We  will  also  provide  a  method for   designing   a   solar   system   with   limited   access  to   information   and resources.    This    chapter    only    discusses    solar    systems   for    the   direct production  of electricity  (photovoltaic  solar  energy).  Thermal  solar  energy systems  are  beyond  the scope  of this  chapter.
 
-Solar Energy
-A   photovoltaic   system   is  based  on  the  ability  of   photovoltaic   panels   to convert  
-sun  radiation  directly  into  electrical  energy.  The  total  amount  of solar  energy  that  
-lights  a  given  area  is  known  as  irradiance  (G)   and  it  is measured  in  watts  per  
-square  metre  (W/m²).  The  instantaneous  values  are normally  averaged  over  a  period  of  
-time,  so  it  is  common  to  talk  about total  irradiance  per  hour,  day  or  month.  The  
-amount  of  irradiance  that arrives  at  the  surface  of  the  Earth  varies  due  to  natural  
-weather  variations and   depends   on   the   location.   Therefore   it   is   necessary   to   
-work   with statistical  data  based  on the  "solar  history"  of a particular  place.  For  many 
-areas  it  can  be  difficult  to acquire  detailed  information,  so  we will  need  to work  with 
- approximate  values  in  this  case.
-A   few  organisations   produce   maps  that  include   average   values  of  daily global  
-irradiation   for  different   regions.   These  values  are  known  as  peak sun   hours   or   
-PSHs.   You   can   use   the   PSH    value   for   your   region   to simplify  your  
-calculations.  One   unit  of "peak  sun  hours"  corresponds  to  a radiation  of  1000  Watts  
-per  square  metre  for  the  duration  of  an  hour.  If an  area  has  4  PSH   per  day  in  the 
- worst  of  the  months,  it  means  we  can expect    a    daily    irradiation    of    400a    
-Wh/m².   Low    resolution    PSH maps/calculation  tools  are  available  from  a number  of 
+**Solar Energy**
+
+A   photovoltaic   system   is  based  on  the  ability  of   photovoltaic   panels   to convert  sun  radiation  directly  into  electrical  energy.  The  total  amount  of solar  energy  that  lights  a  given  area  is  known  as  irradiance  (G)   and  it  is measured  in  watts  per  square  metre  (W/m²).  The  instantaneous  values  are normally  averaged  over  a  period  of  time,  so  it  is  common  to  talk  about total  irradiance  per  hour,  day  or  month.  The  amount  of  irradiance  that arrives  at  the  surface  of  the  Earth  varies  due  to  natural  weather  variations and   depends   on   the   location.   Therefore   it   is   necessary   to  work   with statistical  data  based  on the  "solar  history"  of a particular  place.  For  many areas  it  can  be  difficult  to acquire  detailed  information,  so  we will  need  to work  with 
+ approximate  values  in  this  case.  A   few  organisations   produce   maps  that  include   average   values  of  daily global  irradiation   for  different   regions.   These  values  are  known  as  peak sun   hours   or   PSHs.   You   can   use   the   PSH    value   for   your   region   to simplify  your  calculations.  One   unit  of "peak  sun  hours"  corresponds  to  a radiation  of  1000  Watts  per  square  metre  for  the  duration  of  an  hour.  If an  area  has  4  PSH   per  day  in  the worst  of  the  months,  it  means  we  can expect    a    daily    irradiation    of  4000 Wh/m².   Low    resolution    PSH maps/calculation  tools  are  available  from  a number  of 
 online  sources  such as: http://www.wunderground.com/calculators/solar.html
 For   more  detailed   information,   consult   a  local   solar   energy  vendor   or
-weather  station.
+weather  station.  Airports  normally  record meteorological data including  insolation.
 
-2                14. OFF-GRID  POWER
+**What  about  wind power?**
 
-Airports  normally  record meteorological data including  insolation.
+It  is  possible   to  use  a  wind  generator   in  place  of  solar   panels  when  an autonomous    system    is    being    designed    for    installation    on   a   hill    or mountain.  To  be  effective,  the  average  wind  speed  over  the  year  should  be at  least   3  to  4  metres per  second,   and   the  wind  generator   should  be  6 metres  higher  than  other  objects within  a distance  of  100  metres.  A   location  far  away  from  the  coast  usually  lacks  sufficient  wind  energy  to support  a wind powered  system.  Generally   speaking,   photovoltaic   systems   are   more   reliable   than   wind generators,  as   sunlight   is   more   available   than   consistent   wind   in   most places.   On    the other  hand,   wind  generators   are   able  to  charge   batteries even  at  night,  as  long  as there  is  sufficient  wind.  It  is  of  course  possible  to use  wind  in  conjunction  with solar  power  to  help  cover  times  when  there is   extended   cloud   cover,   or   when   there   is   insufficient  wind.   In   the Highlands  and  Islands  of  Scotland  there  is  a  
+project  that  uses  both  solar and  wind  power  generation.  See  the  following  link  for  more  information: http://www.wirelesswhitespace.org/projects/wind-firenewable-energy-basestation.aspx  For   most   locations   however,   the  cost   of   a   good  wind   generator   is   not justified  by  the  meagre  amount  of  power  it  will  add  to  the  overall  system. This  chapter  will  therefore  focus  on  the  use  of  solar  panels  for  generating electricity.
 
-What  about  wind power?
-It  is  possible   to  use  a  wind  generator   in  place  of  solar   panels  when  an autonomous 
-   system    is    being    designed    for    installation    on   a   hill    or mountain.  To  
-be  effective,  the  average  wind  speed  over  the  year  should  be at  least   3  to  4  metres 
- per  second,   and   the  wind  generator   should  be  6 metres  higher  than  other  objects  
-within  a distance  of  100  metres.
-A   location  far  away  from  the  coast  usually  lacks  sufficient  wind  energy  to
-support  a wind powered  system.
-Generally   speaking,   photovoltaic   systems   are   more   reliable   than   wind generators,   
-as   sunlight   is   more   available   than   consistent   wind   in   most places.   On    the  
-other  hand,   wind  generators   are   able  to  charge   batteries even  at  night,  as  long  as 
- there  is  sufficient  wind.  It  is  of  course  possible  to use  wind  in  conjunction  with  
-solar  power  to  help  cover  times  when  there is   extended   cloud   cover,   or   when   
-there   is   insufhcient   wind.   In   the Highlands  and  Islands  of  Scotland  there  is  a  
-project  that  uses  both  solar and  wind  power  generation.  See  the  following  link  for  
-more  information: http://www.wire1esswhitespace.org/projects/wind-firenewable-energy- 
-basestation.aspx
-For   most   locations   however,   the  cost   of   a   good  wind   generator   is   not 
-justified  by  the  meagre  amount  of  power  it  will  add  to  the  overall  system. This  
-chapter  will  therefore  focus  on  the  use  of  solar  panels  for  generating electricity.
+##   Photovoltaic  system  components
 
-2.      Photovoltaic  system  components
-A  basic photovoltaic  system  consists  of four  main  components:  solar  panel, battery,  
-regulator,  and  load.
-The  panel  is  generating  electricity.  The  battery  stores  electrical  energy.  The regulator  
-protects  the  battery  against  excessive  charge  and  discharge.   The load  refers  to  any  
-device  that  requires  electrical  power.  It  is  important   to remember  that  solar  panels  
-and  batteries  produce  direct  current   (DC).  If the  range  of operational  voltage  of your  
-equipment  does  not  fit  the  voltage supplied  by  your  battery,  it  will  also  be  necessary 
- to  include  some  type  of converter.   If   the  equipment   that  you  want   to  power  uses  
-a  different   DC voltage   than   the   one   supplied   by   the   battery,   you  will   need   
-to   use   a DC/DC converter.  If  some of your  equipment  requires  AC   power,  you will need  
-to  use  a DC/AC converter,  also  known  as  an inverter.  Every  electrical
+A basic photovoltaic  system  consists  of four  main  components:  solar  panel, battery,  regulator,  and  load.  The  panel  is  generating  electricity.  The  battery  stores  electrical  energy.  The regulator  protects  the  battery  against  excessive  charge  and  discharge.   The load  refers  to  any  device  that  requires  electrical  power.  It  is  important   to remember  that  solar  panels  and  batteries  produce  direct  current   (DC).  If the  range  of operational  voltage  of your  equipment  does  not  fit  the  voltage supplied  by  your  battery,  it  will  also  be  necessary 
+ to  include  some  type  of converter.   If   the  equipment   that  you  want   to  power  uses  a  different   DC voltage   than   the   one   supplied   by   the   battery,   you  will   need   to   use   a DC/DC converter.  If  some of your  equipment  requires  AC   power,  you will need  to  use  a DC/AC converter,  also  known  as  an inverter.  Every  electrical system  should  also  incorporate  various  safety  devices  in  the  event  that something goes  wrong.  These  devices  include   proper  wiring,   circuit   breakers,   surge   protectors, fuses, ground rods, lighting arrestors,  etc.
 
-2. Photovoltaic system components      3
+**The solar panel**
 
-system  should  also  incorporate  various  safety  devices  in  the  event  that something goes 
-wrong.
-These  devices  include   proper  wiring,   circuit   breakers,   surge   protectors, fuses, ground 
- rods, lighting arrestors,  etc.
+The  solar  panel  is  composed  of  solar  cells  that  collect  solar  radiation  and transform   it  into  electrical  energy.  This  part  of  the  system  is  sometimes referred  to  as  a solar module  or  photovoltaic  generator.  Solar  panel  arrays   can   be  made  by  connecting   a  set  of  panels  in  series and/or  parallel  in  order  to  provide  the  necessary  energy  for  a  given  load. The electrical  current supplied  by a solar  panel  varies  proportionally to  the solar  radiation.  This  will vary  according  to climatic  conditions,  the hour  of the day,  and  the  time  of the year.
 
-The solar panel
-The  solar  panel  is  composed  of  solar  cells  that  collect  solar  radiation  and transform   
-it  into  electrical  energy.  This  part  of  the  system  is  sometimes referred  to  as  a solar 
- module  or  photovoltaic  generator.
-Solar  panel  arrays   can   be  made  by  connecting   a  set  of  panels  in  series and/or  
-parallel  in  order  to  provide  the  necessary  energy  for  a  given  load. The electrical  
-current  supplied  by a solar  panel  varies  proportionally to  the solar  radiation.  This  will 
-vary  according  to climatic  conditions,  the hour  of the day,  and  the  time  of the year.
+![](imageserver/uploadimages/image123.png)
 
+Several technologies  are used  in the manufacture  of solar  cells. The most  common  is crystalline  silicon,  and  can  be either  monocrystalline or polycrystalline. Amorphous  silicon  can  be  cheaper  but  is less efficient  at converting  solar  energy  to  electricity.   With  a  reduced  life expectancy  and a  6  to  8%  transformation  efficiency,  amorphous   silicon  is  typically  used for  low power equipment,  such  as  portable calculators. New  solar  technologies,  such  as  silicon  ribbon  and  thin film  photovoltaics, are   currently    under    development.    These    technologies    promise    higher efficiencies  but  are  not  yet  widely  available.
 
+**The battery**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure  OGP 1: A  solar panel
-Several technologies  are used  in the manufacture  of solar  cells.
-The most  common  is crystalline  silicon,  and  can  be either  monocrystalline or 
-polycrystalline. Amorphous  silicon  can  be  cheaper  but  is less efficient  at converting  solar 
- energy  to  electricity.   With  a  reduced  life expectancy  and
-
-4                14. OFF-GRID  POWER
-
-a  6  to  8%  transformation  efficiency,  amorphous   silicon  is  typically  used for  low power 
-equipment,  such  as  portable calculators.
-New  solar  technologies,  such  as  silicon  ribbon  and  thin film  photovoltaics, are   
-currently    under    development.    These    technologies    promise    higher efhciencies  but  
-are  not  yet  widely  available.
-
-Tire battery
 The    battery    stores    the   energy    produced    by   the   panels    that    is   not 
-immediately  consumed  by  the  load.  This  stored  energy  can  then  be  used during   periods   
-of  low  solar   irradiation.   The   battery   component   is   also sometimes  called  the  
-accumulator.  Batteries  store  electricity  in  the form  of chemical   energy.    The   most    
-common   type   of   batteries    used   in   solar applications      are     maintenance-free     
-lead-acid      batteries,      also     called recombinant  or  VRLA  (valve  regulated  lead acid) 
- batteries.
+immediately  consumed  by  the  load.  This  stored  energy  can  then  be  used during   periods   of  low  solar   irradiation.   The   battery   component   is   also sometimes  called  the  accumulator.  Batteries  store  electricity  in  the form  of chemical   energy.    The   most    common   type   of   batteries    used   in   solar applications      are     maintenance-free  lead-acid      batteries,      also     called recombinant  or  VRLA  (valve  regulated  lead acid) batteries.
 
 
+![](imageserver/uploadimages/image124.png)
 
+Aside    from    storing    energy,    sealed   lead-acid    batteries    also   serve    two important  functions:
 
+ - They  are  able  to  provide  an  instantaneous  power  superior to  that  of  the  array of  panels.  This  instantaneous  power  is needed  to  start  some  appliances,  such  as  the motor  of  a refrigerator  or  a pump.
+ - They determine  the operating  voltage  of your  installation. For  a  small  power  installation  and  where  space  constraints  are  important, other  types of batteries (such  as NiCd, NiMh,  or  Li-ion)  can  be used. These   types  of  batteries   need a  specialised charger/regulator  and  cannot directly  replace  lead-acid  batteries.
 
+**The regulator**
 
+The  regulator  (or  more  formally,  the  solar  power  charge  regulator)   assures that    the   battery    is    working     in    appropriate    conditions.     It    avoids overcharging   or   overdischarging   the   battery,    both   of   which   are   very detrimental   to   the   life  of   the   battery.   To   ensure   proper   charging   and discharging  of  the  battery,  the regulator  maintains  knowledge  of  the  state of  charge  (SoC)  of  the  battery.  The  SoC   is estimated  based  on  the  actual voltage  of the  battery. By  measuring  the  battery  voltage  and  being  programmed  with  the  type  of storage  technology  used  by  the battery,  the  regulator  will  know  the  precise points  where  the  battery  would  be  overcharged  or  excessively  discharged.
 
+![](imageserver/uploadimages/image125.png)
 
+The regulator  can  include  other  features  that  add  valuable  information  and security   control    to   the   equipment.    These   features    include   ammeters, voltmeters,  measurement    of   ampere-hour,    timers,    alarms,    etc.    While convenient,  none  of  these features  are  required  for  a  working  photovoltaic system.
 
+**The converter**
 
+The  electricity  provided  by  the  panel  array  and  battery  is  DC   at  a  fixed voltage.   The  voltage  provided  might  not  match  what  is  required  by  your load.   A  direct/alternating   (DC/AC)   converter,   also   known   as   inverter, converts  the  DC  current  from  your  batteries  into  AC.  This  comes  at  the price  of  losing  some  energy  during  the  conversion.  If  necessary,  you  can also   use   converters   to   obtain   DC   at  voltage   level   other   than  what   is supplied  by the  batteries.  DC/DC converters  also lose some energy during the   conversion.   For   optimal   operation,   you  should   design   your   solar- powered  system  so  that the generated  DC  voltage  matches  the load.
 
+![](imageserver/uploadimages/image126.png)
 
+**The load**
 
+The  load  is  the  equipment   that  consumes   the  power  generated   by  your energy  system.  The   load    may    include    wireless    communications   equipment,    routers, workstations,  lamps,  TV   sets, VSAT modems,  etc. Although    it    is    not    possible    to    precisely    calculate    the    exact    total 
+consumption   of  your  equipment,   it  is  vital   to  be  able  to  make  a  good estimate. In   this   type  of   system  it  is  absolutely  necessary   to  use  efhcient  and  low power  equipment  to  avoid  wasting  energy.
 
+**Putting  it all  together**
 
+The  complete   photovoltaic   system  incorporates   all  of  these  components. The solar  panels  generate  power when  solar  energy  is  available.
+The   regulator   ensures   the   most   efficient   operation   of   the   panels   and prevents  damage  to  the  batteries.  The  battery  bank  stores  collected  energy for later  use.  Converters     and    inverters    adapt     the    stored    energy    to    match     the  requirements  of your  load.  Finally,  the  load  consumes  the  stored energy  to do work.
 
-Figure  OGP   2.  A  200 AT  lead-acid  battery.  The negative  terminal  was broken  due  to  
-weight  on the terminals  during transportation.
+When  all  of  the  components  are  in  balance  and  are  properly  maintained, the system  will support  itself for  years.
 
-Aside    from    storing    energy,    sealed   lead-acid    batteries    also   serve    two 
-important  functions:
-•      They  are  able  to  provide  an  instantaneous  power  superior to  that  of  the  array  
-of  panels.  This  instantaneous  power  is needed  to  start  some  appliances,   such  as  the  
-motor  of  a
+![](imageserver/uploadimages/image127.png)
 
-2. Photovoltaic system components      S
 
-refrigerator  or  a pump.
-•      They determine  the operating  voltage  of your  installation. For  a  small  power  
-installation  and  where  space  constraints  are  important, other  types of batteries  (such  as 
-NiCd, NiMh,  or  Li-ion)  can  be used. These   types  of  batteries   need  a  specialised   
-charger/regulator  and  cannot directly  replace  lead-acid  batteries.
+We  will now  examine  each  of the individual  components  of the photovoltaic  system  in  greater  detail.
 
-The regulator
-The  regulator  (or  more  formally,  the  solar  power  charge  regulator)   assures that    the   
- battery    is    working     in    appropriate    conditions.     It    avoids overcharging   or   
-overdischarging   the   battery,    both   of   which   are   very detrimental   to   the   life   
-of   the   battery.   To   ensure   proper   charging   and discharging  of  the  battery,  the  
-regulator  maintains  knowledge  of  the  state of  charge  (SoC)  of  the  battery.  The  SoC   is 
- estimated  based  on  the  actual voltage  of the  battery.
-By  measuring  the  battery  voltage  and  being  programmed  with  the  type  of storage  
-technology  used  by  the battery,  the  regulator  will  know  the  precise points  where  the  
-battery  would  be  overcharged  or  excessively  discharged.
+##     The solar panel
 
+An  individual  solar  panel  is  made of many  solar  cells. The  cells  are  electrically  connected  to  provide  a  particular  value  of  current and voltage.
+The  individual   cells   are   properly   encapsulated   to   provide   isolation   and protection  from  humidity  and  corrosion.
 
 
-@ROS!>+-30
+![](imageserver/uploadimages/image128.png)
 
+There  are  different  types  of  modules  available  on  the  market,  depending on  the  power  demands  of  your  application.  The  most  common  modules are  composed  of  32  or  36  solar  cells  of  crystalline  silicon.  These  cells  are all of equal size, wired  in series,  and  encapsulated  between  glass and  plastic material,  using a  polymer  resin  (EVA)  as  a  thermal insulator.
 
+The  surface  area  of  the  module  is  typically  between  0.1 and  0.5  m². Solar panels  usually  have  two electrical  contacts,  one  positive  and  one  negative. Some  panels  also  include  extra  contacts  to  allow  the  installation  of  bypass diodes  across individual  cells.  Bypass  diodes  protect  the  panel  against  a  phenomenon  known  as  “hot- spots”.  A  hot-spot  occurs  when  some  of  the  cells  are  in  shadow  while  the rest  of  the  panel  is  in  full sun.  Rather  than  producing  energy,  shaded  cells behave  as  a  load  that  dissipates  energy.  In  this  situation,  shaded  cells  can see a significant  increase  in  temperature  (about  85 to  100$^{\circ}$ C.) Bypass   diodes   will   prevent   hot-spots   on  shaded   cells,   but   reduce   the maximum  voltage  of  the panel.  They should  only  be  used  when  shading is unavoidable.  It is a  much  better  solution  to  expose  the  entire  panel  to full sun  whenever  possible.
 
-
-
-
-Figure  OGP 3: A 30 Amp solar charge  controller
-The regulator  can  include  other  features  that  add  valuable  information  and security   
-control    to   the   equipment.    These   features    include   ammeters, voltmeters,    
-measurement    of   ampere-hour,    timers,    alarms,    etc.    While
-
-6              14. OFF-GRID  POWER
-
-convenient,  none  of  these features  are  required  for  a  working  photovoltaic system.
-
-The converter
-The  electricity  provided  by  the  panel  array  and  battery  is  DC   at  a  fixed voltage.  
-The  voltage  provided  might  not  match  what  is  required  by  your load.   A  
-direct/alternating   (DC/AC)   converter,   also   known   as   inverter, converts  the  DC  
-current  from  your  batteries  into  AC.  This  comes  at  the price  of  losing  some  energy  
-during  the  conversion.  If  necessary,  you  can also   use   converters   to   obtain   DC   at  
- voltage   level   other   than  what   is supplied  by the  batteries.  DC/DC converters  also 
-lose some energy during the   conversion.   For   optimal   operation,   you  should   design   
-your   solar- powered  system  so  that the generated  DC  voltage  matches  the load.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-P'igure  OGP I:  An 800 Watt  DCIAC  converter  (power  inverter)
-
-The load
-The  load  is  the  equipment   that  consumes   the  power  generated   by  your energy  system.
-The   load    may    include    wireless    communications   equipment,    routers, workstations,  
-lamps,  TV   sets, VSAT modems,  etc.
-Although    it    is    not    possible    to    precisely    calculate    the    exact    total 
-consumption   of  your  equipment,   it  is  vital   to  be  able  to  make  a  good estimate.
-In   this   type  of   system  it  is  absolutely  necessary   to  use  efhcient  and  low
-
-2. Photovoltaic system components      7
-
-power  equipment  to  avoid  wasting  energy.
-
-Putting  it all  together
-The  complete   photovoltaic   system  incorporates   all  of  these  components. The solar  panels 
- generate  power when  solar  energy  is  available.
-The   regulator   ensures   the   most   efficient   operation   of   the   panels   and prevents  
-damage  to  the  batteries.  The  battery  bank  stores  collected  energy for later  use.
-Converters     and    inverters    adapt     the    stored    energy    to    match     the 
-requirements  of your  load.  Finally,  the  load  consumes  the  stored energy  to do work.
-
-When  all  of  the  components  are  in  balance  and  are  properly  maintained, the system  will 
-support  itself for  years.
-
-
-
-
-
-
-
-
-
-Regulator
-
-DC/DC
-
-QC            o  d
-
-
-Solar  panels
-
-fnverfer
-
-Battery  bank
-
-
-Figure  OGP   5: A  Solar installation  with DC   and AC  loads
-
-We  will now  examine  each  of the individual  components  of the photovoltaic  system  in  
-greater  detail.
-
-3.     The solar panel
-An  individual  solar  panel  is  made of many  solar  cells.
-The  cells  are  electrically  connected  to  provide  a  particular  value  of  current and 
-voltage.
-The  individual   cells   are   properly   encapsulated   to   provide   isolation   and
-
-8              14. OFF-GRID  POWER
-
-protection  from  humidity  and  corrosion.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure  OGP €.  the  effect of water and corrosion  in a Solar panel
-
-There  are  different  types  of  modules  available  on  the  market,  depending on  the  power  
-demands  of  your  application.  The  most  common  modules are  composed  of  32  or  36  solar  
-cells  of  crystalline  silicon.  These  cells  are all of equal size, wired  in series,  and  
-encapsulated  between  glass and  plastic material,  using a  polymer  resin  (EVA)  as  a  thermal 
-insulator.
-The  surface  area  of  the  module  is  typically  between  0.1 and  0.5  m². Solar panels  
-usually  have  two electrical  contacts,  one  positive  and  one  negative. Some  panels  also  
-include  extra  contacts  to  allow  the  installation  of  bypass diodes  across individual  
-cells.
-Bypass  diodes  protect  the  panel  against  a  phenomenon  known  as  “hot- spots”.  A  hot-spot  
-occurs  when  some  of  the  cells  are  in  shadow  while  the rest  of  the  panel  is  in  full 
-sun.  Rather  than  producing  energy,  shaded  cells behave  as  a  load  that  dissipates  
-energy.  In  this  situation,  shaded  cells  can see a significant  increase  in  temperature  
-(about  85 to  100°C.)
-Bypass   diodes   will   prevent   hot-spots   on  shaded   cells,   but   reduce   the maximum  
-voltage  of  the panel.  They should  only  be  used  when  shading is unavoidable.  It is a  much  
-better  solution  to  expose  the  entire  panel  to full
-
-3.The solar panel    9
-
-
-sun  whenever  possible.
-
-Irradiance:  1 kW /  m2
-...            .         Cell  Temperature  2JC
-
-
-
-
-
-8OOW / m
-
-
-600W / m2
-
-
-d00W  /  m²
-
-
-200W  / m2
-75C  SOC  25C
-
-
-
-
-
-0                                             10
-
-
-Voltage  (Y)
-
-20                                           30
-
-Figure  OGP   7:  Different IV   CurH6S.   ltte current  (A) changes  with the irradiance,  and the 
- voltage  (V)  changes  with the temperature.
+![](imageserver/uploadimages/image129.png)
 
 The  electrical   performance   of  a  solar   module   is   represented   by  the  IV 
-characteristic  curve,  which  represents  the  current  that  is  provided  based  on the  voltage 
- generated  for  a certain  solar  radiation.
+characteristic  curve,  which  represents  the  current  that  is  provided  based  on the  voltage  generated  for  a certain  solar  radiation.
 
-The curve  represents  all  the possible  values  of voltage-current.
-The  curves  depend   on  two  main  factors:   the  temperature   and   the  solar radiation  
-received  by the cells.
-For  a  given  solar  cell  area,  the  current  generated  is directly  proportional  to solar  
-irradiance  (G),  while  the  voltage  reduces  slightly  with  an  increase  of temperature.
+The curve  represents  all  the possible  values  of voltage-current.  The  curves  depend   on  two  main  factors:   the  temperature   and   the  solar radiation received  by the cells.  For  a  given  solar  cell  area,  the  current  generated  is directly  proportional  to solar  irradiance  (G),  while  the  voltage  reduces  slightly with  an  increase  of temperature.
 
-A  good  regulator  will  try  to  maximise  the  amount  of  energy  that  a  panel provides  by  
-tracking  the  point  that  provides  maximum  power  (V  x I).  The maximum  power  corresponds  
-to  the knee  of the IV  curve.
+A  good  regulator  will  try  to  maximise  the  amount  of  energy  that  a  panel provides  by  tracking  the  point  that  provides  maximum  power  (V  x I).  The maximum  power  corresponds  to  the knee  of the IV  curve.
 
-10              14. OFF-GRID  POWER
+**Solar Panel Parameters**
 
-Solar Panel Parameters
 The main parameters  that  characterise  a photovoltaic  panel  are:
 
-1.    Short   Circuit   Current   (Isc):  the  maximum   current   provided  by the  panel  when  
-the connectors  are  short  circuited.
-2.    Open  Circuit  Voltage  (   oc)I  the  maximum  voltage  that  the  panel provides   when  
-the  terminals   are  not  connected  to  any  load  (an open   circuit).   This   value   is   
-normally   22  V   for   panels   that   are
-going  to  work  in  12 V  systems,  and  is directly  proportional  to  the number  of cells  
-connected  in  series.
-3.    Maximum    Power    Point    (Pqp):    the    point    where    the    power supplied  by the 
- panel  is  at  maximum,  where  Pqp      Iqp  x Vqp.
+1.    **Short   Circuit   Current** ($I_{sc}$):  the  maximum   current   provided  by the  panel  when  the connectors  are  short  circuited.
+2.    Open  Circuit  Voltage  ( $V_{oc}$): the  maximum  voltage  that  the  panel provides   when  the  terminals   are  not  connected  to  any  load  (an open   circuit).   This   value   is   normally   22  V   for   panels   that   are
+going  to  work  in  12 V  systems,  and  is directly  proportional  to  the number  of cells  connected  in  series.
+3.    **Maximum    Power    Point**    ($P_{max}$):    the    point    where    the    power supplied  by the  panel  is  at  maximum,  where  $P_{max} = V_{max} \times I_{max}$.
 
-The  maximum  power  point  of  a  panel  is  measured  in  Watts  (W)  or  peak Watts  (Wp).  It  
-is  important   not  to  forget   that  in  normal  conditions   the panel will not  work  at  peak 
- conditions,  as  the  voltage  of operation  is  fixed by  the  load  or  the  regulator.  Typical 
- values  of Vpp  and  ImaxShould  be  a  bit
-smaller  than  the Inc  and     oc-
-4.     Fill  Factor  (FF):  the  relation   between   the  maximum  power  that the  panel  can   
-actually  provide  and   the  product   Ill          oc    his gives   you  an   idea  of   the  
-quality   of  the  panel   because   it   is   an
-indication  of  the  type  of  IV  characteristic  curve.  The  closer  FF  is to   1,   the   more 
-  power   a   panel   can   provide.   Common   values usually  are  between  0.7  and  0.8.
-5.    Efficiency   (ij):  the  ratio  between   the  maximum  electrical  power that  the  panel  
-can  give  to  the  load  and   the  power  of  the  solar radiation  (p )  incident  on  the  
-panel.  This  is  normally  around  10- 12%,     depending     on     the     type     of     cells 
-    (monocrystalline, polycrystalline, amorphous  or  thin  film).
+The  maximum  power  point  of  a  panel  is  measured  in  Watts  (W)  or  peak Watts  ($W_p$).  It  is  important   not  to  forget   that  in  normal  conditions   the panel will not  work  at  peak conditions,  as  the  voltage  of operation  is  fixed by  the  load  or  the  regulator.  Typical values  of $V_{max}$  and  I_{max} should  be  a  bit smaller  than  the $I_{sc}$  and  $V_{oc}$
+
+4.   **Fill  Factor**  (FF):  the  relation   between   the  maximum  power  that the  panel  can   actually  provide  and   the  product   Ill          oc    his gives   you  an   idea  of   the  quality   of  the  panel   because   it   is   an indication  of  the  type  of  IV characteristic  curve.  The  closer  FF  is to   1,   the   more power   a   panel   can  provide.   Common   values usually  are  between  0.7  and  0.8.
+5. **Efficiency**   ($\eta$):  the  ratio  between   the  maximum  electrical  power that  the  panel  can  give  to  the  load  and   the  power  of  the  solar radiation  (p )  incident  on  the  panel.  This  is  normally  around  10-12%,     depending     on     the     type     of     cells (monocrystalline, polycrystalline, amorphous  or  thin  film).
 
 Considering  the definitions  of point  of maximum  power  and  the fi11  factor we  see  that:
 
+$$
+\eta = \frac{P_{max}}{P_L} = \frac{FF \times I_{sc}\times V_{oc}}{P_L}
+$$
 
-The  values  of  I$c•    OC›  IPmaaxnd  *   ..     are  provided  by  the  manufacturer and   refer 
-  to   standard   conditions   of  measurement   with   irradiance   G    = 1000 W/m², at  
-sea-level,  for  a  temperature  of cells  of T,  =  25°C.
 
-3.The solar panel    I I
+The  values  of   $I_{sc}$, $V_{oc}$, $I_{P_{max}}$ and $V_{P_{max}}$ are  provided  by  the  manufacturer and   refer  to   standard   conditions   of  measurement   with   irradiance   G = 1000 W/m², at sea-level,  for  a  temperature  of cells  of T,  =  25$^{\circ}$C.
 
-The  panel  parameter  values  change  for  other  conditions  of  irradiance  and temperature.  
-Manufacturers   will  sometimes  include  graphs  or  tables  with values  for  conditions  
-different   from   the  standard.   You  should  check   the performance  values  at  the  panel  
-temperatures  that  are  likely  to match  your particular  installation.
-Be   aware   that   two   panels   can   have   the   same        p   but   very   different 
-behaviour  in  different  operating  conditions.  When  acquiring  a  panel,  it  is important   to 
-  verify,   if   possible,   that   their   parameters   (at   least,   I3c  and
-oc)  match  the  values  promised  by the  manufacturer.
-Panel parameters for system sizing
+The  panel  parameter  values  change  for  other  conditions  of  irradiance  and temperature.  Manufacturers   will  sometimes  include  graphs  or  tables  with values  for  conditions  different   from   the  standard.   You  should  check   the performance  values  at  the  panel temperatures  that  are  likely  to match  your particular  installation.  
+
+Be   aware   that   two   panels   can   have   the   same  $W_P$   but   very   different  behaviour  in  different  operating  conditions.  When  acquiring  a  panel,  it  is important   to verify,   if   possible,   that   their   parameters   (at   least, $I_{sc}$ and $V_{oc}$)  match  the  values  promised  by the  manufacturer.
+
+**Panel parameters for system sizing**
+
 To  calculate  the  number  of panels  required  to  cover  a  given  load,  you just
 need  to  know  the  current   and  voltage   at  the  point  of  maximum  power:
 In.p and *   ..
