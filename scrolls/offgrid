@@ -128,187 +128,80 @@ Be   aware   that   two   panels   can   have   the   same  $W_P$   but   very  
 
 To  calculate  the  number  of panels  required  to  cover  a  given  load,  you just
 need  to  know  the  current   and  voltage   at  the  point  of  maximum  power:
-In.p and *   ..
-You  should  always  be  aware  that  the  panel  is  not  going  to  perform  under
-perfect  conditions  as  the  load  or  regulation  system  is  not  always  going  to work  at  
-the  point  of  maximum  power  of  the  panel.  You  should  assume  a loss of efhciency  of 5%  
-in your  calculations  to compensate  for  this.
+$I_{P_{max}}$ and $V_{P_{max}}$
 
-Interconnection of panels
+You  should  always  be  aware  that  the  panel  is  not  going  to  perform  under perfect  conditions  as  the  load  or  regulation  system  is  not  always  going  to work  at  the  point  of  maximum  power  of  the  panel.  You  should  assume  a loss of efficiency  of 5%   in your  calculations  to compensate  for  this.
+
+**Interconnection of panels**
+
 A   solar   panel   array   is   a   collection   of  solar   panels   that   are   electrically 
-interconnected  and  installed  on  some  type  of  support  structure.  Using  a solar  panel  
-array  allows  you  to  generate  greater  voltage  and  current  than  is possible  with  a  
-single  solar  panel.  The  panels  are  interconnected in  such  a way  that  the  voltage  
-generated  is  close  to  (but  greater  than)  the  level  of voltage  of  the  batteries,  and  
-that  the  current  generated  is sufficient  to  feed the equipment  and  to charge  the 
-batteries.
+interconnected  and  installed  on  some  type  of  support  structure.  Using  a solar  panel  array  allows  you  to  generate  greater  voltage  and  current  than  is possible  with  a  single  solar  panel.  The  panels  are  interconnected in  such  a way  that  the  voltage  generated  is  close  to  (but  greater  than)  the  level  of voltage  of  the  batteries,  and  that  the  current  generated  is sufficient  to  feed the equipment  and  to charge  the batteries.
 
-Connecting    solar    panels    in    series    increases    the    generated     voltage. 
-Connecting  panels  in parallel  increases  the current.
-The number  of panels used  should  be  increased  until  the  amount  of power generated  slightly 
- exceeds  the demands  of your  load.
+Connecting    solar    panels    in    series    increases    the    generated     voltage. Connecting  panels  in parallel  increases  the current. The number  of panels used  should  be  increased  until  the  amount  of power generated  slightly exceeds  the demands  of your  load.
 
-It  is  very  important   that  all  of  the  panels  in  your  array  are  as  identical  as 
-possible.   In   an   array,   you   should   use   panels   of   the   same   brand   and 
-characteristics   because   any   difference   in   their   operating   conditions   will have  a  
-big  impact  on the health  and  performance  of your  system.
+It  is  very  important   that  all  of  the  panels  in  your  array  are  as  identical  as possible.   In   an   array,   you   should   use   panels   of   the   same   brand   and characteristics   because   any   difference   in   their   operating   conditions   will have  a  big  impact  on the health  and  performance  of your  system.
 
-12              14. OFF-GRID  POWER
-
-Even  panels   that  have   identical   performance   ratings  will  usually   display some  
-variance  in  their  characteristics due  to  manufacturing  processes.
+Even  panels   that  have   identical   performance   ratings  will  usually   display some  variance  in  their  characteristics due  to  manufacturing  processes.
 
 The    actual    operating    characteristics    of     two    panels    from    the    same 
-manufacturer  can  vary  by as  much  as  +10%.
-Whenever  possible,  it  is  a  good  idea  to  test  the  real-world  performance  of individual  
-panels  to  verify  their  operating  characteristics  before  assembling them  into  an  array.
+manufacturer  can  vary  by as  much  as  +10%.  Whenever  possible,  it  is  a  good  idea  to  test  the  real-world  performance  of individual  panels  to  verify  their  operating  characteristics  before  assembling them  into  an  array.
 
+![](imageserver/uploadimages/image130.png)
 
+**How to choose a good panel**
 
+One   obvious  metric  to  use  when  shopping  for  solar  panels  is  to  compare the  ratio  of  the  nominal  peak  power  ($W_p$)  to  the price.  This  will give you a rough   idea   of   the  cost   per   Watt   for   different   panels.   But   there   are   a number of other considerations to  keep  in mind as  well.
 
+If  you  are  going  to  install  solar  panels  in  geographical  areas  where  soiling (from  dust,  sand,   or  grit)  will  likely  be  a  problem,   consider  purchasing panels with  a  low affinity for soil  retention.
 
+These  panels  are  made  of  materials   that  increase   the  likelihood   that  the panel will  be automatically  cleaned  by wind and  rain.
+Always  check  the  mechanical  construction   of  each  panel.  Verify  that  the glass  is  hardened  and  the  aluminum  frame  is  robust  and  well  built.  The solar  cells  inside  the  panel  can  last  for  more  than  20  years,  but  they  are very  fragile  and   the  panel  must protect   them  from   mechanical  hazards. Look  for  the  manufacturer's  quality  guarantee  in  terms  of  expected  power output  and  mechanical  construction.
 
+Finally,  be  sure  that  the  manufacturer  provides  not  only  the  nominal  peak power   of   the   panel  ($W_p$)   but   also   the   variation   of   the   power   with irradiation  and   temperature.  This  is  particularly  important  when  panels are used  in  arrays,  as  variations  in  the  operating  parameters  can  have  a  big impact  on  the  quality  of  power  generated  and  the  useful  lifetime  of  the panels.
 
+##     The battery
 
+The   battery    “hosts”    a   certain    reversible    chemical    reaction    that   stores electrical  energy  that  can  later  be  retrieved  when  needed.  Electrical  energy is  transformed   into  chemical   energy  when  the  battery   is  being  charged, and  the   reverse   happens   when   the   battery   is   discharged.   A   battery   is formed  by  a  set  of  elements  or  cells  arranged  in  series.  Lead-acid  batteries consist   of   two  submerged   lead   electrodes   in   an  electrolytic   solution   of water   and   sulphuric   acid.   A   potential   difference   of   about   2   volts   takes place  between  the  electrodes,  depending on  the instantaneous  value  of  the charge  state  of  the  battery.
 
+The   most   common   batteries   in   photovoltaic   solar   applications   have   a nominal  voltage  of  12  or  24  volts.  A   12  V   battery  therefore  contains  6 cells  in series.
 
+The  battery   serves   two  important   purposes   in  a  photovoltaic   system:   to provide  electrical  energy  to  the  system  when  energy  is  not  supplied  by  the array  of   solar  panels,  and  to  store  excess  energy  generated   by  the  panels whenever  that  energy  exceeds  the  load.  The  battery  experiences  a  cyclical process  of charging  and  discharging, depending  on  the presence  or  absence of sunlight.
 
+During  the  hours  that  there  is  sun,  the  array  of  panels  produces  electrical energy.   The energy  that  is  not  consumed  immediately  is  used  to  charge  the battery.
 
+During   the  hours  of  absence  of  sun,  any  demand  of  electrical  energy  is supplied  by the  battery,  thereby discharging  it. These  cycles  of  charge  and  discharge  occur  whenever  the  energy  produced by  the  panels  does  not  match   the  energy  required   to  support   the  load. When  there is sufficient  sun  and  the load  is light,  the  batteries  will charge.
 
+Obviously,   the  batteries  will  discharge  at  night  whenever  any  amount  of power  is  required.  The  batteries  will  also  discharge  when  the  irradiance  is insufficient  to   cover   the   requirements   of   the   load  (due   to   the   natural variation  of climatological  conditions,  clouds,  dust,  etc.)
 
-
-
-
-
-
-
-Figure  OGP    8:  Interconnection of panels  in parallel.   the voltage  remains constant  while  
-the  current  duplicat6S.  (Photo.  Fantsuam Foundation,  Nigeria)
-
-How to choose a good panel
-One   obvious  metric  to  use  when  shopping  for  solar  panels  is  to  compare the  ratio  of  
-the  nominal  peak  power  (Wp)  to  the price.  This  will give you a rough   idea   of   the   
-cost   per   Watt   for   different   panels.   But   there   are   a number of other 
-considerations to  keep  in mind as  well.
-If  you  are  going  to  install  solar  panels  in  geographical  areas  where  soiling (from  
-dust,  sand,   or  grit)  will  likely  be  a  problem,   consider  purchasing panels with  a  low 
-afhnity  for soil  retention.
-
-3.The solar panel    13
-
-These  panels  are  made  of  materials   that  increase   the  likelihood   that  the panel will  
-be automatically  cleaned  by wind and  rain.
-Always  check  the  mechanical  construction   of  each  panel.  Verify  that  the glass  is  
-hardened  and  the  aluminum  frame  is  robust  and  well  built.  The solar  cells  inside  the  
-panel  can  last  for  more  than  20  years,  but  they  are very  fragile  and   the  panel  must 
-  protect   them  from   mechanical  hazards. Look  for  the  manufacturer's  quality  guarantee  
-in  terms  of  expected  power output  and  mechanical  construction.
-
-Finally,  be  sure  that  the  manufacturer  provides  not  only  the  nominal  peak power   of   
-the   panel   (W )   but   also   the   variation   of   the   power   with irradiation  and  
-temperature.  This  is  particularly  important  when  panels are used  in  arrays,  as  variations 
-  in  the  operating  parameters  can  have  a  big impact  on  the  quality  of  power  generated  
-and  the  useful  lifetime  of  the panels.
-
-4.     The battery
-The   battery    “hosts”    a   certain    reversible    chemical    reaction    that   stores 
-electrical  energy  that  can  later  be  retrieved  when  needed.  Electrical  energy is  
-transformed   into  chemical   energy  when  the  battery   is  being  charged, and   the   reverse 
-  happens   when   the   battery   is   discharged.   A   battery   is formed  by  a  set  of  
-elements  or  cells  arranged  in  series.  Lead-acid  batteries consist   of   two  submerged   
-lead   electrodes   in   an  electrolytic   solution   of water   and   sulphuric   acid.   A   
-potential   difference   of   about   2   volts   takes place  between  the  electrodes,  depending 
- on  the instantaneous  value  of  the charge  state  of  the  battery.
-The   most   common   batteries   in   photovoltaic   solar   applications   have   a nominal  
-voltage  of  12  or  24  volts.  A   12  V   battery  therefore  contains  6 cells  in series.
-The  battery   serves   two  important   purposes   in  a  photovoltaic   system:   to provide  
-electrical  energy  to  the  system  when  energy  is  not  supplied  by  the array  of   solar  
-panels,  and  to  store  excess  energy  generated   by  the  panels whenever  that  energy  
-exceeds  the  load.  The  battery  experiences  a  cyclical process  of charging  and  discharging, 
- depending  on  the presence  or  absence of sunlight.
-During  the  hours  that  there  is  sun,  the  array  of  panels  produces  electrical energy.  
-The energy  that  is  not  consumed  immediately  is  used  to  charge  the battery.
-
-14              14. OFF-GRID  POWER
-
-During   the  hours  of  absence  of  sun,  any  demand  of  electrical  energy  is supplied  by 
-the  battery,  thereby discharging  it.
-These  cycles  of  charge  and  discharge  occur  whenever  the  energy  produced by  the  panels  
-does  not  match   the  energy  required   to  support   the  load. When  there is sufhcient  sun  
-and  the load  is light,  the  batteries  will charge.
-
-Obviously,   the  batteries  will  discharge  at  night  whenever  any  amount  of power  is  
-required.  The  batteries  will  also  discharge  when  the  irradiance  is insufficient   to   
-cover   the   requirements   of   the   load  (due   to   the   natural variation  of 
-climatological  conditions,  clouds,  dust,  etc.)
-
-If  the  battery  does  not  store  enough  energy  to  meet  the  demand  during periods  without  
-sun,  the  system  will  be  exhausted  and  will  be  unavailable for  consumption.  On   the  
-other  hand,  oversizing  the  system  (by  adding  far too    many    panels    and    batteries)  
-  is    expensive    and   inefficient.    When designing   a  stand-alone  system  we  need  to  
-reach  a  compromise   between the cost  of components  and  the availability  of power from  the 
-system.
+If  the  battery  does  not  store  enough  energy  to  meet  the  demand  during periods  without  sun,  the  system  will  be  exhausted  and  will  be  unavailable for  consumption.  On   the  other  hand,  oversizing  the  system  (by  adding  far too    many    panels    and    batteries)    is    expensive    and   inefficient.    When designing   a  stand-alone  system  we  need  to  reach  a  compromise   between the cost  of components  and  the availability  of power from  the system.
 
 One    way   to   do   this   is   to   estimate   the   required   number   of   days   of 
-autonomy.   In   the  case  of  a  telecommunications  system,   the  number  of days  of  autonomy 
- depends  on  its  critical  function   within  your  network design.  If  the  equipment  is  
-going  to  serve  as  a  repeater  and  is  part  of  the backbone    of    your    network,    you 
-   will    likely    want    to    design    your photovoltaic  system  with  an  autonomy  of up 
-to  )-7  days.
+autonomy.   In   the  case  of  a  telecommunications  system,   the  number  of days  of  autonomy  depends  on  its  critical  function   within  your  network design.  If  the  equipment  is  going  to  serve  as  a  repeater  and  is  part  of  the backbone    of    your    network,    you will    likely    want    to    design    your photovoltaic  system  with  an  autonomy  of up to  5-7  days.
+
 On    the   other   hand,   if   the   solar   system   is   responsible   for   a   providing 
-energy  to  client  equipment   you  can  probably  reduce  number  of  days  of autonomy   to  two 
- or  three.  In  areas  with  low  irradiance,   this  value  may need  to  be  increased  even  
-more.  In  any  case,  you  will  always  have  to  find the  proper  balance  between  cost  and  
-reliability.
+energy  to  client  equipment   you  can  probably  reduce  number  of  days  of autonomy   to  two or  three.  In  areas  with  low  irradiance,   this  value  may need  to  be  increased  even  more.  In  any  case,  you  will  always  have  to  find the  proper  balance  between  cost  and  reliability.
 
-Types of batteries
-Many  different   battery  technologies   exist,  and  are  intended  for  use  in  a variety  of  
-different   applications.   The  most   suitable  type  for  photovoltaic applications  is  the 
-stationary  battery,  designed  to  have  a  fixed  location  and for   scenarios   where   the   
-power   consumption   is   more   or   less   irregular. "Stationary”   batteries   can   
-accommodate   deep   discharge   cycles,   but   they are  not  designed  to  produce  high  
-currents  in  brief periods  of  time.
-Stationary  batteries  can  use  an  electrolyte  that  is  alkaline  (such  as  Nickel- Cadmium)  
-or  acidic  (such  as Lead-Acid).
+**Types of batteries**
 
-4.The battery         15
+Many  different   battery  technologies   exist,  and  are  intended  for  use  in  a variety  of  different   applications.   The  most   suitable  type  for  photovoltaic applications  is  the stationary  battery,  designed  to  have  a  fixed  location  and for   scenarios   where   the   power   consumption   is   more   or   less   irregular. "Stationary”   batteries   can   accommodate   deep   discharge   cycles,   but   they are  not  designed  to  produce  high  currents  in  brief periods  of  time.
+Stationary  batteries  can  use  an  electrolyte  that  is  alkaline  (such  as  Nickel- Cadmium)  or  acidic  (such  as Lead-Acid).
 
-Stationary  batteries  based  on Nickel-Cadmium  are  recommended  for  their high  reliability  
-and  resistance  whenever  possible.
-Unfortunately,   they   tend   to   be   much   more   expensive   and   difhcult   to obtain  than 
- sealed lead-acid  batteries.
-In  many  cases  when  it  is  difficult  to  find  local,  good  and  cheap  stationary batteries  
- (importing   batteries   is   not   cheap),   you  will   be   forced   to   use batteries  
-targeted  to  the  automobile  market.
+Stationary  batteries  based  on Nickel-Cadmium  are  recommended  for  their high  reliability  and  resistance  whenever  possible. Unfortunately,   they   tend   to   be   much   more   expensive   and   difficult   to obtain  than sealed lead-acid  batteries.
+In  many  cases  when  it  is  difficult  to  find  local,  good  and  cheap  stationary batteries   (importing   batteries   is   not   cheap),   you  will   be   forced   to   use batteries  targeted  to  the  automobile  market.
 
-Using car  batteries
-Automobile   batteries  are  not  well  suited  for  photovoltaic  applications   as they   are   
-designed   to  provide  a  substantial   current   for  just   few  seconds (when  starting  then  
-engine)  rather  than  sustaining  a  low  current  for  long period   of   time.   This   design   
-characteristic   of   car   batteries   (also   called traction   batteries)    results   in   a   
-shortened    effective   life   when   used   in photovoltaic  systems.  Traction  batteries  can  
-be  used  in  small  applications where   low   cost   is   the   most   important    
-consideration,   or   when   other batteries  are  not  available.
+**Using car  batteries**
 
-Traction   batteries   are   designed   for   vehicles   and   electric   wheelbarrows. They  are  
-cheaper  than  stationary  batteries  and  can  serve  in  a photovoltaic installation,    although 
-   they   require    very   frequent    maintenance.    These batteries  should  never  be  deeply  
-discharged,   because  doing  so  will  greatly reduce   their   ability   to   hold   a   charge.  
- A   truck   battery   should   not   be discharged   to  more  than  70%  of  its  total  
-capacity.   This  means  that  you can  only  use  a  maximum  of 30%  of a  lead-acid  battery's  
-nominal  capacity before  it  must  be  recharged.
-You  can  extend  the  life  of  a  lead-acid  battery  by  using  distilled  water.  By using  a  
-densimeter   or  hydrometer,   you  can   measure   the  density  of  the battery's  electrolyte.  
-A  typical  battery  has  specific  gravity  of  1.28.
-Adding  distilled  water  and  lowering  the  density  to  1.2 can  help  reduce the anode's  
-corrosion,  at  a  cost  of  reducing  the  overall  capacity  of  the  battery. If   you  adjust   
-the  density   of   battery   electrolyte,   you  must   use  distilled water,  as  tap  water  or  
-well  water  will permanently  damage  the  battery.
+Automobile   batteries  are  not  well  suited  for  photovoltaic  applications   as they   are   designed   to  provide  a  substantial   current   for  just   few  seconds (when  starting  then  engine)  rather  than  sustaining  a  low  current  for  long period   of   time.   This   design   characteristic   of   car   batteries   (also   called traction   batteries)    results   in   a   shortened    effective   life   when   used   in photovoltaic  systems.  Traction  batteries  can  be  used  in  small  applications where   low   cost   is   the   most   important    consideration,   or   when   other batteries  are  not  available.
 
-States of charge
-There  are  two  special  states  of charge  that  can  take  place  during  the  cyclic charge  
-and  discharge  of  the  battery.  They  should  both  be  avoided  in  order to  preserve  the 
-useful  life  of the  battery.
+Traction   batteries   are   designed   for   vehicles   and   electric   wheelbarrows. They  are  cheaper  than  stationary  batteries  and  can  serve  in  a photovoltaic installation,    although  they   require    very   frequent    maintenance.    These batteries  should  never  be  deeply discharged,   because  doing  so  will  greatly reduce   their   ability   to   hold   a   charge.  
+ 
+A   truck   battery   should   not   be discharged   to  more  than  70%  of  its  total  
+capacity.   This  means  that  you can  only  use  a  maximum  of 30%  of a  lead-acid  battery's  nominal  capacity before  it  must  be  recharged.  You  can  extend  the  life  of  a  lead-acid  battery  by  using  distilled  water.  By using  a  densimeter   or  hydrometer,   you  can   measure   the  density  of  the battery's  electrolyte.  
+A  typical  battery  has  specific  gravity  of  1.28. Adding  distilled  water  and  lowering  the  density  to  1.2 can  help  reduce the anode's  corrosion,  at  a  cost  of  reducing  the  overall  capacity  of  the  battery. If   you  adjust   the  density   of   battery   electrolyte,   you  must   use  distilled water,  as  tap  water  or  well  water  will permanently  damage  the  battery.
+
+**States of charge**
+
+There  are  two  special  states  of charge  that  can  take  place  during  the  cyclic charge  and  discharge  of  the  battery.  They  should  both  be  avoided  in  order to  preserve  the useful  life  of the  battery.
 
 16              14. OFF-GRID  POWER
 

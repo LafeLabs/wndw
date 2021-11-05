@@ -42,8 +42,10 @@
         "home",
         "indoor",
         "licensing",
+        "maintenance",
         "markdown",
         "mesh",
+        "monitoring",
         "networking",
         "offgrid",
         "outdoor",
@@ -51,6 +53,7 @@
         "pi",
         "radio",
         "security",
+        "sustainability",
         "telecommunications",
         "web",
         "wifi"
