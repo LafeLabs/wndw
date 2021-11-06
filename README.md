@@ -2,61 +2,21 @@
 
 ## [image server](imageserver/)
 
-#  [Wireless Networking in the Developing World](http://wndw.net/book.html#readBook)
+### Links
 
+ - [dnagenerator.php](dnagenerator.php)
+ - [editor.php](editor.php)
+ - [global replicator link](https://raw.githubusercontent.com/LafeLabs/wndw/main/php/replicator.txt)
+ - [replicator.php](replicator.php)
+
+#  [Wireless Networking in the Developing World](http://wndw.net/book.html#readBook)
 
 ![](imageserver/uploadimages/image122.png)
 ![](imageserver/uploadimages/image121.png)
 
-
 Self-replicating document swarm of open source book Wireless Networking in the Developing World.
 
-#  [Free Net](https://github.com/LafeLabs/freenet/)
-
- - *get free stuff*
- - *give away free stuff*
- - *ask for help*
- - *help people out*
- - *tell a story about free net*
- - *hear a story about free net*
- - *replicate and share the system*
-
-
-
-To replicate, buy a domain name, get a hosting account, and set up a raspberry pi web server to edit the code on.  Get an email address at your domain operator@[domain].  
-
-Forward email address to a personal operator address or set up mail client.
-
-Scrolls are just [markdown documents](scrolls/markdown).
-
-Copy the replicator at [php/replicator.txt](php/replicator.txt) into the main directory on the remote server as replicator.php.  Point a browser to [your domain]/replicator.php.  Then follow the instructions below to replicate the system onto a Raspberry pi.  Use port forwarding to connect your home ip address via port 80 to the pi web server.  Use the scroll set replicator to copy the scroll set from the home pi to the remote server.  
-
-Set up a second pi as a solar powered terminal which can be used out in public to edit the contents of the home pi which then replicates to the public page.  Make a sign for the public domain with rainbow colored felt letters in block letters on a black cotton flannel cloth flag and display it to get people to go to the page and either help someone or get some free stuff or read a story.  
-
-Always replicate all information as many times as possible to protect. 
-
-There are no users. There are only swarms of self-replicating documents used by everyone to share things.
-
-Existing operator will teach you how to do all this.
-
-## Links
-
- - [qrcode.html](qrcode.html)
- - [ipaddress.php](ipaddress.php)
- - [http://localhost/](http://localhost/)
- - [../](../)
- - [fork.html](fork.html)
- - [user.php](user.php)
- - [index.html](index.html)
- - [readme.html](readme.html)
- - [editor.php](editor.php)
- - [dnagenerator.php](dnagenerator.php)
- - [global page replicator code link](https://raw.githubusercontent.com/LafeLabs/freenet/main/php/replicator.txt)
- - [local replicator code link](php/replicator.txt)
- - [scroll set replicator](scrollset.html)
- - [set replicator](set.html)
- - [copy code server replicator](copy.php?from=https://raw.githubusercontent.com/LafeLabs/codeserver/main/php/replicator.txt&to=replicator.php)
- - [replicator.php](replicator.php)
+Follow the following installation and then click on the link to "wndw/" from "links" and click the replicator to replicate this book. Then read it and edit it and replicate it out to the next instance.
 
 # Basic Kit
 
@@ -107,7 +67,7 @@ sudo apt install php libapache2-mod-php -y
 ```
 cd /var/www/html
 sudo rm index.html
-sudo curl -o replicator.php https://raw.githubusercontent.com/LafeLabs/freenet/main/php/replicator.txt
+sudo curl -o replicator.php https://raw.githubusercontent.com/LafeLabs/pi/main/php/replicator.txt
 cd ..
 sudo chmod -R 0777 *
 cd html
