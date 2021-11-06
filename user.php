@@ -351,6 +351,9 @@ input{
     color:#00ff00;
     font-size:2em;
     display:none;
+    text-align:justify;
+
+    
 }
 #scrollscroll a{
     color:#ff2cb4;
