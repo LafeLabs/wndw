@@ -580,197 +580,76 @@ $$
 C_{NOM}(Ah) = C_{NEC}(Ah) / DoD_{MAX}
 $$
 
-In  order  to  calculate  the  number  of  batteries  in  series  ($N_{bs}$). we  divide  the nominal  voltage  of our  installation  ($V_N$)  by the nominal  voltage  of a single battery (      NBat)'
+In  order  to  calculate  the  number  of  batteries  in  series  ($N_{bs}$). we  divide  the nominal  voltage  of our  installation  ($V_N$)  by the nominal  voltage  of a single battery ($V_{NBat}$).
+
+$$
+N_{bs} = V_N/V_{NBat}
+$$
 
 **Regulator**
 
-One   important  warning:  always  use  regulators  in  series,  never  in  parallel. If   your  
-regulator   does  not  support   the  current   required   by  your  system, you will  need  to  
-buy a  new regulator  with  a  larger  working  current.
-For  security  reasons,  a  regulator  needs  to  be  able  to  operate  with  a  current
-I   axRegAlt  least  20%   greater  than  the  maximum  intensity  that  is provided  by
+One   important  warning:  always  use  regulators  in  series,  never  in  parallel. If   your  regulator   does  not  support   the  current   required   by  your  system, you will  need  to  buy a  new regulator  with  a  larger  working  current. For  security  reasons,  a  regulator  needs  to  be  able  to  operate  with  a  current $I_{maxReg}$ at  least  20%   greater  than  the  maximum  intensity  that  is provided  by
 the  array  of panels:
 
+$$
+I_{maxReg} = 1.2 N_{pp} I_{PMax}
+$$
 
-DC/AC Inverter
+**DC/AC Inverter**
+
+
 The  total  energy  needed  for  the  AC   equipment  is  calculated  including  all
-the  losses  that  are  introduced  by the DC/AC converter  or  inverter.
-When  choosing  an   inverter,   keep   in  mind  that   the  performance   of  the
-inverter  varies  according  to  the amount  of  requested  power.
-An  inverter  has  better  performance  characteristics  when  operating  close  to
-its  rated  power.
+the  losses  that  are  introduced  by the DC/AC converter  or  inverter.  When  choosing  an   inverter,   keep   in  mind  that   the  performance   of  the inverter  varies  according  to  the amount  of  requested  power. An  inverter  has  better  performance  characteristics  when  operating  close  to its  rated  power.
 
 Using   a   1500   Watt   inverter   to   power   a   25   Watt   load   is   extremely 
-inefficient.
+inefficient.  In  order  to  avoid  this  wasted  energy,  it  is  important   to  consider  not  the peak  power of  all  your  equipment,  but  the  peak  power  of  the  equipment that  is expected  to operate simultaneously.
 
-13. Procedure of calculation   39
+##   Cables
 
-In  order  to  avoid  this  wasted  energy,  it  is  important   to  consider  not  the peak  power 
- of  all  your  equipment,  but  the  peak  power  of  the  equipment that  is expected  to operate 
- simultaneously.
+Once   you   know   the   numbers    of   panels   and   batteries,    and   type   of regulators  and  inverters  that  you  want   to  use,  it  is  necessary   to  calculate the   length   and  the   thickness    of   the   cables    needed    to   connect    the components  together.  The  **length**  depends  on  the  location  of  your  the  installation.   You  should try  to  minimise  the  length  of  the  cables  between  the  regulator,  panels,  and batteries.  Using  short  cables  will minimise  lost  power  and  cable  costs. The   **thickness**   chosen    is   based   on   the   length   of   the   cable   and    the maximum  current  it  must  carry.
 
-14.   Cables
-Once   you   know   the   numbers    of   panels   and   batteries,    and   type   of regulators  
-and  inverters  that  you  want   to  use,  it  is  necessary   to  calculate the   length   and    
-the   thickness    of   the   cables    needed    to   connect    the components  together.
-The  length  depends  on  the  location  of  your  the  installation.   You  should try  to  
-minimise  the  length  of  the  cables  between  the  regulator,  panels,  and batteries.  Using  
-short  cables  will minimise  lost  power  and  cable  costs.
-The   thickness   chosen    is   based   on   the   length   of   the   cable   and    the
-maximum  current  it  must  carry.
+The goal is to  minimise  voltage  drops. In order to calculate  the thickness S of the cable  it is necessary  to know:
 
-The goal is to  minimise  voltage  drops.
-In order to calculate  the thickness S of the cable  it is necessary  to know:
-
-•       the maximum  current  IMc that  is  going  to  circulate  in  the cable.   In   the   case  
- of   the   panel-battery   subsystem,   it   is Iq         calculated   for   every   month.   In  
- the   battery-load subsystem   it   depends   on   the   way   that   the   loads   are
-connected;
-•       the  voltage   drop  (   a-*b)   that  we  consider   acceptable   in the  cable.  The  
-voltage   drop   that  results  from   adding   all possible  individual  drops  is  expressed  as  
-a  percent  of  the
-nominal  voltage  of  the  installation.
+ - the maximum  current  $I_{MC}$ that  is  going  to  circulate  in  the cable.   In   the   case of   the   panel-battery   subsystem,   it   is $I_{mMAX}$ calculated   for   every   month.   In  the   battery-load subsystem   it   depends   on   the   way   that   the   loads   are connected;
+ - the  voltage   drop  ($V_a - V_b$)   that  we  consider   acceptable   in the  cable.  The  voltage   drop   that  results  from   adding   all possible  individual  drops  is  expressed  as  a  percent  of  the nominal  voltage  of  the  installation.
 
 Typical  maximum  values are:
 
+![](imageserver/uploadimages/image136.png)
 
-Component
-Panel  Array  ->  Battery Battery  -> Converter Main  Line
-Main  Line  (Illumination) Main  Line (Equipment)
-Voltage Drop (%of VN)
-1,00%
-1,00%
-3,00%
-3,00%
-5,00%
-
-40            14. OFF-GRID  POWER
-
-Typical  acceptable  voltage  drops in cables
+**Typical  acceptable  voltage  drops in cables**
 
 The section  of the cable is determined  by Ohm's  Law:
 
-S(mm*)  ——  r(Hmm’Im)L(m) !  «**tA)/ (V,-V   (V)
-where 5 is the section,  r is resistivity  (intrinsic property of the material: for copper,  
-0.01286 Dmm2/m),  and  L the length.
+$$
+S(mm^2)  = r(\Omega mm^2/m)L(m) I_{mMAX}/ (V_a - V_b)   (V)
+$$
 
-5 is chosen  taking into consideration  the cables available  in  the market.
+where S is the section,  r is resistivity  (intrinsic property of the material: for copper,  
+0.01286 $\Omega mm^2/m$),  and  L the length.
 
-You  should  choose   the  immediately   superior   section   to   the  one   that  is obtained  
-from  the  formula.  For  security  reasons  there  are  some  minimum values,   for   the   cable  
- that   connects   the   panels   and   battery,    this   is   a minimum  of 6 mm². For  the other 
-sections,  the minimum  is 4 mm².
+S is chosen  taking into consideration  the cables available  in  the market.
 
-15.   Cost of a solar installation
-While  solar  energy  itself  is  free,  the  equipment   needed  to  turn  it  into useful  
-electric  energy is not.
+You  should  choose   the  immediately   superior   section   to   the  one   that  is obtained  from  the  formula.  For  security  reasons  there  are  some  minimum values,   for   the   cable  that   connects   the   panels   and   battery,    this   is   a minimum  of 6 mm$^2$. For  the other sections,  the minimum  is 4 mm$^2$.
 
-You  not  only  need  to  buy  equipment  to  transform   the  solar  energy  in electricity  and  
-store  it  for  use,  but  you  must  also  replace  and  maintain various  components  of the 
-system.
-The  problem  of  equipment  replacement  is  often  overlooked,  and  a  solar system  is 
-sometimes  implemented  without a  proper  maintenance  plan.
-In  order  to  calculate   the  real  cost  of  your   installation,   we  include   an 
-illustrative  example.
-The first  thing to do it is to calculate  the initial investment  costs.
+##   Cost of a solar installation
+
+While  solar  energy  itself  is  free,  the  equipment   needed  to  turn  it  into useful  electric  energy is not.
+
+You  not  only  need  to  buy  equipment  to  transform   the  solar  energy  in electricity  and  store  it  for  use,  but  you  must  also  replace  and  maintain various  components  of the system.  The  problem  of  equipment  replacement  is  often  overlooked,  and  a  solar system  is sometimes  implemented  without a  proper  maintenance  plan.  In  order  to  calculate   the  real  cost  of  your   installation,   we  include   an illustrative  example.  The first  thing to do it is to calculate  the initial investment  costs.
 
 
+![](imageserver/uploadimages/image137.png)
 
-Description
-60W     Solar     Panel (about $4/\/\/)
-30A  Regulator Wiring  (metres)
-50   Ah   Deep   Cycle Batteries
-Number 4
-
-1
-25
-
-6
-Unit Cost
-$300
-
-$100
-$1/metre
-
-$150
-Total
-Subtotal
-$1,200
-
-$100
-$25z
-
-$900
-$2,225
-
-I S. Cost of a solar installation              4 I
 
 The  calculation   of   the  investment   cost  is  relatively   easy  once  the  system
-has  been  dimensioned.
-You  just  need  to  add  the  price  for  each  piece  equipment   and  the  labour
-cost  to  install  and  wire  the  equipment  together.
-
-For  simplicity,  we  do  not  include  the  costs  of  transport  and  installation but you should 
- not overlook  them.
-To  figure  out  how  much  a  system  will  really  cost  to  operate  we  must estimate  how  
-long  each  part  will  last  and  how  often  you  must  replace  it. In accounting  terminology  
-this is known  as amomsanon.
+has  been  dimensioned.  You  just  need  to  add  the  price  for  each  piece  equipment   and  the  labour  cost  to  install  and  wire  the  equipment  together.  For  simplicity,  we  do  not  include  the  costs  of  transport  and  installation but you should  not overlook  them.  To  figure  out  how  much  a  system  will  really  cost  to  operate  we  must estimate  how   long  each  part  will  last  and  how  often  you  must  replace  it. In accounting  terminology  this is known  as ***amortization***.
 
 Our new table will look like this:
 
-
-
-Description
-
-60W          Solar Panel
-30A  Regulator Wiring  (metres)
-
-50Ah         Deep cycle batteries
-Number 4
-1
-25
-
-6
-Unit Cost
-$300
-
-$100
-$1/ metre
-$150
-
-Total
-Subtotal
-
-$1,200
-
-$100
-$25
-
-$900
-
-$2,225
-Lifetime(yrs)
-
-20
-
-5
-10
-
-5
-
-Annual  Cost
-Yearly Cost
-$60
-
-$20
-$2.50
-
-$180
+![](imageserver/uploadimages/image138.png)
 
 $262.50
 
 As  you  see,  once  the  first  investment  has  been  done,  an  annual  cost  of
-$262.50 is expected.
-
-The annual  cost  is an  estimation  of  the  required capital  per  year  to  replace the system 
-components  once  they reach  the end  of their  useful life.
+$262.50 is expected.  The annual  cost  is an  estimation  of  the  required capital  per  year  to  replace the system  components  once  they reach  the end  of their  useful life.
