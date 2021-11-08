@@ -335,682 +335,251 @@ MRTG  can  be  a little  confusing  to set  up, especially if you are  not famil
 
 RRD  is  short  for  Round  Robin  Database.  RRD  is  a  database  that  stores information   in   a   very   compact   way  that   does   not   expand   over   time. RRDtool  refers  to  a  suite  of  tools  that  allow  you  to  create  and  modify RRD databases,  as well as generate  useful  graphs  to  present  the data. It  is  used  to  keep  track  of  time-series  data  (such  as  network  bandwidth, machine  room   temperature,  or  server  load  average)  and  can  display  that data as  an  average over  time.
 
-Note   that   RRDtool   itself  does   not   contact   network   devices   to  retrieve data.  It is merely  a database  manipulation  tool. You  can  use  a  simple  wrapper  script  (typically  in  shell  or  Perl)  to  do  that work  for you.  RRDtool  is  also  used  by many  full  featured  front-ends  that present   you  with  a  
-friendly  web  interface  for  configuration   and  display. RRD    graphs  give  you  more  
-control  over  display  options  and  the  number of items available  on a  graph  as  compared  to 
-MRTG.
+Note   that   RRDtool   itself  does   not   contact   network   devices   to  retrieve data.  It is merely  a database  manipulation  tool. You  can  use  a  simple  wrapper  script  (typically  in  shell  or  Perl)  to  do  that work  for you.  RRDtool  is  also  used  by many  full  featured  front-ends  that present   you  with  a  friendly  web  interface  for  configuration   and  display. RRD    graphs  give  you  more  control over  display  options  and  the  number of items available  on a  graph  as compared  to MRTG.
 
-Di at    Up  Modems  i n  Use
-1o                 ....—       ......{.                                                             
-                          )
+![](imageserver/uploadimages/image151.png)
 
+RRHtool  is included  in  virtually  all  modern  Linux  distributions,  and  can be  downloaded  from  http://oss.oetiker.ch/rrdtool/
 
+**ntop**
 
-
-0   06:  00
-B   Node as     Cu r rent:
-
-12: 00                    18: 00                    00: 00
-3  Average:    3. 64    Naximum:      1 0
-06:  00
-Pigure PM    8.  RRDtool gives  you a lot of flexibility  in how  your  collected network  data  
-may  be  displayed.
-
-9.Trending tools     23
-
-RRHtool  is included  in  virtually  all  modern  Linux  distributions,  and  can be  downloaded  
-from  http://oss.oetiker.ch/rrdtool/
-
-ntop
-For   historical   trafhc   analysis   and    usage,   you   will   certainly   want   to 
-investigate  ntop.
-This   program   builds   a   detailed   real-time   report   of  observed   network trafhc,   
-displayed   in   your   web   browser.   It  integrates   with   rrdtool,   and makes graphs  and  
-charts  visually depicting  how the network is being used. On  very  busy  networks,  ntop  can  
-use  a  lot of  CPU  and  disk space,  but  it gives you extensive insight  into how your network  
-is being  used. It runs  on Linux,  BSD,  Mac OS X, and Windows.
+For   historical   traffic  analysis   and    usage,   you   will   certainly   want   to 
+investigate  ntop.  This   program   builds   a   detailed   real-time   report   of  observed   network traffic, displayed   in   your   web   browser.   It  integrates   with   rrdtool,   and makes graphs  and charts  visually depicting  how the network is being used. On  very  busy  networks,  ntop  can use  a  lot of  CPU  and  disk space,  but  it gives you extensive insight  into how your network is being  used. It runs  on Linux,  BSD,  Mac OS X, and Windows.
 
 Some  of its  more  useful  features  include:
 
-Traffic   display   can   be   sorted   by   various   criteria   (source,   destination, protocol, 
- MAC address,  etc.).
+Traffic   display   can   be   sorted   by   various   criteria   (source,   destination, protocol, MAC address,  etc.).
 
 Traffic statistics  grouped  by protocol  and  port  number.
 
-An  IP  traffic  matrix  which  shows  connections  between  machines  Network flows   for   
-routers   or  switches   that  support   the   NetFlow   protocol   Host operating   system    
-identification,   P2P   traffic,    identification,   numerous graphical  charts,  Perl,  PHP,  and 
- Python API.
+An  IP  traffic  matrix  which  shows  connections  between  machines  Network flows   for routers   or  switches   that  support   the   NetFlow   protocol   Host operating   system identification,   P2P   traffic,    identification,   numerous graphical  charts,  Perl,  PHP,  and Python API.
 
 ntop   is   available   from   http://www.ntop.org/   and   is   available   for   most
-operating  systems.
-It  is  often  included  in  many  of  the  popular  Linux  distributions,  including
-RedHat,  Debian,  and  Ubuntu.
+operating  systems.  It  is  often  included  in  many  of  the  popular  Linux  distributions,  including RedHat,  Debian,  and  Ubuntu.
 
-While  it  can  be  left  running  to  collect  historical  data,  ntop  can  be  fairly CPU   
-intensive,  depending on the amount  of traffic observed.
+While  it  can  be  left  running  to  collect  historical  data,  ntop  can  be  fairly CPU   intensive,  depending on the amount  of traffic observed.
 
-If  you  are  going  to  run  it  for  long  periods  you  should  monitor  the  CPU utilisation  
-of the monitoring  machine.
-
-24            16. NETWORK  MONITORING
-
-GI obal TCP..'UDP Protoc of Distribution
+If  you  are  going  to  run  it  for  long  periods  you  should  monitor  the  CPU utilisation  of the monitoring  machine.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure PM   9: ntop  displays a wealth of information  about how your  network is utilised  by  
-various clients and servers.
+![](imageserver/uploadimages/image152.png)
 
 The  main  disadvantage  of  ntop  is  that  it  does  not  provide  instantaneous
-information,  only  long-term  totals  and  averages.
-This   can   make   it   difhcult    to   use   to   diagnose   a   problem   that   starts
-suddenly.
+information,  only  long-term  totals  and  averages.  This   can   make   it   difhcult    to   use   to   diagnose   a   problem   that   starts suddenly.
 
-Cacti
+**Cacti**
+
 http://www.cacti.net/
-Cacti  is a front-end  for  RRDtool.  It stores  all of  the necessary  information to create  
-graphs  in a  MyS@L  database.  The front-end  is written  in  PHP.
 
-Cacti  does  the  work  of  maintaining  graphs,  data  sources,  and  handles  the actual  data 
-gathering.
-There   is  support  for  SNMP  devices,  and   custom   scripts  can   easily  be written  to  
-poll virtually  any conceivable  network event.
+Cacti  is a front-end  for  RRDtool.  It stores  all of  the necessary  information to create  graphs  in a  MySQL  database.  The front-end  is written  in  PHP.
 
-9.Trending tools     25
+Cacti  does  the  work  of  maintaining  graphs,  data  sources,  and  handles  the actual  data gathering.  There   is  support  for  SNMP  devices,  and   custom   scripts  can   easily  be written  to  poll virtually  any conceivable  network event.
+
+![](imageserver/uploadimages/image153.png)
 
 
+Cacti   can   be   somewhat   confusing   to   configure,   but   once   you   work through   the  documentation   and   examples,   it  can  yield  very  impressive graphs. There  are  hundreds  of  templates  for  various  systems  available  on  the  cacti website,  and the code  is  under  rapid development.
 
+**NetFlow**
 
-
-Filter  by  host:          M*PR0W (
-
-P resets:     Last Day                    F ro m:   2006-09-2 6 08 3 4             yp:   200 6-0 
-9-27 08 34
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Cacti   can   be   somewhat   confusing   to   configure,   but   once   you   work through   the  
-documentation   and   examples,   it  can  yield  very  impressive graphs.
-There  are  hundreds  of  templates  for  various  systems  available  on  the  cacti website,  and 
- the code  is  under  rapid development.
-
-NetFlow
-NetFlow  is  a  protocol  for  collecting   IP  traffic  information   invented   by Cisco. From  
-the Cisco website:
+NetFlow  is  a  protocol  for  collecting   IP  traffic  information   invented   by Cisco. From  the Cisco website:
 
 Cisco   IOS   NetFlow   efhciently   provides   a   key   set   of   services   for   IP 
-applications,   including  network  traffic  accounting,   usage-based   network billing,    
-network    planning,    security,    Denial    of    Service    monitoring capabilities,  and  
-network  monitoring.
-NetFlow    provides    valuable    information    about    network    users    and applications,  
-peak  usage  times,  and  traffic  routing.
+applications,   including  network  traffic  accounting,   usage-based   network billing,    network    planning,    security,    Denial    of    Service    monitoring capabilities,  and  network  monitoring. NetFlow    provides    valuable    information    about    network    users    and applications,   peak  usage  times,  and  traffic  routing.
 
-26            16. NETWORK  MONITORING
+Cisco  routers  can  generate  NetFlow  information  which  is  available  from the   router   in   the   form   of   UDP    packets.   NetFlow   is   also   less   CPU- intensive   on   Cisco   routers   than   using   SNMP.   It   also   provides   more granular  information  than  SNMP,  letting  you  get  a  more  detailed  picture of  port  and   protocol   usage.This   information  is  collected   by  a  NetFlow collector  that stores  and  presents  the data as  an  aggregate  over  time.  By  analysing  flow  data,  one  can  build  a  picture  of  traffic  flow  and  traffic volume  in a  network  or  on  a  connection.  There  are  several  commercial and  free  NetFlow collectors  available.  Ntop  is  one  free  tool  that  can  act  as a  NetFlow  collector  and  probe.  
+Another  is  Flowc  (see  below).  It  can  also be  desirable  to  use  Netflow  as  a spot  check  tool,  by just  looking at a quick snapshot   of   data   during   a   network   crisis.   Think  of   NetFlow   as   an alternative   to   SNMP   for   Cisco   devices.   For   more   information  about NetFlow,  see http://en.wikipedia.org/wiki/Netflow
 
-Cisco  routers  can  generate  NetFlow  information  which  is  available  from the   router   in   
-the   form   of   UDP    packets.   NetFlow   is   also   less   CPU- intensive   on   Cisco   
-routers   than   using   SNMP.   It   also   provides   more granular  information  than  SNMP,  
-letting  you  get  a  more  detailed  picture of  port  and   protocol   usage.This   information   
-is  collected   by  a  NetFlow collector  that stores  and  presents  the data as  an  aggregate  
-over  time.
-By  analysing  flow  data,  one  can  build  a  picture  of  trafhc  flow  and  trafhc volume  in  
-a  network  or  on  a  connection.  There  are  several  commercial and  free  NetFlow collectors  
-available.  Ntop  is  one  free  tool  that  can  act  as a  NetFlow  collector  and  probe.  
-Another  is  Flowc  (see  below).  It  can  also be  desirable  to  use  Netflow  as  a spot  check 
- tool,  by just  looking at a quick snapshot   of   data   during   a   network   crisis.   Think   
-of   NetFlow   as   an alternative   to   SNMP   for   Cisco   devices.   For   more   information  
- about NetFlow,  see http://en.wikipedia.org/wiki/Netflow
+**Flowc**
 
-Flowc
-http://netacad.kiev.ua/flowc/.  Flowc  is  an  open  source  NetFlow  collector (see  NetFlow  
-above).  It  is  lightweight  and  easy  to  configure.  Flowc  uses  a MyS@L  database  to  store  
-aggregated   traffic  information.  Therefore,   it  is possible  to generate  your  own  reports  
-from  the data  using SQL,  or  use  the included  report  generators.  The  built-in  report  
-generators  produce  reports in  HTML,  plain  text or a graphical  format.
+http://netacad.kiev.ua/flowc/.  Flowc  is  an  open  source  NetFlow  collector (see  NetFlow  above).  It  is  lightweight  and  easy  to  configure.  Flowc  uses  a MySQL  database  to  store  aggregated   traffic  information.  Therefore,   it  is possible  to generate  your  own  reports  from  the data  using SQL,  or  use  the included  report  generators.  The  built-in  report  generators  produce  reports in  HTML,  plain  text or a graphical  format.
 
 
+![](imageserver/uploadimages/image154.png)
+
+The  large  gap  in  data  probably  indicates  a  network  outage. Trending  tools typically will  not  notify you of outages,  but  merely log the occurrence. To  be  notified  when  network  problems  occur,  use  a  realtime  monitoring tool such  as  Nagios.
+
+**SmokePing**
+
+http://oss.oetiker.ch/smokeping/.      SmokePing      is      a      deluxe      latency measurement  tool written  in  Perl.  It  can  measure,   store  and  display  latency,  latency  distribution  and  packet loss all on a single  graph. SmokePing    uses   the   RRDtool   for   data   storage,    and   can   draw   very informative  graphs  that  present  up  to  the  minute  information  on  the  state of your  network  connection.
+
+It  is  very  useful  to  run  SmokePing  on  a  host  with  good  connectivity  to your  entire  network.  Over  time,  trends  are  revealed  that  can  point  to  all sorts  of network problems.  Combined  with  MRTG  or  Cacti,  you  can  observe  the  effect  that  network congestion  has on packet loss and latency.
+
+SmokePing  can  optionally  send  alerts  when  certain  conditions   are  met, such  as  when  excessive  packet  loss is seen  on a  link for  an extended  period of  time. An example  of SmokePing in action  is shown  in  Figure  NM  12.
 
 
-1.3 M
+![](imageserver/uploadimages/image155.png)
 
-1.1 M
+**EtherApe**
 
-y               0 . 8  R
-
-
-
-
-O.3 M
-
-0
-
-Traffic  counter   SeoialB
-
-
-
-
-
-
-
-
-
-
-
-
-
-07     08     09     10     11     12     13    14     15     16     17     18     19     20     21 
-    22     23     00     01     02     03     04     08     06
-%  Inconi ng  t   aF* i c                                                   Last  update:   20  
-January  06: 43
-■  Outgoing t a££ic
-
-Pigure PM   11. A typical flow chart generated  by  Flowc.
-
-The  large  gap  in  data  probably  indicates  a  network  outage. Trending  tools typically will  
-not  notify you of outages,  but  merely log the occurrence.
-
-9.Trending tools     27
-
-To  be  notified  when  network  problems  occur,  use  a  realtime  monitoring tool such  as  
-Nagios.
-
-SmokePing
-http://oss.oetiker.ch/smokeping/.      SmokePing      is      a      deluxe      latency
-measurement  tool written  in  Perl.
-It  can  measure,   store  and  display  latency,  latency  distribution  and  packet
-loss all on a single  graph.
-SmokePing    uses   the   RRDtool   for   data   storage,    and   can   draw   very informative  
-graphs  that  present  up  to  the  minute  information  on  the  state of your  network  
-connection.
-
-It  is  very  useful  to  run  SmokePing  on  a  host  with  good  connectivity  to your  entire  
-network.  Over  time,  trends  are  revealed  that  can  point  to  all sorts  of network problems.
-Combined  with  MRTG  or  Cacti,  you  can  observe  the  effect  that  network congestion  has on 
-packet loss and latency.
-
-SmokePing  can  optionally  send  alerts  when  certain  conditions   are  met, such  as  when  
-excessive  packet  loss is seen  on a  link for  an extended  period of  time. An example  of 
-SmokePing in action  is shown  in  Figure  NM  12.
-
-Last 16 Hours
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ldlan  Ping  RTT   ( avg  339, 9  ns )      0    0    0   1/20     B 2/20     ■  3/20     B 4/20    
- B 10/20     B 19/20             avg  pk9  los  s :   0,
-
-
-
-Figure  PM    12:  SmobePing can  Simultaneously display packet  lOsS  and latency spreads  in  a 
-Single  graph.
-
-28              16. NETWORK  MONITORING
-
-EtherApe
 http://etherape.sourceforge.net/
-EtherApe  displays  a  graphical  representation  of  network  traffic.  Hosts  and links  change  
-size  depending   on  the  amount  of  traffic  sent  and  received. The colours  change  to  
-represent  the protocol  most  used.  As with  wireshark and   tcpdump,  data  can  be  captured   
-"off  the  wire”  from   a  live  network connection   or  read  from   a  tcpdump  capture   file. 
- EtherApe  doesn't  show quite  as  much  detail  as  ntop,  but  its  resource  requirements  are  
-much  lighter.
+EtherApe  displays  a  graphical  representation  of  network  traffic.  Hosts  and links  change  size  depending   on  the  amount  of  traffic  sent  and  received. The colours  change  to  represent  the protocol  most  used.  As with  wireshark and   tcpdump,  data  can  be  captured   "off  the  wire”  from   a  live  network connection   or  read  from   a  tcpdump  capture   file.  EtherApe  doesn't  show quite  as  much  detail  as  ntop,  but  its  resource  requirements  are  much  lighter.
 
+**iptraf**
 
-http://iptraf.seul.org/
-IPTraf   is  a  lightweight   but   powerful   LAN   monitor.   It  has   an   ncurses interface  
-and  runs  in  a  command  shell. IPTraf takes  a  moment  to  measure observed   traffic,   and   
-then   displays   various   network  statistics   including TCP  and  UDP  connections,  ICMP  and  
-OSPF  information,  traffic  flows, IP  checksum  errors,  and  more.  It  is  a  simple  to  use  
-program   that  uses minimal  system  resources. While  it does  not  keep  historical  data,  it 
+http://iptraf.seul.org/ 
+
+IPTraf   is  a  lightweight   but   powerful   LAN   monitor.   It  has   an   ncurses interface  and  runs  in  a  command  shell. IPTraf takes  a  moment  to  measure observed   traffic,   and   then   displays   various   network  statistics   including TCP  and  UDP  connections,  ICMP  and  OSPF  information,  traffic  flows, IP  checksum  errors,  and  more.  It  is  a  simple  to  use  program   that  uses minimal  system  resources. While  it does  not  keep  historical  data,  it 
 is  very useful  for displaying  an  instantaneous  usage  report.
 
-IPTrof
+![](imageserver/uploadimages/image156.png)
 
-
-
-TCP
-TCP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ents"I es  &aa&&aaa& E topped
-
-time:
-
-0:00
-
-I   Lip                              scrol I  vzr¥lou    WsoW    X—eXtS
-Figure  PM    lG:   iptra   s  statistical  breakdown  of traffic  by port.
-
-9.Trending tools     29
-
+**Agrus**
 
 http://qosient.com/argus/.
-Argus  stands  for  Audit  Record  Generation  and  Utilisation  System.  Argus is  also  the  name 
- of  the  mythological  Greek  god who  had  hundreds  of eyes.
 
-Prom  the  ArguS  w€bSlt6:
-Argus  generates  flow  statistics  such  as  connectivity,  capacity,  demand,  loss, delay,  and  
-jitter  on  a  per  transaction   basis.  Argus  can  be  used  to  analyse and   report   on   the 
-  contents   of   packet   capture   files   or   it   can   run   as   a continuous   monitor,  
-examining  data  from  a  live  interface;  generating   an audit  log  of all  the  network  
-activity  seen  in  the packet  stream.
-Argus   can   be  deployed   to  monitor   individual  end-systems,   or  an  entire enterprises   
-network   activity.   As   a   continuous   monitor,   Argus   provides both  push  and  pull  data 
- handling  models,   to  allow  flexible  strategies  for collecting    network   audit   data.   
-Argus   data   clients   support   a   range   of operations,    such   as   sorting,   
-aggregation,    archival   and   reporting.   Argus consists  of  two  parts:  a  master  collector 
- that  reads  packets  from  a  network device,   and   a  client   that  connects   to   the  
-master   and   displays  the   usage statistics.  Argus  runs  on BSD,  Linux,  and  most  other  
-UNIX systems.
+Argus  stands  for  Audit  Record  Generation  and  Utilisation  System.  Argus is  also  the  name  of  the  mythological  Greek  god who  had  hundreds  of eyes.
 
-NeTraMet
-http://www.caida.org/tools/measurement/netramet/ NeTraMet  is  another  popular  flow  analysis  
-tool.  Like  Argus,
-NeTraMet   consists   of   two   parts:   a   collector   that   gathers   statistics   via SNMP,  
-and  a  manager  that  specifies  which  flows  should  be  watched.
-Flows  are  specified  using  a simple  programming  language  that  defines  the addresses   used  
- on   either   end,   and   can   include   Ethernet,   IP,   protocol information,    or   other   
-identifiers.   NeTraMet   runs   on   DOS     and   most UNIX systems,  including  Linux  and  BSD.
+*From the Argus website: *
 
-10.    Throughput  testing
-How  fast  can  the network  go?
-What  is  the actual  usable capacity  of a particular  network  link?
-You  can  get  a  very  good  estimate  of  your  throughput  capacity  by flooding the  link with  
-traffic  and  measuring  how  long  it  takes  to  transfer  the data.
+Argus  generates  flow  statistics  such  as  connectivity,  capacity,  demand,  loss, delay,  and  jitter  on  a  per  transaction   basis.  Argus  can  be  used  to  analyse and   report   on   the  contents   of   packet   capture   files   or   it   can   run   as   a continuous   monitor,  examining  data  from  a  live  interface;  generating   an audit  log  of all  the network  activity  seen  in  the packet  stream.  Argus   can   be  deployed   to  monitor   individual  end-systems,   or  an  entire enterprises   network   activity.   As   a   continuous   monitor,   Argus   provides both  push  and  pull  data handling  models,   to  allow  flexible  strategies  for collecting    network   audit   data.    Argus   data   clients   support   a   range   of operations,    such   as   sorting,   aggregation,    archival   and   reporting.   Argus consists  of  two  parts:  a  master  collector that  reads  packets  from  a  network device,   and   a  client   that  connects   to   the  master   and   displays  the   usage statistics.  Argus  runs  on BSD,  Linux,  and most  other  UNIX systems.
 
-30              16. NETWORK  MONITORING
+**NeTraMet**
 
+http://www.caida.org/tools/measurement/netramet/ NeTraMet  is  another  popular  flow  analysis  tool.  Like  Argus,  NeTraMet   consists   of   two   parts:   a   collector   that   gathers   statistics   via SNMP, and  a  manager  that  specifies  which  flows  should  be  watched.  Flows  are  specified  using  a simple  programming  language  that  defines  the addresses   used  on   either   end,   and   can   include   Ethernet,   IP,   protocol information,    or   other   identifiers.   NeTraMet   runs   on   DOS     and   most UNIX systems,  including  Linux  and  BSD.
 
+##    Throughput  testing
+
+How  fast  can  the network  go? What  is  the actual  usable capacity  of a particular  network  link?  You  can  get  a  very  good  estimate  of  your  throughput  capacity  by flooding the  link with   traffic  and  measuring  how  long  it  takes  to  transfer  the data.
+
+![](imageserver/uploadimages/image157.png)
+
+While  there  are  web  pages  available  that  will  perform  a  “speed  test”  in  your browser  (such  as  http://www.dslreports.com/stest  or http://speedtest.net/), these  tests  are  increasingly   inaccurate  as  you  get  further  from  the  testing source.  Even worse,  they do not  allow  you to test  the speed  of a given  link, but  only  the speed of your  link  to  a particular  site on the Internet.  Here  are  a  few  tools  that  will  allow  you  to perform  throughput  testing  on your  own  networks.
+
+**ttcp**
+
+Now  a  standard  part  of  most  Unix-like  systems,  ttcp  is  a  simple  network performance  testing tool. One  instance  is  run  on  either  side of  the link you want  to  test. The first  node  runs in  receive  mode,  and  the other transmits:
+
+![](imageserver/uploadimages/image158.png)
+
+![](imageserver/uploadimages/image159.png)
+
+After  collecting  data  in  one  direction,  you  should  reverse  the  transmit  and receive  partners  to  test  the  link  in  the  other  direction.  It  can  test  UDP     as well  as  TCP  streams,   and  can  alter  various   TCP     parameters   and   buffer lengths   to   give   the   network   a   good  workout.   It   can   even   use  a   user- supplied  data  stream  instead  of  sending  random  data.  Remember  that  the speed  readout  is  in  kilobytes,  not  kilobits.  Multiply  the  result  by  8  to  find the  speed  in  kilobits  per  second.  The  only real  disadvantage  to  ttcp  is  that it  hasn't  been  developed  in  years.  Fortunately,   the code  has  been  released in  the  public domain  and is  freely  available.  Like  ping  and  traceroute,  ttcp is  found  as  a standard  tool on many  systems.
+
+**iperf**
+
+http://iperf.sourceforge.net/. Much  like  ttcp,  iperf  is  a  command  line  tool for  estimating  the  throughput  of  a  network  connection.  It  supports  many of  the  same  features  as   ttcp,  but  uses  a  “client”  and  “server”  model  instead of a  “receive”  and  “transmit”  pair. To  run  iperf,  launch  a server  on one  side and  a client  on the other:
+
+![](imageserver/uploadimages/image160.png)
 
 
 
+The  server  side  will  continue   to  listen  and  accept  client  connections   on port  5001  until  you  hit  control-C  to  kill  it.  This  can  make  it  handy  when running  multiple  test runs  from  a  variety  of locations.  The  biggest  difference  between  ttcp  and  iperf  is  that  iperf  is  under  active development,   and  has  many  new  features  (including  IPv6  support).   This makes   it   a   good   choice   as   a   performance    tool   when   building    new networks.
 
 
+**bing**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-is  one
-always  give  you  an accurate picture  of network performance.
-’on I
-
-While  there  are  web  pages  available  that  will  perform  a  “speed  test”  in  your browser  
-(such  as  http://www.dslreports.com/stest  or http://speedtest.net/), these  tests  are  
-increasingly   inaccurate  as  you  get  further  from  the  testing source.  Even worse,  they do 
-not  allow  you to test  the speed  of a given  link, but  only  the speed of your  link  to  a 
-particular  site on the Internet.
-Here  are  a  few  tools  that  will  allow  you  to perform  throughput  testing  on
-your  own  networks.
-
-MCI
-Now  a  standard  part  of  most  Unix-like  systems,  ttcp  is  a  simple  network performance  
-testing tool.
-One  instance  is  run  on  either  side of  the link you want  to  test.
-The first  node  runs in  receive  mode,  and  the other transmits:
-
-node  a$  ttcp -r  -s
-nodes b$  ttcp  -t -s  node  a
-ttcp-t:  buflen ——8192,  nbuf——20d8,  align——1638f0,  port——5001  tcp  ->   node   a
-ttcp-t:  socket
-ttcp-t:  connect
-ttcp-t:  1G7ZZ21 € bytes  in 2k9. lJ   real Seconds  ——  Gh. ZG KBB ec  +++
-
-I 0.Throughput testing          3 I
-
-ttcp-t:  2048  ISO  calls,  mseclcall  ——  124. SZ,  callslsec  ——  8.22
-ttcp-t:  0.Ouser  0.2sys  4:09real  0%  0i+0d 0WdXFSS  0+Opf 7533+OCSW
-
-After  collecting  data  in  one  direction,  you  should  reverse  the  transmit  and receive  
-partners  to  test  the  link  in  the  other  direction.  It  can  test  UDP     as well  as  TCP  
-   streams,   and  can  alter  various   TCP     parameters   and   buffer lengths   to   give   
-the   network   a   good  workout.   It   can   even   use  a   user- supplied  data  stream  
-instead  of  sending  random  data.  Remember  that  the speed  readout  is  in  kilobytes,  not  
-kilobits.  Multiply  the  result  by  8  to  find the  speed  in  kilobits  per  second.  The  only 
- real  disadvantage  to  ttcp  is  that it  hasn't  been  developed  in  years.  Fortunately,   the 
- code  has  been  released in  the  public domain  and is  freely  available.  Like  ping  and  
-traceroute,  ttcp is  found  as  a standard  tool on many  systems.
-
-iperf
-http://iperf.sourceforge.net/. Much  like  ttcp,  iperf  is  a  command  line  tool for  estimating 
- the  throughput  of  a  network  connection.  It  supports  many of  the  same  features  as  
-ttcp,  but  uses  a  “client”  and  “server”  model  instead of a  “receive”  and  “transmit”  
-pair.
-To  run  iperf,  launch  a server  on one  side and  a client  on the other:
-
-node  a$ iperf -s
-nodeqb$  iperf -c nodeqa
-
-Client  connecting  to  node  a,  TCP  port h001 TCP  window  SiS6:  1€. 0 KByte  (default)
-
-[5]   local  10. 15. €. 1 port  1212 connected  with  10. 15. €.23 port 5001 [ID] Interval       
-TranSfer                  Bandwidth
-[5]   0.0-11.3 sec 7G8 KByteS            558 Kbitslsec
-The  server  side  will  continue   to  listen  and  accept  client  connections   on port  5001  
-until  you  hit  control-C  to  kill  it.  This  can  make  it  handy  when running  multiple  test 
- runs  from  a  variety  of locations.
-The  biggest  difference  between  ttcp  and  iperf  is  that  iperf  is  under  active 
-development,   and  has  many  new  features  (including  IPv6  support).   This makes   it   a   
-good   choice   as   a   performance    tool   when   building    new networks.
-
-32              16. NETWORK  MONITORING
-
-bing
 http://fgouget.free.fr/bing/indx-en.shtml
-Rather  than  flood  a  connection   with  data  and  see  how  long  the  transfer takes  to  
-complete,  bing  attempts  to  estimate  the  available  throughput  of  a point-to-point  
-connection  by  analysing  round  trip  times  for  various  sized ICMP  packets.  While   it  is  
-not  always  as  accurate   as  a  flood  test,   it  can provide  a  good estimate  without  
-transmitting  a  large  number  of  bytes.
-Since   bing   works   using   standard   ICMP   echo   requests,   it  can   estimate available  
-bandwidth  without  the  need  to  run  a  special  client  on  the  other end,   and  can   even   
-attempt   to  estimate   the  throughput   of   links   outside your  network.  Since  it  uses  
-relatively  little  bandwidth,  bing  can  give  you  a rough  idea of network  performance  
-without  running  up  the  charges  that  a flood  test  would certainly  incur.
+Rather  than  flood  a  connection   with  data  and  see  how  long  the  transfer takes  to  complete,  bing  attempts  to  estimate  the  available  throughput  of  a point-to-point  connection  by  analysing  round  trip  times  for  various  sized ICMP  packets.  While   it  is  not  always  as  accurate   as  a  flood  test,   it  can provide  a  good estimate  without  transmitting  a  large  number  of  bytes. Since   bing   works   using   standard   ICMP   echo   requests,   it  can   estimate available  bandwidth  without  the  need  to  run  a  special  client  on  the  other end,   and  can   even   attempt   to  estimate   the  throughput   of   links   outside your  network.  Since  it  uses  relatively  little  bandwidth,  bing  can  give  you  a rough  idea of network  performance  without  running  up  the  charges  that  a flood  test  would certainly  incur.
 
-11.   Realtime tools and intrusion  detection
+##   Realtime tools and intrusion  detection
+
 It   is   desirable   to   find  out   when   people   are   trying   to   break   into   your 
-network,  or when  some part  of the network  has  failed.
-Because   no  system   administrator   can   be   monitoring   a   network   all   the time,  there 
- are  programs  that  constantly  monitor  the status  of  the  network and  can  send alerts when  
-notable  events occur.
+network,  or when  some part  of the network  has  failed. Because   no  system   administrator   can   be   monitoring   a   network   all   the time,  there are programs  that  constantly  monitor  the status  of  the  network and  can  send alerts when  notable  events occur.
 
 The following  are some open  source  tools  that can  help  perform  this  task.
 
-Snort
-Snort  (http://www.snort.org/)  is  a  packet  sniffer  and  logger  which  can  be used  as  a  
-lightweight  network  intrusion  detection  system.
-It  features  rule-based  logging  and  can  perform  protocol  analysis,  content searching,  and  
-packet  matching.
+**Snort**
+
+Snort  (http://www.snort.org/)  is  a  packet  sniffer  and  logger  which  can  be used as  a  lightweight  network  intrusion  detection  system. It  features  rule-based  logging  and  can  perform  protocol  analysis,  content searching,  and   packet  matching.
 
 It  can  be  used  to  detect  a  variety  of  attacks  and  probes,  such  as  stealth port   
-scans,   CGI     attacks,   SMB    probes,   OS    fingerprinting  attempts,   and many  other 
-kinds  of anomalous  trafhc patterns.
-Snort  has  a  real-time  alert  capability  that  can  notify  administrators  about problems  as  
-they occur  with  a  variety  of methods.
-Installing  and  running  Snort  is  not  trivial,  and  depending  on  the  amount of network  
-trafhc,  will  likely  require  a  dedicated  monitoring  machine  with considerable  resources.
-
-I I . Realtime tools and intrusion detection          33
+scans,   CGI     attacks,   SMB    probes,   OS    fingerprinting  attempts,   and many other kinds  of anomalous  trafhc patterns.  Snort  has  a  real-time  alert  capability  that  can  notify  administrators  about problems  as  they occur  with  a  variety  of methods.  Installing  and  running  Snort  is  not  trivial,  and  depending  on  the  amount of network  traffic,  will  likely  require  a  dedicated  monitoring  machine  with considerable  resources.
 
 Fortunately,    Snort    is    very    well   documented    and    has    a   strong   user 
-community.
-By   implementing    a   comprehensive    Snort    rule   set,    you   can    identify unexpected  
- behaviour   that   would   otherwise   mysteriously   eat   up   your Internet  bandwidth.
-See    http://snort.org/docs/    for    an    extensive    list    of    installation     and 
-configuration  resources.
+community. By   implementing    a   comprehensive    Snort    rule   set,    you   can    identify unexpected  behaviour   that   would   otherwise   mysteriously   eat   up   your Internet  bandwidth.  See    http://snort.org/docs/    for    an    extensive    list    of    installation     and configuration  resources.
 
-Apache:  modpsecurity
-ModSecurity   (http://www.modsecurity.org/)  is   an   open   source   intrusion detection  and  
-prevention  engine  for  web  applications.
-This  kind  of security  tool  is  also  known  as  a web  application  firewall. ModSecurity     
-increases    web    application     security    by    protecting    web applications  from  known  
-and  unknown  attacks.
-It  can   be   used   on  its   own,   or   as   a   module   in   the  Apache  web   server
-(http://www.apache.org/).
+**Apache:  mod_security**
 
-There  are  several  sources  for  updated  modpsecurity  rules  that  help  protect against  the 
-latest  security  exploits.
-One     excellent    resource    is    GotRoot,    which    maintains    a    huge    and 
-frequently  updated  repository  of rules: 
-http://www.atomicorp.com/wiki/index.php/AtomicpModSecuritypRules Web  application  security  is 
-important  in defending  against  attacks  on your web  server,  which  could  result  in  the  
-theft  of  valuable  or  personal  data,  or in  the  server  being  used  to  launch  attacks  or  
-send  spam  to  other  Internet users.   As   well   as   being   damaging    to   the   Internet   
- as   a   whole,   such intrusions  can  seriously  reduce  your  available  bandwidth.
+ModSecurity   (http://www.modsecurity.org/)  is   an   open   source   intrusion detection  and  prevention  engine  for  web  applications.
+This  kind  of security  tool  is  also  known  as  a web  application  firewall.  ModSecurity     increases    web    application     security    by    protecting    web applications  from  known  and  unknown  attacks. It  can   be   used   on  its   own,   or   as   a   module   in   the  Apache  web   server (http://www.apache.org/).
 
-Nagios
-Nagios  (http://nagios.org/)  is  a  program   that  monitors  hosts  and  services on your  
-network,  notifying  you immediately  when  problems  arise.
-It  can  send  notifications  via  email,  SMS,  or  by  running  a  script,  and  will send  
-notifications  to  the  relevant  person  or  group  depending  on  the nature of   the   problem.  
- Nagios   runs   on   Linux   or   BSD,   and   provides   a   web interface   to   show   
-up-to-the-minute  system   status.   Nagios   is  extensible, and  can  monitor   the  status  of  
-virtually   any  network  event.  It  performs checks  by  running  small  scripts  at  regular  
-intervals,  and  checks  the  results against  an  expected  response.
+There  are  several  sources  for  updated  mod_security  rules  that  help  protect against  the  latest  security  exploits. One     excellent    resource    is    GotRoot,    which    maintains    a    huge    and  frequently  updated  repository  of rules: 
+http://www.atomicorp.com/wiki/index.php/AtomicpModSecuritypRules Web  application  security  is important  in defending  against  attacks  on your web  server,  which  could  result  in  the   theft  of  valuable  or  personal  data,  or in  the  server  being  used  to  launch  attacks  or   send  spam  to  other  Internet users.   As   well   as   being   damaging    to   the   Internet   as   a   whole,   such intrusions  can  seriously  reduce  your  available  bandwidth.
 
-34            16. NETWORK  MONITORING
+**Nagios**
 
-This  can  yield  much  more  sophisticated   checks   than  a  simple  network probe.  For  
-example,  ping  may  tell  you  that  a  machine  is  up,  and  nmap may  report  that  a  TCP   
-port  responds  to  requests,  but  Nagios  can  actually retrieve   a   web   page   or   make   a 
-  database   request,   and   verify   that   the response  is not an  error.
+Nagios  (http://nagios.org/)  is  a  program   that  monitors  hosts  and  services on your  network,  notifying  you immediately  when  problems  arise. It  can  send  notifications  via  email,  SMS,  or  by  running  a  script,  and  will send  notifications  to  the  relevant  person  or  group  depending  on  the nature of   the   problem.  Nagios   runs   on   Linux   or   BSD,   and   provides   a   web interface   to   show   up-to-the-minute  system   status.   Nagios   is  extensible, and  can  monitor   the  status  of  virtually   any  network  event.  It  performs checks  by  running  small  scripts  at  regular  intervals,  and  checks  the  results against  an  expected  response.
+
+This  can  yield  much  more  sophisticated   checks   than  a  simple  network probe.  For  example,  ping  may  tell  you  that  a  machine  is  up,  and  nmap may  report  that  a  TCP   port  responds  to  requests,  but  Nagios  can  actually retrieve   a   web   page   or   make   a database   request,   and   verify   that   the response  is not an  error.
+
+![](imageserver/uploadimages/image161.png)
+
+Nagios  can  even  notify  you  when  bandwidth  usage,  packet  loss,  machine room  temperature,  or  other  network  health  indicator  crosses  a  particular threshold. This  can  give  you  advance  warning  of  network  problems,  often  allowing you to  respond  to  the problem  before  users have a chance  to complain.
+
+**Zabbix**
+
+Zabbix   (http://www.zabbix.org/)   is  an   open   source   realtime   monitoring tool  that  is  something  of  a  hybrid  between   Cacti  and  Nagios.  It  uses  a SQL    database  for  data  storage,  has  its  own  graph  rendering  package,  and performs  all  of  the  functions  you  would  expect  from  a  modern  realtime monitor    (such    as    SNMP    polling    and    instant    notification    of    error conditions).  Zabbix  is  released  under  the  GNU   General  Public License.
 
 
+##   Other  useful tools
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Pigure PM    15:  Nagios  beeps  you  informed the  moment  a network  fault  or Service  outage  
-occurs.
-
-Nagios  can  even  notify  you  when  bandwidth  usage,  packet  loss,  machine room  temperature,  
-or  other  network  health  indicator  crosses  a  particular threshold.
-This  can  give  you  advance  warning  of  network  problems,  often  allowing you to  respond  to 
- the problem  before  users have a chance  to complain.
-
-Zabbix
-Zabbix   (http://www.zabbix.org/)   is  an   open   source   realtime   monitoring tool  that  is  
-something  of  a  hybrid  between   Cacti  and  Nagios.  It  uses  a SQL    database  for  data  
-storage,  has  its  own  graph  rendering  package,  and performs  all  of  the  functions  you  
-would  expect  from  a  modern  realtime monitor    (such    as    SNMP    polling    and    
-instant    notification    of    error conditions).  Zabbix  is  released  under  the  GNU    
-General  Public License.
-
-
-12.   Other  useful tools
-12. Other  useful  tools              35
 There   are   thousands   of   free   network   monitoring    tools    that   fill   very 
-specialised  needs.  Here  are  a  few  of  our  favourites  that  don't  quite  fit  into the  
-above  categories.
+specialised  needs.  Here  are  a  few  of  our  favourites  that  don't  quite  fit  into the  above  categories.
 
-ngrep
-Ngrep   provides   most   of   GNU     grep's   pattern   matching   features,    but applies   
-them   to  network   traffic.   It  currently   recognises   IPv4   and   IPv6, TCP,   UDP,   ICMP, 
-  IGMP,   PPP,   SLIP,   FDDI,   Token   Ring,   and   much
-more.  As  it  makes  extensive  use  of   regular  expression  matches,  it  is  a  tool suited  
-to  advanced  users  or  those  that  have  a  good  knowledge  of  regular expressions.  You  
-don't  necessarily  need  to  be  a  regex  expert  to  be  able  to make  basic  use  of  ngrep.  
-For  example,  to  view  all  packets  that  contain  the string  GET    (presumably  HTTP 
-requests),  try  this:
+**ngrep**
 
+Ngrep   provides   most   of   GNU     grep's   pattern   matching   features,    but applies   them   to  network   traffic.   It  currently   recognises   IPv4   and   IPv6, TCP,   UDP,   ICMP, IGMP,   PPP,   SLIP,   FDDI,   Token   Ring,   and   much
+more.  As  it  makes  extensive  use  of   regular  expression  matches,  it  is  a  tool suited  to  advanced  users  or  those  that  have  a  good  knowledge  of  regular expressions.  You  don't  necessarily  need  to  be  a  regex  expert  to  be  able  to make  basic  use  of  ngrep.  For  example,  to  view  all  packets  that  contain  the string  GET    (presumably  HTTP requests),  try  this:
+
+
+```
 #  ngrep  -q GET
+```
 
-Pattern  matches  can  be  constrained  further  to  match  particular  protocols, ports,  or  
-other criteria  using  BPF  filters.  This  is  the filter  language  used  by common  packet  
-snifhng  tools,  such  as  tcpdump  and  snoop. To  view  GET or  POST strings sent to destination  
-port 80, use this command  line:
+Pattern  matches  can  be  constrained  further  to  match  particular  protocols, ports,  or  other criteria  using  BPF  filters.  This  is  the filter  language  used  by common  packet  sniffing  tools,  such  as  tcpdump  and  snoop. To  view  GET or  POST strings sent to destination  port 80, use this command  line:
 
-#  ngrep  -q  'GE    POST'port  80
+```
+#  ngrep  -q  'GET|POST' port  80
+```
 
-By  using  ngrep  creatively,   you  can  detect  anything  from  virus  activity  to spam  email. 
-You  can  download  ngrep  at http://ngrep.sourceforge.net/.
+By  using  ngrep  creatively,   you  can  detect  anything  from  virus  activity  to spam  email.  You  can  download  ngrep  at http://ngrep.sourceforge.net/.
 
-nmap/Zenmap
-nmap  is  a  network  diagnostic  tool  for  showing   the  state  and  availability  of network   
-ports  on  a  network   interface.  A   common  use  is  to  scan  a  network host  on  a  TCP/IP  
-network  for  what  ports  are  open,  thereby  allowing  one  to create  a  ”map”  of  the  
-network  services  that  the  machine  provides.  The  nmap tool  does   this   by  sending  
-specially  crafted  packets  to  a  target   network  host and  noticing  the  response(s).  For  
-example,  a web  server  with  an  open  port  80 but  no  running  web  server  will  respond  
-differently   to  an  nmap  probe   than one  that  not  only  has  the  port open  but  is  
-running  httpd.
-Similarly,  you will  get  a  different  response  to  a  port  that  is simply  shut  off vs.  one 
- that  is open  on a host  but  blocked  by a  firewall.
+**nmap/Zenmap**
 
-36            16. NETWORK  MONITORING
+nmap  is  a  network  diagnostic  tool  for  showing   the  state  and  availability  of network   ports  on  a  network   interface.  A   common  use  is  to  scan  a  network host  on  a  TCP/IP  network  for  what  ports  are  open,  thereby  allowing  one  to create  a  ”map”  of  the  network  services  that  the  machine  provides.  The  nmap tool  does   this   by  sending  specially  crafted  packets  to  a  target   network  host and  noticing  the  response(s).  For  example,  a web  server  with  an  open  port  80 but  no  running  web  server  will  respond  differently   to  an  nmap  probe   than one  that  not  only  has  the  port open  but  is  running  httpd.  Similarly,  you will  get  a  different  response  to  a  port  that  is simply  shut  off vs.  one  that  is open  on a host  but  blocked  by a  firewall.
 
-Over   time,   nmap   has   evolved   from    being   a   simple   port-scanner   to something  
-that  can  detect  OS   versions,  network  drivers,   the  type  of  NIC hardware   being  used  
-by  an  interface,  driver   versions,   etc.  In  addition   to scanning  individual   machines,   
-it  can  also  scan  entire  networks   of  hosts. This  does  mean  that  nmap  is  potentially  
-also  useful  by  malicious  network users  as   a  way   to   ”scope  out"   a  system   before   
-attacking   it.  Like  many diagnostic    tools,    nmap    can    be    used    for    good   or   
- ill    and    network administrators  would  do  well  to  be  aware  of  both  sides.  The  nmap  
-tool  is released   under   the  GPL    license   and   the  latest   version   can   be  found  at 
-http:IIwww.nmap.org.
+Over   time,   nmap   has   evolved   from    being   a   simple   port-scanner   to something  that  can  detect  OS   versions,  network  drivers,   the  type  of  NIC hardware   being  used  by  an  interface,  driver   versions,   etc.  In  addition   to scanning  individual   machines,  it  can  also  scan  entire  networks   of  hosts. This  does  mean  that  nmap  is  potentially  also  useful  by  malicious  network users  as   a  way   to   ”scope  out"   a  system   before   attacking   it.  Like  many diagnostic    tools,    nmap    can    be    used    for    good   or  ill    and    network administrators  would  do  well  to  be  aware  of  both  sides.  The  nmap  tool  is released   under   the  GPL    license   and   the  latest   version   can   be  found  at *http://www.nmap.org*.
 
-Zenmap
-Zenmap   is  a  cross-platform   GUI  for   nmap  which   runs   under  Linux, Windows,   Mac   OS  
- X,   BSD,   etc.   and   can   be   downloaded   from   the nmap.org site as well.
+**Zenmap**
 
-netcat
-Somewhat  between  nmap  and  tcpdump,  netcat  is  another  diagnostic  tool for  poking  and  
-prodding  at  ports  and  connections  on  a  network.  It  takes its  name  from  the  UNIX  
-cat(1)  utility,  which  simply  reads  out  whatever file   you   ask   it   to.   Similarly,   
-netcat   reads   and   writes   data   across   any arbitrary  TCP    or  UDP    port.  The netcat  
-utility  is  not  a packet  analyser  but works  on  the data(payload)  contained  in  the packets.
-For  example,  here  is  how  to  run  a  very  simple   l-line,   l-time  web  server with  
+Zenmap   is  a  cross-platform   GUI  for   nmap  which   runs   under  Linux, Windows,   Mac   OS   X,   BSD,   etc.   and   can   be   downloaded   from   the nmap.org site as well.
+
+**netcat**
+
+Somewhat  between  **nmap**  and  **tcpdump**,  **netcat**  is  another  diagnostic  tool for  poking  and  prodding  at  ports  and  connections  on  a  network.  It  takes its  name  from  the  UNIX  **cat(1)**  utility,  which  simply  reads  out  whatever file   you   ask   it   to.   Similarly,  netcat   reads   and   writes   data   across   any arbitrary  TCP    or  UDP    port.  The netcat  utility  is  not  a packet  analyser  but works  on  the data(payload)  contained  in  the packets.  For  example,  here  is  how  to  run  a  very  simple   l-line,   l-time  web  server with  
 netcat:
 
-[ echo  -ne  ”HTTPI1. 0  200  OHr!n!r!n ”;  cat  some.file;  }    nc  -1 8080
-The file  Some.ale W1l1  be  sent  to  the first  host  that  connects  to port  8080 on the system 
- running  netcat.
-The -1 command  tells  netcat  to  "listen”  on port  8080 and  wait  until  it  gets a connection.
-Once  it  does,  it  stops  blocking,  reads  the  data  off  the  pipe  and  sends  it  to the  
-client  connected  on  port  8080.  Some  other  good  examples  of  netcat usage  can  be  found  
-in  the Wikipedia  entry for  netcat: 
+![](imageserver/uploadimages/image162.png)
+
+The file  Some.file will be  sent  to  the first  host  that  connects  to port  8080 on the system  running  netcat.  The -1 command  tells  netcat  to  "listen”  on port  8080 and  wait  until  it  gets a connection.  Once  it  does,  it  stops  blocking,  reads  the  data  off  the  pipe  and  sends  it  to the  client  connected  on  port  8080.  Some  other  good  examples  of  netcat usage  can  be  found  in  the Wikipedia  entry for  netcat: 
+
 https://secure.wikimedia.org/wikipedia/en/wiki/Netcat#Examples
-You  can  download  the  latest  version  of netcat  from http://nc110.sourceforge.net/
-It is  available  under  a Permissive  Free  Software  License.
+
+You  can  download  the  latest  version  of netcat  from http://nc110.sourceforge.net/ It is  available  under  a Permissive  Free  Software  License.
 
 
-13.   What  is normal?
-I 3.What is normal! 37
+##   What  is normal?
 
-If   you  are  looking  for  a  definitive  answer  as  to  what  your  traffic  patterns should  
-look  like,  you  are  going  to  be  disappointed.  There  is  no  absolute right   answer   to   
-this   question,   but   given  some  work  you  can   determine what   is  normal  for  your  
-network.  While  every  environment   is  different, some   of   the   factors   that   can   
-influence   the   appearance   of   your   traffic patterns  are:
 
-•      The capacity  of your  Internet  connection
-•      The number  of users  that  have  access  to  the  network
-•      The social  policy  (byte  charging,  quotas,  honour  system,  etc.).
-•      The  number,  types,  and  level  of services  offered
-•      The    health    of    the    network    (presence    of    viruses,    excessive 
-broadcasts,   routing   loops,   open   email   relays,   denial   of   service attacks,  etc.).
-•      The competence  of your  computer  users
-•      The  location   and   configuration   of  control   structures   (firewalls, proxy servers,  
-caches,  and  so on)
+If   you  are  looking  for  a  definitive  answer  as  to  what  your  traffic  patterns should  look  like,  you  are  going  to  be  disappointed.  There  is  no  absolute right   answer   to   this   question,   but   given  some  work  you  can   determine what   is  normal  for  your  network.  While  every  environment   is  different, some   of   the   factors   that   can   influence   the   appearance   of   your   traffic patterns  are:
 
-This  is  not  a  definitive  list,  but  should  give  you  an  idea  of  how  a  wide range of 
-factors  can  affect  your  bandwidth  patterns.
-With this  in  mind, let's look  at  the topic of  baselines.
+ - The capacity  of your  Internet  connection
+ - The number  of users  that  have  access  to  the  network  
+ - The social  policy  (byte  charging,  quotas,  honour  system,  etc.).
+ - The  number,  types,  and  level  of services  offered
+ - The    health    of    the    network    (presence    of    viruses,    excessive  broadcasts,   routing   loops,   open   email   relays,   denial   of   service attacks, etc.).
+ - The competence  of your  computer  users
+ - The  location   and   configuration   of  control   structures   (firewalls, proxy servers,  caches,  and  so on)
 
-14.    Establishing  a baseline
-Since  every  environment   is  different,   you  need  to  determine  for  yourself what  your  
-traffic  patterns  look  like  under  normal  situations.  This  is  useful because   it   allows   
-you   to   identify   changes   over   time,   either   sudden   or gradual.   These   changes   
-may  in  turn  indicate   a  problem,   or   a  potential future  problem,  with  your  network.
-For  example,  suppose  that  your  network  grinds  to  a  halt,  and  you  are  not sure   of   
-the   cause.   Fortunately,   you   have   decided   to   keep   a   graph   of broadcasts   as   a 
-  percentage   of  the  overall   network   traffic.   If   this   graph shows  a  sudden  increase 
- in  the  amount  of  broadcast   trafhc,  it  may  mean that  your  network  has  been  infected  
-with  a virus.
-Without  an  idea  of  what  is  ”normal"   for  your  network  (a  baseline),  you would  not   be 
- able  to  see  that  the  number  of  broadcasts   had   increased,
+This  is  not  a  definitive  list,  but  should  give  you  an  idea  of  how  a  wide range of factors  can  affect  your  bandwidth  patterns. With this  in  mind, let's look  at  the topic of  baselines.
 
-38         16. NETWORK MONITORING
+##    Establishing  a baseline
 
-only  that  it was  relatively  high,  which  may  not  indicate  a problem.  Baseline  graphs  and 
- figures  are  also  useful  when  analysing   the  effects  of changes  made  to  the  network.  
-It  is  often  very  useful  to  experiment  with such   changes   by   trying   different    
-possible    values.   Knowing   what    the baseline   looks   like  will  show  you  whether   
-your   changes   have  improved matters,  or  made  them worse.
+Since  every  environment   is  different,   you  need  to  determine  for  yourself what  your  traffic  patterns  look  like  under  normal  situations.  This  is  useful because   it   allows   you   to   identify   changes   over   time,   either   sudden   or gradual.   These   changes   may  in  turn  indicate   a  problem,   or   a  potential future  problem,  with  your  network. For  example,  suppose  that  your  network  grinds  to  a  halt,  and  you  are  not sure   of   the   cause.   Fortunately,   you   have   decided   to   keep   a   graph   of broadcasts   as   a percentage   of  the  overall   network   traffic.   If   this   graph shows  a  sudden  increase in  the  amount  of  broadcast   traffic,  it  may  mean that  your  network  has  been  infected  with  a virus. Without  an  idea  of  what  is  ”normal"   for  your  network  (a  baseline),  you would  not   be able  to  see  that  the  number  of  broadcasts   had   increased, only  that  it was  relatively  high,  which  may  not  indicate  a problem.  Baseline  graphs  and  figures  are  also  useful  when  analysing   the  effects  of changes  made  to  the  network.   It  is  often  very  useful  to  experiment  with such   changes   by   trying   different    possible    values.   Knowing   what    the baseline   looks   like  will  show  you  whether   your   changes   have  improved matters,  or  made  them worse.
+
+
+![](imageserver/uploadimages/image163.png)
 
 1760 .0  k
 o1320.0 k
