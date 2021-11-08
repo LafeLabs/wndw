@@ -581,388 +581,75 @@ Since  every  environment   is  different,   you  need  to  determine  for  your
 
 ![](imageserver/uploadimages/image163.png)
 
-1760 .0  k
-o1320.0 k
-880.0  k
-
-
-0 .0  k                12         16         20   22    0    2          6     8    10   12   14   
-16
-Pigure PM    lG:   By collecting  data  over  a long period of time,  you  can predict
-the  growth  of  your  network  and  make  changes  before problems  develop.
-
 In  Figure  NM    16,  we  can  see  the  effect  of  the  implementation  of  delay
-pools  on Internet  utilisation  around  the period of  May.
-If  we  did  not  keep  a  graph  of  the  line  utilisation,  we  would  never  know
-what  the  effect  of  the  change  over  the  long  term  was.
-When  watching  a  total  trafhc  graph  after  making  changes,   don't  assume that  just  
-because  the  graph  does  not  change  radically  that  your  efforts  were wasted.   You  might  
-have   removed  frivolous   usage  from  your  line  only  to have  it  replaced  by genuine  
-legitimate  traffic.
-You   could   then   combine   this   baseline   with   others,   say   the   top   100   sites 
-accessed  or  the  average  utilisation  by  your   top  twenty  users,  to  determine  if habits  
-have  simply  changed.  As we  will see  later,  MRTG,  RRDtool,  and  Cacti are  excellent  tools  
-you can  use  to  keep  a  baseline.
+pools  on Internet  utilisation  around  the period of  May. If  we  did  not  keep  a  graph  of  the  line  utilisation,  we  would  never  know what  the  effect  of  the  change  over  the  long  term  was. When  watching  a  total  trafhc  graph  after  making  changes,   don't  assume that  just   because  the  graph  does  not  change  radically  that  your  efforts  were wasted.   You  might   have   removed  frivolous   usage  from  your  line  only  to have  it  replaced  by genuine  legitimate  traffic.
+You   could   then   combine   this   baseline   with   others,   say   the   top   100   sites accessed  or  the  average  utilisation  by  your   top  twenty  users,  to  determine  if habits  have  simply  changed.  As we  will see  later,  MRTG,  RRDtool,  and  Cacti are  excellent  tools   you can  use  to  keep  a  baseline.
 
-1760 .0  K
-o1320.0 k
+![](imageserver/uploadimages/image164.png)
 
+Figure  NM    17  shows  traffic  on  an  Aidworld  firewall  over  a  period  of  24 hours.  There  is  nothing  apparently  wrong  with  this  graph,  but  users  were complaining  about  slow  Internet  access.  Figure  NM    18  shows   that  the  upload   bandwidth   use  (blue)   was  higher during  working hours  on  the  last  day  than  on  previous  days.  A  period  of heavy   upload   usage   started  every  morning   at   03:00,   and   was  normally finished  by 09:00,  but  on the last  day  it was still  running  at  16:30.  Further investigation   revealed  a  problem  with  the  backup  software,   which  ran  at 03:00  every day.
 
-c  880.0 k
+![](imageserver/uploadimages/image165.png)
 
-w 440.0 k
-0 .0  k
+Figure  NM    19  shows  measurements  of  latency  on  the  same  connection  as measured   by   the   program   called   SmokePing.   The  position   of   the  dots shows  the  average  latency,  while  the  grey  smoke  indicates  the  distribution of  latency   (jitter).   The  colour  of  the  dots   indicates   the  number  of  lost packets.  This  graph  over  a  period  of  four   hours  does  not  help  to  identify whether  there are  any  problems  on the  network.
 
+![](imageserver/uploadimages/image166.png)
 
+The  next  graph  (Figure  NM    20)  shows  the  same  data  over  a  period  of  16 hours.  This  indicates  that  the  values  in  the  graph  above  are  close  to  the normal  level  (baseline), but  that  there  were  significant  increases  in  latency at  several   times  during   the  early  morning,   up  to  30  times   the  baseline value.
+This   indicates   that   additional   monitoring   should   be   performed   during these  periods  to  establish  the  cause  of  the  high  latency  to  avoid  problems such  as  the  backup  not  completing  in  the future.
 
-10               @0                      10     14 16
+![](imageserver/uploadimages/image167.png)
 
-Pigure PM    lZ:    he   traffic  trend at Aidworld logged over a Single  day.
+Figure  NM  21 shows  that Tuesday  was significantly  worse  than  Sunday  or Monday  for latency,  especially during the early morning  period. This  might  indicate  that something  has  changed  on the  network.
 
-14. Establishing a baseline      39
+![](imageserver/uploadimages/image168.png)
 
-Figure  NM    17  shows  trafhc  on  an  Aidworld  firewall  over  a  period  of  24 hours.  There  
-is  nothing  apparently  wrong  with  this  graph,  but  users  were complaining  about  slow  
-Internet  access.
-Figure  NM    18  shows   that  the  upload   bandwidth   use  (blue)   was  higher during  working 
- hours  on  the  last  day  than  on  previous  days.  A  period  of heavy   upload   usage   
-started  every  morning   at   03:00,   and   was  normally finished  by 09:00,  but  on the last  
-day  it was still  running  at  16:30.  Further investigation   revealed  a  problem  with  the  
-backup  software,   which  ran  at 03:00  every day.
+**How do I  interpret  the  traffic graph?**
 
-1000 .0  k
-u   750 . 0  k
+In  a  basic  network  flow  graph  (such  as  that  generated   by  the  network monitor  tool  MRTG),  the  green  area  indicates  inbound  traffic,  while  the blue   line   indicates  outbound    traffic.   Inbound    traffic   is   traffic   that originates  from  another  network  (typically  the  Internet)  and  is  addressed to  a   computer   inside   your   network.   Outbound   traffic  is traffic that originates  from  your  network,  and  is addressed  to a  computer  somewhere on  the  Internet.  Depending  on  what  sort  of  network  environment  you have,  the  graph  will  help  you  understand  how  your  network  is  actually being   used.    For  example,   monitoring   of  servers   usually   reveals   larger amounts  of  outbound  traffic  as  the  servers  respond  to  requests  (such  as sending  mail  or  serving  web  pages),  while  monitoring   client   machines might  reveal  higher  amounts  of  inbound traffic to  the  machines  as  they receive  data from  the servers.
 
-500 .0   k
+![](imageserver/uploadimages/image169.png)
 
-? 250.0 k
-0.0     k
-hon           Tue                            Thu                              Sat    Sun    Mon    
-Tue
-
-Figure PM    18.’   The same network  logged over  an entire  week  reveals  a problem  with  
-backups,  which  caused unexpected  congestion  for  network  iis€FS.
-
-Figure  NM    19  shows  measurements  of  latency  on  the  same  connection  as measured   by   
-the   program   called   SmokePing.   The  position   of   the  dots shows  the  average  latency,  
-while  the  grey  smoke  indicates  the  distribution of  latency   (jitter).   The  colour  of  
-the  dots   indicates   the  number  of  lost packets.  This  graph  over  a  period  of  four  
-hours  does  not  help  to  identify whether  there are  any  problems  on the  network.
-
-Last 4 Hours
-
-
-
-
-
-
-
-
-
-
-
-kIed1an  P1ng  RTT  ( avg  Z 35 , 6 ns )      O 0    M J/20    M 2/20    M 3/20    M 4/20    M Z 
-0/20    M 19/Z0           avg pkg loss: 0.
-
-
-Pigure  PM    19:  Pour  hours  of jitter  and packet  IONS.
-
-40              16. NETWORK  MONITORING
-
-The  next  graph  (Figure  NM    20)  shows  the  same  data  over  a  period  of  16 hours.  This  
-indicates  that  the  values  in  the  graph  above  are  close  to  the normal  level  (baseline), 
-  but  that  there  were  significant  increases  in  latency at  several   times  during   the  
-early  morning,   up  to  30  times   the  baseline value.
-This   indicates   that   additional   monitoring   should   be   performed   during these  periods 
- to  establish  the  cause  of  the  high  latency  to  avoid  problems such  as  the  backup  not  
-completing  in  the future.
-
-Last 16 Hours
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Pkdzan  Peng  RTT   ( avg  339, 9  ms I        ■   0     ■  2/20     ■  2/20     ■  3/20     ■  
-4/20     M I 0/20     M 19/20             avg  pkg I os s :  0.
-
-
-Figure NM   20:  A  higher  spread of Jitter  is  revealed  in  the  16  hour  log.
-Figure  NM  21 shows  that Tuesday  was significantly  worse  than  Sunday  or Monday  for latency, 
- especially during the early morning  period.
-This  might  indicate  that something  has  changed  on the  network.
-
-Last 72 Hours
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure PM    21.  Zooming out to the  week  long view  reveah a definite
-repetition  of increased  latency  and packet  loss  in  the early  morning hours.
-
-14. Establishing a baseline      4 I
-
-How do I  interpret  the  trafhc  graph?
-In  a  basic  network  flow  graph  (such  as  that  generated   by  the  network monitor  tool  
-MRTG),  the  green  area  indicates  inbound  traffic,  while  the blue   line   indicates   
-outbound    trafhc.   Inbound    trafhc   is   traffic   that originates  from  another  network  
-(typically  the  Internet)  and  is  addressed to  a   computer   inside   your   network.   
-Outbound   trafhc   is   trafhc   that originates  from  your  network,  and  is addressed  to a  
-computer  somewhere on  the  Internet.  Depending  on  what  sort  of  network  environment  you 
-have,  the  graph  will  help  you  understand  how  your  network  is  actually being   used.   
-For   example,   monitoring   of  servers   usually   reveals   larger amounts  of  outbound  
-traffic  as  the  servers  respond  to  requests  (such  as sending  mail  or  serving  web  
-pages),  while  monitoring   client   machines might  reveal  higher  amounts  of  inbound  trafhc  
-to  the  machines  as  they receive  data from  the servers.
-
-680 . 0  k
-u   510.0  k
-c    340 . 0  k
-
-? 170.0 k
-
-
-0 .0   k
-
-Tue           Ned          Thu                           Sat    Sun    Mon    Tue    bed
-
-Figure PM    22:  The classic  network  flow  graph.  ltte green area  repFeSents inbound traffic,  
-while the  blue  line represents  outbound traffic.  ltte repeating arch of outbound traffc  show  
-when  the  nightly  backups  have  run.
 Traffic  patterns  will  vary  with what  you are  monitoring.
 
-A router  will normally show more incoming  trafhc  than  outgoing  trafhc  as users download  data 
-from  the Internet.
-An  excess  of  outbound   traffic  that  is  not  transmitted  by  your  network servers  may  
-indicate  a  peer-to-peer  client,  unauthorised  server,  or  even  a virus on one or  more of 
-your  clients.
+A router  will normally show more incoming  traffic than  outgoing  traffic as users download  data from  the Internet. An  excess  of  outbound   traffic  that  is  not  transmitted  by  your  network servers  may  indicate  a  peer-to-peer  client, unauthorised  server,  or  even  a virus on one or  more of your  clients.
 
 There  are  no  set  metrics   that  indicate  what   outgoing  traffic   to  incoming
-trafhc  should  look  like.
-It  is  up  to  you  to  establish  a  baseline  to  understand  what  normal  network
-trafhc  patterns  look  like on your network.
+traffic should  look  like. It  is  up  to  you  to  establish  a  baseline  to  understand  what  normal  network traffic patterns  look  like on your network.
 
-42            16. NETWORK MONITORING
+**Detecting network overload**
 
-Detecting network overload
 Figure  NM 23 shows  traffic  on an  overloaded  Internet connection.
 
+![](imageserver/uploadimages/image170.png)
+
+The  most  apparent  sign  of overloading  is  the  flat  tops  on  outbound  traffic during  the  middle  of every day. Flat   tops   may   indicate   overloading,    even   if   they   are   well   below   the maximum  theoretical  capacity  of  the  link. In  this  case  it  may  indicate  that  you  are  not  getting  as  much  bandwidth from  your  service  provider  as  you expect.
+
+**Measuring 95th percentile**
+
+The  95th  percentile  is  a  widely  used  mathematical  calculation  to  evaluate regular  and  sustained  utilisation  of a  network  pipe. Its value  shows  the highest  consumption  of traffic  for a given  period. Calculating  the  95th percentile  means  that  95%  of  the  time  the  usage  is below  a  certain  amount,  and  5%  of the  time  usage  is above  that  amount.  The  95th  percentile  is  a  good  guideline  to  show  bandwidth  that  is  actually used  at  least  95%  of the  time.
 
 
+![](imageserver/uploadimages/image171.png)
 
+MRTG  and  Cacti will calculate  the 95th percentile  for you.  This  is  a  sample   graph  of  a  960  kbps  connection.   The  95th  percentile came  to 945  kbps  after  discarding  the highest  5%  of traffic.
 
-1000  k
+##   Monitoring RAM and CPU usage
 
-Yrafflc  Anal ysls  for   7  ——
+By   definition,   servers   provide   critical   services   that   should   always   be available.  Servers  receive  and  respond  to client  machine  requests,  providing  access  to services  that are  the  whole  point  of  having  a  network  in  the  first  place. Therefore,     servers      must     have    sufficient hardware    capabilities     to accommodate  the work load.  This  means they  must  have  adequate  RAM,  storage,  and  processing  power to accommodate  the  number of client  requests. Otherwise,  the  server  will  take  longer  to  respond,  or  in  the  worst  case, may  be   incapable  of  responding  at  all. Since  hardware  resources  are finite, it is important  to keep  track of how system  resources  are  being used.  If a  core server  (such  as  a  proxy server  or  email server)  is overwhelmed  by requests,   access  times  become slow.
 
+This  is  often  perceived  by  users  as  a  network  problem.  There  are  several programs  that  can  be  used  to  monitor  resources  on  a  server.  The  simplest method  on  a  Windows  machine  is  to  access  the Task  Manager  using  the Ctrl  Alt  +  Del  keys,  and  then  click  on  the  Performance  tab.  On  a  Linux or  BSD  box,  you  can  type  top  in  a  terminal  window.  To  keep  historical logs  of such  performance,  MRTG  or  RRDtool  can  also  be  used.
 
+![](imageserver/uploadimages/image172.png)
 
+Mail  servers  require  adequate  space,  as  some  people  may  prefer  to  leave their  email  messages  on  the server  for  long  periods  of time. The messages  can  accumulate  and  fill  the  hard  disk,  especially  if  quotas  are not  in  use. If   the   disk   or   partition   used   for   mail   storage   fills   up,   the  mail   server cannot  receive  mail.  If   that  disk  is  also  used  by  the  system,   all  kinds  of system   problems   may   occur   as   the   operating   system   runs   out   of   swap space and  temporary  storage. File servers  need  to  be  monitored,  even  if  they have  large disks.  Users  will  find  a  way  to  fill  any  size  disk  more  quickly  than  you  might think.
 
-
-
-
-
-200 k
-
-
-
-Th u
-gg Peak  I nbound  I raffJ c B   tnom  ng  t railc
-4 o0s     8and ui d t h   t980  kb ps)
-
-F r1                      SaI
-Q  Peak  outbound  I raff  c
-■   Outgoing  t raffa c
-
-S un                     NO n                   Twe          \¥e d
-Na x   tn !   941. 47  kbps   (9     )     A ug   \ n:   106. 20  kbp s   (11d)     € ur   I n :   
-271. 24  kbp s   (2BX) Na x  ou t : ss9. s9  kbps   (9ss}     o vg  out  : 447. 81  kbp s   {47x)   
-  Cu r  Ou t : 791 . ee  kbp s   (s2'x) uo rk1ng  day   aue ra gg S   IN'    19s. 99  kb ps  out  ! 
-786. 17  kbp s
-Pe d  F e b     2  15: Z2: 00  2005
-
-
-Pigure PM    23:  flat-topped  graphs  indicate  overloading  of available bandwidth.
-
-The  most  apparent  sign  of overloading  is  the  flat  tops  on  outbound  traffic during  the  
-middle  of every day.
-Flat   tops   may   indicate   overloading,    even   if   they   are   well   below   the
-maximum  theoretical  capacity  of  the  link.
-In  this  case  it  may  indicate  that  you  are  not  getting  as  much  bandwidth from  your  
-service  provider  as  you expect.
-
-Measuring 95th percentile
-The  95th  percentile  is  a  widely  used  mathematical  calculation  to  evaluate regular  and  
-sustained  utilisation  of a  network  pipe.
-Its value  shows  the highest  consumption  of traffic  for a given  period. Calculating  the  95th 
- percentile  means  that  95%  of  the  time  the  usage  is below  a  certain  amount,  and  5%  
-of the  time  usage  is above  that  amount.
-The  95th  percentile  is  a  good  guideline  to  show  bandwidth  that  is  actually used  at 
-least  95%  of the  time.
-
-14. Establishing a baseline      43
-
-
-
-
-Last 7 days
-
-
-].0M
-
-
-
-
-0.O
-
-Tue  22        'bed  23        Thu   24
-
-Sat 26   Sun 27
-
-E} Totmal
-1nbounmd
-Outboumnd
-954
-
-PBx1eun            N n1nufr            Average            Current nbound          625 . 46  kbps    
-   22.56  kbps     109.78  kbps       66. 68  kbps
-Outbound         586. 92  kbps         0. 99  kbps       83.19  kbps       36. 08  kbps
-Total              I212. 38  kbps       23. 62  kbps     192. 97  kbps     102.76  kbps
-
-
-Data  In          B2996B0  9Ikb
-
-95 Percentile!   565.11 kbps
-Data  Out:         62B9094.26kb
-
-
-
-Figure PM    24.’   The horizontal line shOtPS  the 9ith percentile  amount.
-
-MRTG  and  Cacti will calculate  the 95th percentile  for you.
-This  is  a  sample   graph  of  a  960  kbps  connection.   The  95th  percentile came  to 945 
-kbps  after  discarding  the highest  5%  of traffic.
-
-15.   Monitoring RAM and CPU usage
-By   definition,   servers   provide   critical   services   that   should   always   be available.
-Servers  receive  and  respond  to client  machine  requests,  providing  access  to services  that 
- are  the  whole  point  of  having  a  network  in  the  first  place. Therefore,     servers     
-must     have    sufhcient     hardware    capabilities     to accommodate  the work load.
-This  means they  must  have  adequate  RAM,  storage,  and  processing  power to accommodate  the 
-number of client  requests.
-Otherwise,  the  server  will  take  longer  to  respond,  or  in  the  worst  case, may  be  
-incapable  of  responding  at  all. Since  hardware  resources  are finite, it is important  to 
-keep  track of how system  resources  are  being used.
-If a  core server  (such  as  a  proxy server  or  email server)  is overwhelmed  by requests,  
-access  times  become slow.
-
-44               16. NETWORK  MONITORING
-
-This  is  often  perceived  by  users  as  a  network  problem.  There  are  several programs  that 
- can  be  used  to  monitor  resources  on  a  server.  The  simplest method  on  a  Windows  
-machine  is  to  access  the Task  Manager  using  the Ctrl  Alt  +  Del  keys,  and  then  click  
-on  the  Performance  tab.  On  a  Linux or  BSD  box,  you  can  type  top  in  a  terminal  
-window.  To  keep  historical logs  of such  performance,  MRTG  or  RRDtool  can  also  be  used.
-
-
-CPU usage - by day
-
-200
-
-
-
-100
-
-
-50
-
-
-Tue  I2 : 00                           dded  00: 00                           Wed  I2 ! 00
-a  s ysten         Cur         I ,43      Ntn:        0 . 32      Avg         I .72      ix:        
- 10  71
-m   user            Cur:        4.29      Ntn:        0. 65      Avg:        4.89      Nax:       
-76 . 14
-m n1ce            Cur !        0. 00      Ntn:        0. 00      Avg!        I .73      Pbx:      
-14.76
-m  1dte             Cur :     19I . 43      Ntn:       33. 43      Avg:     181 . 56       flax:    
- 198.72
-m 1o«/alt              Cur:             2.57         Nzn:         0 . 05       Avg:         9.85    
-   Nax:     132 . 38
-In 1rq              Cur         0, 08      Ntn:        0 . 02      Avg         0. I I       ix:     
-     0  BB
-n so{tirq     Cur:     0.20    Min:     0.00    Avg:     0.14    MBx:     1.05
-Last   uDdate !   Wed   SeD   27  17 : 55 :03  2006
-
-
-Figure PM    25.  RRDtool can  Show arbitrary  data,  such as  memory  and CPU usage,  expressed as 
- an average  over  time.
-
-Mail  servers  require  adequate  space,  as  some  people  may  prefer  to  leave their  email  
-messages  on  the server  for  long  periods  of time.
-The messages  can  accumulate  and  fill  the  hard  disk,  especially  if  quotas  are
-not  in  use.
-If   the   disk   or   partition   used   for   mail   storage   fills   up,   the  mail   server 
-cannot  receive  mail.  If   that  disk  is  also  used  by  the  system,   all  kinds  of system   
-problems   may   occur   as   the   operating   system   runs   out   of   swap space  and  
-temporary  storage.
-File servers  need  to  be  monitored,  even  if  they have  large disks.
-Users  will  find  a  way  to  fill  any  size  disk  more  quickly  than  you  might
-think.
-
-I S. Monitoring RAM and CPU usage     4S
-
-Disk   usage   can   be   enforced   through   the   use   of  quotas,   or   by  simply monitoring 
- usage  and  telling  people  when  they  are  using  too much.
-Nagios  can  notify  you  when  disk  usage,  CPU     utilisation,  or  other  system resources  
-cross  a critical  threshold.
-If  a  machine  becomes  unresponsive  or  slow,  and  measurements  show  that a  system  resource 
- is  being  heavily  used,  this  may  be  an  indication  that  an upgrade   is   required.   If   
-processor   usage   constantly   exceeds   60%   of   the total,  it  may  be  time  to  upgrade  
-the  processor.  Slow  speeds  could  also  be as  a  result  of insufficient  RAM. Be sure  to  
-check  the overall  usage  of CPU, RAM,  and  disk space  before  deciding  to  upgrade  a 
-particular  component. A  simple  way  to  check  whether  a  machine  has  insufficient  RAM    is 
- to  look at  the hard  disk  light.
-When   the  light   is  on  constantly,   it   usually  means   that   the   machine   is 
-constantly  swapping  large  amounts  of data  to  and  from  the disk.
+Disk   usage   can   be   enforced   through   the   use   of  quotas,   or   by  simply monitoring  usage  and  telling  people  when  they  are  using  too much. Nagios  can  notify  you  when  disk  usage,  CPU     utilisation,  or  other  system resources  
+cross  a critical  threshold.  If  a  machine  becomes  unresponsive  or  slow,  and  measurements  show  that a  system  resource is  being  heavily  used,  this  may  be  an  indication  that  an upgrade   is   required.   If   processor   usage   constantly   exceeds   60%   of   the total,  it  may  be  time  to  upgrade  the  processor.  Slow  speeds  could  also  be as  a  result  of insufficient  RAM. Be sure  to  check  the overall  usage  of CPU, RAM,  and  disk space  before  deciding  to  upgrade  a particular  component. A  simple  way  to  check  whether  a  machine  has insufficient  RAM    is  to  look at  the hard  disk  light. When   the  light   is  on  constantly,   it   usually  means   that   the   machine   is constantly  swapping  large  amounts  of data  to  and  from  the disk.
 This  is known  as  thrashing,  and  is extremely  bad for performance.
-It  can  usually   be  fixed  by  investigating   which  process  is  using  the  most RAM,  and  
-killing  or  reconfiguring   that  process.  Failing   that,  the  system needs  more  RAM.  You  
-should  always  determine  whether  it  is  more  cost effective  to  upgrade  an  individual  
-component   or  purchase  a  whole   new machine.   Some  computers  are  difhcult   or  impossible 
-  to  upgrade,   and  it often  costs  more   to   replace   individual   components   than   to   
-replace   the entire   system.   Since   the   availability   of  parts   and   systems   varies   
-widely around  the  world,  be  sure  to  weigh  the  cost  of  parts  vs.  whole  systems, 
-including shipping  and  taxes,  when  determining  the cost  of  upgrading.
+It  can  usually   be  fixed  by  investigating   which  process  is  using  the  most RAM,  and  killing  or  reconfiguring   that  process.  Failing   that,  the  system needs  more  RAM.  You  should  always  determine  whether  it  is  more  cost effective  to  upgrade  an  individual  component   or  purchase  a  whole   new machine.   Some  computers  are  difficult or  impossible to  upgrade,   and  it often  costs  more   to   replace   individual   components   than   to   replace   the entire   system.   Since   the   availability   of  parts   and   systems   varies   widely around  the  world,  be  sure  to  weigh  the  cost  of  parts  vs.  whole  systems, including shipping  and  taxes,  when  determining  the cost  of  upgrading.
 
 
-16.   Summary
-In  summary  in  this  chapter  we've  tried  to  give  you an  insight  into  how  to monitor   
-your   network    and   computing    resources   cost   effectively    and efhciently.   We've   
-introduced   many  of  our   favourite   tools   to   assist   you. Many  of  them are  tried  and  
-tested  by many  network  operators.
-Hopefully  you  have  understood   the  importance  of  monitoring   to  enable you   to    both   
-justify   upgrades    when   necessary    to    those   funding    the upgrades,  plus  minimise  
-the  impact  of problems  as  they occur.
-The  end  result  is  keeping  your  network  and  computing  resources  healthy and  keeping   all 
- of  your   users  happy  with  the  service   you  are  providing them.
+##   Summary
+
+In  summary  in  this  chapter  we've  tried  to  give  you an  insight  into  how  to monitor   your   network    and   computing    resources   cost   effectively    and efficiently.   We've   introduced   many  of  our   favourite   tools   to   assist   you. Many  of  them are  tried  and  tested  by many  network  operators.  Hopefully  you  have  understood   the  importance  of  monitoring   to  enable you   to    both   justify   upgrades    when   necessary    to    those   funding    the upgrades,  plus  minimise  the  impact  of problems  as  they occur.  The  end  result  is  keeping  your  network  and  computing  resources  healthy and  keeping   all of  your   users  happy  with  the  service   you  are  providing them.
