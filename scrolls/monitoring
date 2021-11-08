@@ -1,849 +1,341 @@
-## [HOME](scrolls/monitoring)
+## [HOME](scrolls/home)
 
 # NETWORK MONITORING
 
-1.     Introduction
+##     Introduction
 
-Network  monitoring  is  the  use  of logging  and  analysis  tools  to  accurately determine  
-traffic  flows,  utilisation,  and  other  performance  indicators  on  a network.    Good   
-monitoring    tools   give   you   both   hard   numbers   and graphical  aggregate  
-representations of  the  state  of  the  network.  This  helps you    to   visualise    precisely   
- what    is   happening,    so   you   know   where adjustments  may be needed.
+Network  monitoring  is  the  use  of logging  and  analysis  tools  to  accurately determine  traffic  flows,  utilisation,  and  other  performance  indicators  on  a network.    Good   monitoring    tools   give   you   both   hard   numbers   and graphical  aggregate  representations of  the  state  of  the  network.  This  helps you    to   visualise    precisely   what    is   happening,    so   you   know   where adjustments  may be needed.
+
 These  tools can help you answer critical questions,  such as:
 
-•      What  are the most popular services  used on the network?
-•      Who are the heaviest  network  users?
-•      What other wireless  channels  are in use in my area?
-•      Are  users   installing   wireless   access   points  on  my  private  wired network?
-•      At what  time of the day is the network  most  utilised?
-•      What sites do your  users frequents
-•      Is   the   amount   of   inbound   or   outbound   traffic   close   to   the available  
-network  capacity?
-•      Are   there   indications   of  an   unusual   network   situation   that   is consuming  
-bandwidth  or causing other problems?
-•      Is our Internet  Service  Provider  (ISP) providing  the level of service that we are paying 
-fort
+ - What  are the most popular services  used on the network?
+ - Who are the heaviest  network  users?
+ - What other wireless  channels  are in use in my area?
+ - Are  users   installing   wireless   access   points  on  my  private  wired network?
+ - At what  time of the day is the network  most  utilised?
+ - What sites do your  users frequents
+ - Is   the   amount   of   inbound   or   outbound   traffic   close   to   the available  network  capacity?
+ - Are   there   indications   of  an   unusual   network   situation   that   is consuming  bandwidth  or causing other problems?
+ - Is our Internet  Service  Provider  (ISP) providing  the level of service that we are paying for?
 
-This  should   be  answered   in  terms  of  available   bandwidth,   packet   loss, latency,  and 
-overall availability.
-And perhaps  the most  important  question  of all:
+This  should   be  answered   in  terms  of  available   bandwidth,   packet   loss, latency,  and overall availability. And perhaps  the most  important  question  of all:
 
-•      Do  the observed  traffic patterns  fit our expectations?
+ - Do  the observed  traffic patterns  fit our expectations?
 
-Monitoring  and  metrics  tools  are  vitally  important  programs  to  have  on hand  to  check  
-on  the  health  of  your  network  and  diagnose/troubleshoot problems.
+Monitoring  and  metrics  tools  are  vitally  important  programs  to  have  on hand  to  check  on  the  health  of  your  network  and  diagnose/troubleshoot problems.
 
-2              16. NETWORK  MONITORING
+Throughout  previous  chapters  in  this  book  we've  mentioned  or  given  brief examples   of  using   certain   tools   for  specific   tasks   like  configuration   and setup,   troubleshooting,   gathering   statistics   and   metrics   data   about   the health  of your  network,  etc.  This  section  discusses  some  of these  tools  in  a more  detailed  manner.   It should   be  noted  that   this  is  by  no  means  an exhaustive  list of all the tools  available  for wired and wireless  networks.
+
+It is also  important  to  realise  that  diagnostic  and  monitoring  tools  change just  like  all  other  software  and  hardware  does.  Staying  up  to  date  on  the latest  versions,  bugs  in existing  versions,  new  tools  in  the  field,  etc.  can  be an almost full-time  job in itself.
+
+For  this  book,  where  we've  found  that  a  certain  tool  is  no  longer  being actively maintained  between  the previous edition  and this one, we have left it out of this  text. The tools discussed  in this section  are all  being currently developed  as  of  this  writing,  but  it  is  left  as  an  exercise  to  the  reader  to determine if a particular  tool is suitable for their situation.
+
+##     Network monitoring example
+
+Let's  look  at  how  a  typical  system  administrator  can  make  good  use  of network monitoring tools.
+
+**An effective network monitoring example**
+
+For the purposes of example, let's assume that we are in charge of a network that  has  been  running  for  three  months.  It  consists  of  50  computers  and three servers: email, web, and proxy servers.  While  initially  things  are  going  well,   users   begin  to  complain   of  slow network speeds and an increase in spam emails.  As  time  goes  on,  computer  performance  slows  to  a  crawl  (even  when  not using the network), causing considerable frustration in your users.
+
+With   frequent   complaints   and   very   low   computer   usage,   the   Board   is questioning  the need for so much network  hardware.  The  Board  also  wants  evidence  that  the  bandwidth  they  are  paying  for  is actually  being  used. As   the   network   administrator,   you   are   on   the   receiving   end   of   these  complaints.
 
 
-Throughout  previous  chapters  in  this  book  we've  mentioned  or  given  brief examples   of  
-using   certain   tools   for  specific   tasks   like  configuration   and setup,   
-troubleshooting,   gathering   statistics   and   metrics   data   about   the health  of your  
-network,  etc.  This  section  discusses  some  of these  tools  in  a more  detailed  manner.   It 
- should   be  noted  that   this  is  by  no  means  an exhaustive  list of all the tools  
-available  for wired and wireless  networks.
+How   can   you   diagnose   the   sudden   drop   in   network   and   computer performance  and also justify the network hardware  and bandwidth  costs?
 
-It is also  important  to  realise  that  diagnostic  and  monitoring  tools  change just  like  
-all  other  software  and  hardware  does.  Staying  up  to  date  on  the latest  versions,  bugs  
-in existing  versions,  new  tools  in  the  field,  etc.  can  be an almost full-time  job in 
-itself.
+**Monitoring  the LAN    (local traffic)**
 
-For  this  book,  where  we've  found  that  a  certain  tool  is  no  longer  being actively 
-maintained  between  the previous edition  and this one, we have left it out of this  text. The 
-tools discussed  in this section  are all  being currently developed  as  of  this  writing,  but  
-it  is  left  as  an  exercise  to  the  reader  to determine if a particular  tool is suitable for 
-their situation.
-
-2.     Network monitoring example
-Let's  look  at  how  a  typical  system  administrator  can  make  good  use  of network 
-monitoring tools.
-
-An effective network monitoring example
-For the purposes of example, let's assume that we are in charge of a network that  has  been  
-running  for  three  months.  It  consists  of  50  computers  and three servers: email, web, and 
-proxy servers.
-While  initially  things  are  going  well,   users   begin  to  complain   of  slow network speeds 
-and an increase in spam emails.
-As  time  goes  on,  computer  performance  slows  to  a  crawl  (even  when  not using the 
-network), causing considerable frustration in your users.
-
-With   frequent   complaints   and   very   low   computer   usage,   the   Board   is questioning  
-the need for so much network  hardware.
-The  Board  also  wants  evidence  that  the  bandwidth  they  are  paying  for  is actually  being 
-used.
-As   the   network   administrator,   you   are   on   the   receiving   end   of   these 
-complaints.
-
-2. Network monitoring example              3
-
-How   can   you   diagnose   the   sudden   drop   in   network   and   computer performance  and 
-also justify the network hardware  and bandwidth  costs?
-
-Monitoring  the LAN    (local tragic)
-To get  an idea of exactly what  is causing  the slow down,  you should  begin by  looking  at  
-traffic  on  the  local  LAN.   There  are  several  advantages  to monitoring local trafhc:
+To get  an idea of exactly what  is causing  the slow down,  you should  begin by  looking  at  traffic  on  the  local  LAN.   There  are  several  advantages  to monitoring local traffic:
 
 1.   Troubleshooting  is  greatly  simplified.  Viruses  can  be  detected  and eliminated.
 2.   Malicious  users can be detected  and dealt  with.
 3.   Network  hardware  and resources can be justified with real statistics.
 
-Assume  that  all  of the switches  support  the Simple  Network  Management Protocol   (SNMP).  
-SNMP   is  an  application-layer   protocol   designed   to facilitate   the   exchange   of   
-management   information   between   network devices.
-By  assigning  an  IP address  to  each  switch,  you  are  able  to  monitor  all  the interfaces  
-on that switch,  observing  the entire  network from a single  point. This is much easier than 
-enabling SNMP on all computers in a network.
+Assume  that  all  of the switches  support  the Simple  Network  Management Protocol   (SNMP).   SNMP   is  an  application-layer   protocol   designed   to facilitate   the   exchange   of   management   information   between   network devices. By  assigning  an  IP address  to  each  switch,  you  are  able  to  monitor  all  the interfaces  on that switch,  observing  the entire  network from a single  point. This is much easier than enabling SNMP on all computers in a network.
 
-By  using  a  free  tool  such  as  MRTG,  http://oss.oetiker.ch/mrtg/,  you  can monitor   each   
-port   on   the  switch   and   present   data  graphically,   as   an aggregate average over time.
-The graphs are  accessible  from  the web, so you  are able  to view  the graphs from any machine 
-at anytime.
+By  using  a  free  tool  such  as  MRTG,  http://oss.oetiker.ch/mrtg/,  you  can monitor   each   port   on   the  switch   and   present   data  graphically,   as   an aggregate average over time.  The graphs are  accessible  from  the web, so you  are able  to view  the graphs from any machine at anytime.
 
-With  MRTG  monitoring  in  place,  it  becomes  obvious  that  the  internal LAN  is  swamped  
-with  far  more  traffic  than  the  Internet  connection  can support,  even  when  the lab  is  
-unoccupied.  This  is  a  pretty clear  indication that some of the computers are infested with a 
-network virus.
+With  MRTG  monitoring  in  place,  it  becomes  obvious  that  the  internal LAN  is  swamped  with  far  more  traffic  than  the  Internet  connection  can support,  even  when  the lab  is  unoccupied.  This  is  a  pretty clear  indication that some of the computers are infested with a network virus.
 
-After  installing  good  anti-virus  and  anti-spyware  software  on  all  of  the machines,  the 
-internal LAN traffic settles down to expected levels.
-The  machines  run  much  more  quickly,  spam  emails  are  reduced,  and  the users'  morale 
-quickly improves.
+After  installing  good  anti-virus  and  anti-spyware  software  on  all  of  the machines,  the internal LAN traffic settles down to expected levels. The  machines  run  much  more  quickly,  spam  emails  are  reduced,  and  the users'  morale quickly improves.
 
-4                16. NETWORK  MONITORING
 
-Monitoring  the WAN   (external trafhc)
+**Monitoring  the WAN   (external traffic)**
+
 In  addition   to  watching   the   traffic  on   the   internal   LAN,   you   need   to 
-demonstrate   that  the  bandwidth  the  organisation   is  paying  for  is  actually what  they 
-are getting from  their ISP.
+demonstrate   that  the  bandwidth  the  organisation   is  paying  for  is  actually what  they are getting from  their ISP.
 
-You can achieve  this by monitoring  external  trafhc.
-External   traffic  is  generally  classified  as  anything  sent  over  a  Wide  Area Network  
-(WAN).  Anything  received  from  (or sent  to)  a network other  than your internal LAN   also 
-qualifies  as external  traffic.
-The advantages  of monitoring  external  traffic include:
+You can achieve  this by monitoring  external  traffic.  External   traffic  is  generally  classified  as  anything  sent  over  a  Wide  Area Network   (WAN).  Anything  received  from  (or sent  to)  a network other  than your internal LAN   also qualifies  as external  traffic. The advantages  of monitoring  external  traffic include:
 
-Internet  bandwidth  costs are justified by showing  actual usage,  and whether that  usage agrees 
-with your ISP's  bandwidth  charges.
-Future    capacity    needs    are    estimated    by   watching    usage    trends    and 
-predicting  likely  growth  patterns.  Intruders  from  the  Internet  are  detected and filtered  
-before  they can cause problems.
+Internet  bandwidth  costs are justified by showing  actual usage,  and whether that  usage agrees with your ISP's  bandwidth  charges.  Future    capacity    needs    are    estimated    by   watching    usage    trends    and predicting  likely  growth  patterns.  Intruders  from  the  Internet  are  detected and filtered  before  they can cause problems.
 
-Monitoring  this  traffic  is  easily  done  with  the  use of MRTG  on  an  SNMP enabled  device,  
-such  as  a  router.  If   your  router  does  not  support  SNMP, then  you  can  add  a switch  
-between  your  router  and  your  ISP  connection, and monitor  the port  traffic just as you would 
-with an internal LAN.
+Monitoring  this  traffic  is  easily  done  with  the  use of MRTG  on  an  SNMP enabled  device,  such  as  a  router.  If   your  router  does  not  support  SNMP, then  you  can  add  a switch  between  your  router  and  your  ISP  connection, and monitor  the port  traffic just as you would with an internal LAN.
 
-3.     Detecting network outages
+##     Detecting network outages
+
+
 With  monitoring  tools  in  place,  you  now have an accurate  measurement  of
-how much  bandwidth  the organisation  is using.
-This measurement should agree with your ISP's bandwidth  charges.
-It  can  also  indicate  the  actual  throughput  of  your  connection  if  you  are using close to 
-your available capacity at peak times.
-A  "flat  top”  graph  is  a fairly  clear  indication  that  you  are  operating  at  full
-capacity.
-The following  figure  NM  1 shows  flat  tops in  peak  outbound  trafhc in  the middle of every 
-day except Sunday.
-It   is  clear  that  your  current   Internet  connection   is  overutilised   at  peak times, 
-causing network lag.
-After  presenting  this  information  to  the  Board,  you  can  make  a  plan  for further   
-optimising  your   existing   connection   (by   upgrading   your   proxy server and  using other 
-techniques  in this  book)  and estimate  how soon you will need to upgrade your connection  to 
-keep up with the demand.
-
-3. Detecting network outages S
-
-This  is  also  an  excellent  time  to  review  your  operational  policy  with  the Board, and 
-discuss ways to bring actual usage in line with that policy.
-
-Traffi c  Anal ysis  for  7
+how much  bandwidth  the organisation  is using. This measurement should agree with your ISP's bandwidth  charges. It  can  also  indicate  the  actual  throughput  of  your  connection  if  you  are using close to  your available capacity at peak times. A  "flat  top”  graph  is  a fairly  clear  indication  that  you  are  operating  at  full capacity.  The following  figure  NM  1 shows  flat  tops in  peak  outbound  traffic in  the middle of every day except Sunday.  It   is  clear  that  your  current   Internet  connection   is  overutilised   at  peak times, causing network lag.
+After  presenting  this  information  to  the  Board,  you  can  make  a  plan  for further   optimising  your   existing   connection   (by   upgrading   your   proxy server and  using other techniques  in this  book)  and estimate  how soon you will need to upgrade your connection  to keep up with the demand.
 
 
+This  is  also  an  excellent  time  to  review  your  operational  policy  with  the Board, and discuss ways to bring actual usage in line with that policy.
+
+![](imageserver/uploadimages/image140.png)
 
 
+Later  in  the  week,  you  receive  an  emergency  phone  call  in  the  evening. Apparently,  no one in  the lab can  browse  the web or send  email. You  rush to the lab and hastily reboot  the proxy server, with no results. Browsing and email  are  still  broken.  You  then  reboot  the  router,  but  there  is  still  no success.  You  continue  eliminating  the  possible  fault  areas  one  by one  until you  realise  that  the network switch  is off - a loose  power cable is to  blame. After applying power, the network comes to life again.
 
-
-
-
-
-
-
-
-
-M  Peak    nbound   t ra III  c
-■   TncomJ ng   t ra £f1 c
-M  1 OOH   B andul d I h   (960  Kb p s
-B  Pe ak  outbound   t raffl c
-B   Ou tgolng   t ra fflc
-tax  In i   941. 47  kbps   £9BX)     év g  In  i  106.20  kbp s   (11a)    Cu r   In     271. 24  
-kbps   (20x) Nax  Out: 949. 89  kbps    ssh)    éu g  Out: 447. 81  kbp s   (47x)    Cu r  Out: 
-791. 88  kbps   (Box) to rk1ng  day  aue rages   In !   1 s9. 99  kbps  out: 786. 17  kbps
-red  Feb    2  18: 22: 00  20012
-
-
-Figure PM    1: A  graph with a  ”flat top ” is one indication  ofoverutiltsation.
-
-Later  in  the  week,  you  receive  an  emergency  phone  call  in  the  evening. Apparently,  no 
-one in  the lab can  browse  the web or send  email. You  rush to the lab and hastily reboot  the 
-proxy server, with no results. Browsing and email  are  still  broken.  You  then  reboot  the  
-router,  but  there  is  still  no success.  You  continue  eliminating  the  possible  fault  
-areas  one  by one  until you  realise  that  the network switch  is off - a loose  power cable is 
-to  blame. After applying power, the network comes to life again.
-
-How  can  you  troubleshoot  such  an  outage  without  such  time  consuming trial and  error?  Is 
- it  possible  to  be  notified  of outages  as  they occur,  rather than waiting for a user to 
-complain?
+How  can  you  troubleshoot  such  an  outage  without  such  time  consuming trial and  error?  Is  it  possible  to  be  notified  of outages  as  they occur,  rather than waiting for a user to complain?
 
 One    way    to    do    this    is    to    use    a    program    such    as    Nagios 
-(http://www.nagios.org/) that continually polls network devices and notifies you  of  outages.  
-Nagios  will  report  on  the  availability  of  various  machines and  services,  and  will  alert 
- you  to  machines  that  have  gone  down.  In addition  to displaying  the network status 
-graphically  on a web  page, it will send   notifications   via   SMS   or   email,   alerting   
-you   immediately   when problems arise.
+(http://www.nagios.org/) that continually polls network devices and notifies you  of  outages.  Nagios  will  report  on  the  availability  of  various  machines and  services,  and  will  alert you  to  machines  that  have  gone  down.  In addition  to displaying  the network status graphically  on a web  page, it will send   notifications   via   SMS   or   email,   alerting   you   immediately   when problems arise.
 
-6              16. NETWORK  MONITORING
 
-With good  monitoring  tools  in  place, you will  be able to  justify  the cost of equipment  and 
-bandwidth  by effectively demonstrating  how it is being used by the organisation.
-You are notified automatically  when  problems arise, and you have historical statistics  of  how  
-the  network  devices  are  performing.  You  can  check  the current  performance  against  this  
-history  to   find  unusual  behaviour,  and head off problems  before they become critical. When 
-problems do come up, it is simple  to determine  the source and  nature  of the  problem.  Your  
-job  is easier,  the Board is satisfied,  and your users are much happier.
+With good  monitoring  tools  in  place, you will  be able to  justify  the cost of equipment  and bandwidth  by effectively demonstrating  how it is being used by the organisation. You are notified automatically  when  problems arise, and you have historical statistics  of  how  the  network  devices  are  performing.  You  can  check  the current  performance  against  this  history  to   find  unusual  behaviour,  and head off problems  before they become critical. When problems do come up, it is simple  to determine  the source and  nature  of the  problem.  Your  job  is easier,  the Board is satisfied,  and your users are much happier.
 
-4.     Monitoring your network
-Managing  a  network  without  monitoring  is  similar  to  driving  a  vehicle without a 
-speedometer or a fuel gauge.
-How  do  you  know  how  fast  you  are  goings  Is  the  car  consuming  fuel  as efficiently  as  
-promised  by the  dealers?  If you  do an  engine  overhaul  several months later, is the car any 
-faster or more efficient  than it was before?
-Similarly,  how  can  you  pay  for  an  electricity  or  water  bill  without  seeing your monthly 
-usage from a meter?
-You  must  have  an  account  of your  network  bandwidth  utilisation  in  order to  justify  the  
-cost  of  services  and  hardware  purchases,  and  to  account  for usage trends.
+##     Monitoring your network
+
+Managing  a  network  without  monitoring  is  similar  to  driving  a  vehicle without a speedometer or a fuel gauge.  How  do  you  know  how  fast  you  are  goings  Is  the  car  consuming  fuel  as efficiently  as  promised  by the  dealers?  If you  do an  engine  overhaul  several months later, is the car any faster or more efficient  than it was before?  Similarly,  how  can  you  pay  for  an  electricity  or  water  bill  without  seeing your monthly usage from a meter?  You  must  have  an  account  of your  network  bandwidth  utilisation  in  order to  justify  the  cost  of  services  and  hardware  purchases,  and  to  account  for usage trends.
 
 There  are  several  benefits  to  implementing  a  good  monitoring  system  for your network:
 
-•      Network  budget and resources are  justified.  Good monitoring  tools can  demonstrate  
-without  a  doubt  that  the  network  infrastructure (bandwidth,  hardware,  and software)  is 
-suitable and able to handle the requirements of network  users.
+ - Network  budget and resources are  justified.  Good monitoring  tools can  demonstrate  without  a  doubt  that  the  network  infrastructure (bandwidth,  hardware,  and software)  is suitable and able to handle the requirements of network  users.
+ - Network  intruders   are  detected   and   Altered.   By  watching  your network   traffic,  you  can  detect  attackers   and  prevent   access   to critical internal servers and services.
+ - Network  viruses  are  easily  detected.  You  can   be  alerted   to  the presence  of  
+network  viruses,  and  take  appropriate  action   before they consume  Internet  bandwidth and destabilise your network.
+ - Troubleshooting of  network  problems  is  greatly  simplified.  Rather than  attempting  ”trial  and  error”  to debug  network  problems,  you can   be   instantly   notified   of  specific   problems.   Some   kinds   of problems  can even be repaired  automatically.
+ - Network  performance  can  be  highly  optimised.  Without  effective monitoring,  it  is impossible  to fine  tune your devices  and protocols to achieve  the best possible performance.
+ - Capacity     planning     is     much     easier.     With     solid     historical 
+performance   records,   you   do   not   have   to   ”guess”    how   much bandwidth  you will need as your network  grows.
+ - Proper  network  usage can be enforced.  When bandwidth  is a scarce resource,  the  only  way  to  be  fair  to  all  users  is  to  ensure  that  the network  is being used for its intended purpose.
 
-•      Network  intruders   are  detected   and   Altered.   By  watching  your network   traffic,  
-you  can  detect  attackers   and  prevent   access   to critical internal servers and services.
+Fortunately,    network    monitoring    does    not    need   to    be   an   expensive  undertaking.   There  are  many  freely  available  open  source   tools  that  will show you exactly what  is happening on your network  in considerable  detail. This  section  will  help  you identify  many  invaluable  tools  and  how  best  to use them.
 
-•      Network  viruses  are  easily  detected.  You  can   be  alerted   to  the presence  of  
-network  viruses,  and  take  appropriate  action   before they consume  Internet  bandwidth and 
-destabilise your network.
+**The dedicated monitoring server**
 
-4. Monitoring your network   7
+While  monitoring  services  can  be  added  to  an  existing  network  server,  it  is often  desirable  to  dedicate  one  machine  (or  more,  if  necessary)  to  network monitoring.  Some applications  (such  as ntop http://www.ntop.org/) require considerable  resources  to run,  particularly  on a busy network. But  most  logging  and monitoring  programs  have  modest  RAM    and storage requirements,   typically  with  little  CPU    power  required.  Since  open  source operating  systems   (such   as   Linux   or   BSD)   make   very   efficient   use   of hardware    resources,    this   makes  it    possible    to    build    a   very    capable monitoring   server   from   recycled   PC   parts.   There   is   usually   no  need   to purchase a brand new server to relegate  to monitoring  duties. The exception  to this rule is in very large installations. If   your   network   includes   more   than   a   few   hundred   nodes,   or   if   you consume  more than 50 Mbps of Internet  bandwidth,  you will likely need to split  up monitoring  duties between  a few dedicated machines.
 
-•      Troubleshooting of  network  problems  is  greatly  simplified.  Rather than  attempting  
-”trial  and  error”  to debug  network  problems,  you can   be   instantly   notified   of  
-specific   problems.   Some   kinds   of problems  can even be repaired  automatically.
-
-•      Network  performance  can  be  highly  optimised.  Without  effective monitoring,  it  is 
-impossible  to fine  tune your devices  and protocols to achieve  the best possible performance.
-
-•      Capacity     planning     is     much     easier.     With     solid     historical 
-performance   records,   you   do   not   have   to   ”guess”    how   much bandwidth  you will 
-need as your network  grows.
-
-•      Proper  network  usage can be enforced.  When bandwidth  is a scarce resource,  the  only  
-way  to  be  fair  to  all  users  is  to  ensure  that  the network  is being used for its 
-intended purpose.
-
-Fortunately,    network    monitoring    does    not    need   to    be   an   expensive 
-undertaking.   There  are  many  freely  available  open  source   tools  that  will show you 
-exactly what  is happening on your network  in considerable  detail. This  section  will  help  you 
- identify  many  invaluable  tools  and  how  best  to use them.
-
-The dedicated monitoring server
-While  monitoring  services  can  be  added  to  an  existing  network  server,  it  is often  
-desirable  to  dedicate  one  machine  (or  more,  if  necessary)  to  network monitoring.  Some 
-applications  (such  as ntop http://www.ntop.org/) require considerable  resources  to run, 
-particularly  on a busy network.
-But  most  logging  and monitoring  programs  have  modest  RAM    and storage requirements,  
-typically  with  little  CPU    power  required.  Since  open  source operating   systems   (such   
-as   Linux   or   BSD)   make   very   efficient   use   of hardware    resources,    this   makes  
-  it    possible    to    build    a   very    capable monitoring   server   from   recycled   PC   
- parts.   There   is   usually   no  need   to purchase a brand new server to relegate  to 
-monitoring  duties.
-The exception  to this rule is in very large installations.
-If   your   network   includes   more   than   a   few   hundred   nodes,   or   if   you consume  
-more than 50 Mbps of Internet  bandwidth,  you will likely need to split  up monitoring  duties 
-between  a few dedicated machines.
-
-8                16. NETWORK  MONITORING
-
-This  depends   largely  on  exactly  what   you  want   to   monitor.   If   you  are attempting  
-to  account  for  all  services  accessed  per  MAC     address,  this  will consume  considerably  
-more  resources  than simply  measuring  network  flows on  a  switch  port.  But  for  the  
-majority  of  installations,  a  single  dedicated monitoring   machine   is   usually   
-enough.While   consolidating   monitoring services  to  a single  machine  will  streamline  
-administration  and  upgrades,  it can   also   ensure   better   ongoing   monitoring.For   
-example,   if   you   install monitoring  services  on a web server,  and that web server develops  
-problems, then  your  network  may  not  be monitored  until  the problem  is resolved.  To a  
-network  administrator,  the  data  collected  about  network  performance  is nearly  as important 
- as the network  itself.  Your  monitoring  should  be robust and  protected  from  service  
-outages  as  well  as  possible.  Without  network statistics,  you are effectively  blind to 
-problems with the network.
+This  depends   largely  on  exactly  what   you  want   to   monitor.   If   you  are attempting  to  account  for  all  services  accessed  per  MAC     address,  this  will consume  considerably  more  resources  than simply  measuring  network  flows on  a  switch  port.  But  for  the  majority  of  installations,  a  single  dedicated monitoring   machine   is   usually   enough.While   consolidating   monitoring services  to  a single  machine  will  streamline  administration  and  upgrades,  it can   also   ensure   better   ongoing   monitoring. For   example,   if   you   install monitoring  services  on a web server,  and that web server develops  problems, then  your  network  may  not  be monitored  until  the problem  is resolved.  To a  network  administrator,  the  data  collected  about  network  performance  is nearly  as important as the network  itself.  Your  monitoring  should  be robust and  protected  from  service  outages  as  well  as  possible.  Without  network statistics,  you are effectively  blind to problems with the network.
 
 Where does the server fit in your network?
-If  you are only interested  in collecting  network flow statistics from a router, you can do this 
-from just  about  anywhere on the LAN.
-This provides  simple  feedback  abo ut  utilisation,  but  cannot  give you  comprehensive  
-details  about  usage  patterns.
-Figure  NM   2  below  shows  a  typical  MRTG  graph  generated  from the  Internet  router.  
-While  the  inbound  and  outbound  utilisation are  clear,  there  is  no  detail  about  which  
-computers,  users,  or protocols  are  using  bandwidth.
 
-KNTC   12B  Kbps
+If  you are only interested  in collecting  network flow statistics from a router, you can do this from just  about  anywhere on the LAN.
+This provides  simple  feedback  about  utilisation,  but  cannot  give you  comprehensive  details  about  usage  patterns.  Figure  NM   2  below  shows  a  typical  MRTG  graph  generated  from the  Internet  router.  While  the  inbound  and  outbound  utilisation are  clear,  there  is  no  detail  about  which  computers,  users,  or protocols  are  using  bandwidth.
+
+![](imageserver/uploadimages/image141.png)
+
+For   more   detail,   the   dedicated   monitoring   server   must   have   access   to everything  that  needs  to  be  watched. Typically,  this  means  it  must  have  access  to  the entire  network.  To  monitor  a  WAN    connection,  such  as  the  Internet  link  to  your  ISP,  the monitoring server  must  be  able  to  see  the  trafhc  passing  through  the  edge router.  To  monitor  a  LAN,  the  monitoring  server  is  typically  connected  to a   monitor   port   on   the   switch. If    multiple   switches   are   used   in   an installation,  the monitoring  server  may  need a connection  to  all of  them. That   connection   can   either   be   a   physical   cable,   or if   your   network switches  support  it,  a VLAN  specifically  configured  for  monitoring  traffic.
 
 
-
-
-
-
-Wed   00: 0- 0                                          ned  12: 00
-
-
-Figure NM   2:  Polling the edge  router  can  show  you  the overall  network utilisation,  but  
-you  cannot  break  the data down further  into machines, services,  and users.
-
-4. Monitoring your network   9
-
-For   more   detail,   the   dedicated   monitoring   server   must   have   access   to everything 
- that  needs  to  be  watched.
-Typically,  this  means  it  must  have  access  to  the entire  network.
-To  monitor  a  WAN    connection,  such  as  the  Internet  link  to  your  ISP,  the monitoring  
-server  must  be  able  to  see  the  trafhc  passing  through  the  edge router.  To  monitor  a  
-LAN,  the  monitoring  server  is  typically  connected  to a   monitor   port   on   the   switch. 
-  If    multiple   switches   are   used   in   an installation,  the monitoring  server  may  need 
- a connection  to  all of  them. That   connection   can   either   be   a   physical   cable,   or 
-  if   your   network switches  support  it,  a VLAN  specifically  configured  for  monitoring  
-traffic.
-
-
-
-
-
-
-
-
-
-Switch                           Network
-
-
-
-
-
-Pigure NM   3:  Use the  monitor port  on your  switch to  obSGFve  tra    c  crossing all of the  
-network ports.
+![](imageserver/uploadimages/image142.png)
 
 If    monitor    port    functionality    is    not    available    on   your    switch,    the 
-monitoring  server  may  be  installed  between  your  internal LAN   and  the Internet.  While  
-this  will  work,  it  introduces  a  single  point  of  failure  for the  network,   as  the  
-network  will  fail  if  the  monitoring  server  develops  a problem.  It  is  also  a  potential  
-performance  bottleneck,  if  the  server  cannot keep  up with  the demands  of  the network.
-
-10            16. NETWORK  MONITORING
+monitoring  server  may  be  installed  between  your  internal LAN   and  the Internet.  While  this  will  work,  it  introduces  a  single  point  of  failure  for the  network,   as  the  network  will  fail  if  the  monitoring  server  develops  a problem.  It  is  also  a  potential  performance  bottleneck,  if  the  server  cannot keep  up with  the demands  of  the network.
 
 
+![](imageserver/uploadimages/image143.png)
 
+A  better  solution  is  to  use  a  simple  network  hub  (not  a  switch)  which connects  the  monitoring   machine  to  the  internal  LAN,  external  router, and  the monitoring  machine.
 
-
-
-
-
-
-
-
-
-
-etwo monitor
-
-
-
-
-
-
-
-
-Figure PM    4.’  By inserting a network  monitor  between  the LAN    and your Internet  
-connection,  you  can  observe  all network  traffc.
-
-A  better  solution  is  to  use  a  simple  network  hub  (not  a  switch)  which connects  the  
-monitoring   machine  to  the  internal  LAN,  external  router, and  the monitoring  machine.
-
-While   this   does   still   introduce   an   additional   point   of   failure   to   the network 
- (since  the  entire  network  will  be  unreachable  if  the  hub  dies), hubs  are generally 
-considered  to  be much  more reliable  than  routers.
+While   this   does   still   introduce   an   additional   point   of   failure   to   the network (since  the  entire  network  will  be  unreachable  if  the  hub  dies), hubs  are generally considered  to  be much  more reliable  than  routers.
 
 They  are  also  very  easily  replaced  should  they  fail.
 
-4. Monitoring your network   I I
-
-
-
-
-
-
-
-
-
-
-
-
-Hub
-Network
-
-
-
-
-
-
-
-
-
-
-
-
-Figure PM    5.  If your  switch does  not provide  monitor port functionality,  you can  insert  a 
-network  hub between  your Internet  router and the LAN,  and connect  the  monitoring  server to  
-the hub.
+![](imageserver/uploadimages/image144.png)
 
 Once  your  monitoring  server  is  in  place,  you  are  ready  to  start  collecting data.
 
-What  to monitor
-It is possible  to plot  just  about  any  network event and  watch  its  value  on a graph  over  
-time.
-Since  every  network  is  slightly  different,   you  will  have  to  decide  what information   
-is   important   in   order   to   gauge   the   performance   of   your network.
-Here  are  some  important   indicators   that  many   network   administrators will typically  
-track.
+**What  to monitor**
 
-12            16. NETWORK  MONITORING
+It is possible  to plot  just  about  any  network event and  watch  its  value  on a graph  over  time.  Since  every  network  is  slightly  different,   you  will  have  to  decide  what information   is   important   in   order   to   gauge   the   performance   of   your network. Here  are  some  important   indicators   that  many   network   administrators will typically  track.
 
-Wireless  statistics
-•       Received  signal  and  noise  from  all  backbone  nodes
-•       Number  of  associated  stations
-•       Detected  adjacent  networks  and  channels
-•       Excessive  retransmissions
-•       Radio  data  rate,  if  using  automatic  rate scaling
+**Wireless  statistics**
 
-Switch  statistics
-•      Bandwidth  usage  per switch  port
-•      Bandwidth  usage  broken  down  by protocol
-•      Bandwidth  usage  broken  down  by MAC  address
-•       Broadcasts  as  a  percentage  of  total  packets
-•       Packet  loss and  error  rate
+ - Received  signal  and  noise  from  all  backbone  nodes
+ - Number  of  associated  stations
+ - Detected  adjacent  networks  and  channels
+ - Excessive  retransmissions
+ - Radio  data  rate,  if  using  automatic  rate scaling
 
-Internet statistics
-•       Internet  bandwidth  use  by host  and  protocol
-•       Proxy server  cache  hits
-•       Top  100 sites  accessed
-•       DNS   requests
-•       Number  of inbound  emails  / spam emails  / email  bounces
-•       Outbound  email  queue  size
-•       Availability  of critical  services  (web servers,  email  servers,  etc.).
-•       Ping  times and  packet  loss  rates  to your  ISP
-•       Status  of  backups
+**Switch  statistics**
 
-System  health  statistics
-•      Memory  usage
-•      Swap  file  usage
-•       Process  count  /  zombie  processes
-•      System  load
-•      Uninterruptible Power Supply  (UPS)  voltage  and  load
-•      Temperature,  fan  speed,  and  system  voltages
-•      Disk SMART  status
-•       RAID  array status
+ - Bandwidth  usage  per switch  port
+ - Bandwidth  usage  broken  down  by protocol
+ - Bandwidth  usage  broken  down  by MAC  address
+ - Broadcasts  as  a  percentage  of  total  packets
+ - Packet  loss and  error  rate
+
+**Internet statistics**
+
+ - Internet  bandwidth  use  by host  and  protocol
+ - Proxy server  cache  hits
+ - Top  100 sites  accessed
+ - DNS   requests
+ - Number  of inbound  emails  / spam emails  / email  bounces
+ - Outbound  email  queue  size
+ - Availability  of critical  services  (web servers,  email  servers,  etc.).
+ - Ping  times and  packet  loss  rates  to your  ISP
+ - Status  of  backups
+
+**System  health  statistics**
+
+ - Memory  usage
+ - Swap  file  usage
+ - Process  count  /  zombie  processes
+ - System  load
+ - Uninterruptible Power Supply  (UPS)  voltage  and  load
+ - Temperature,  fan  speed,  and  system  voltages
+ - Disk SMART  status
+ - RAID  array status
 
 You   should   use   this   list   as   a   suggestion   of   where   to   begin.   As  your 
-network   matures,   you  will   likely   find   new   key   indicators   of   network performance, 
- and  you should  of course  track those as well.
+network   matures,   you  will   likely   find   new   key   indicators   of   network performance, and  you should  of course  track those as well.
 
-4. Monitoring your network   13
+There  are  many  freely  available  tools  that  will  show  you  as  much  detail  as you like about  what  is happening  on your  network. You   should   consider   monitoring   the   availability   of   any   resource   where unavailability  would adversely  affect  your  network  users. Don't   forget   to  monitor   the  monitoring   machine   itself,  for  example   its CPU      usage   and   disk   space,   in   order   to   receive   advance   warning   if   it becomes   overloaded   or   faulty.   A    monitoring    machine   that   is   low   on resources  can  affect  your  ability  to  monitor  the network  effectively.
 
-There  are  many  freely  available  tools  that  will  show  you  as  much  detail  as you like 
-about  what  is happening  on your  network.
-You   should   consider   monitoring   the   availability   of   any   resource   where
-unavailability  would adversely  affect  your  network  users.
-Don't   forget   to  monitor   the  monitoring   machine   itself,  for  example   its CPU      
-usage   and   disk   space,   in   order   to   receive   advance   warning   if   it becomes   
-overloaded   or   faulty.   A    monitoring    machine   that   is   low   on resources  can  
-affect  your  ability  to  monitor  the network  effectively.
+##     Types of  monitoring  tools
 
-5.     Types of  monitoring  tools
 We will now look  at several  different  classes  of  monitoring  tools.
-1.    Network  detection  tools  listen  for  the  beacons  sent  by wireless  access points,  and  
-display  information  such  as  the  network  name,  received signal  strength,  and  channel.
 
-2.    Spot   check   tools   are  designed  for   troubleshooting  and   normally   run 
-interactively  for  short  periods  of  time.  A  program  such  as  ping  may  be considered  an  
-active  spot  check  tool,  since  it  generates  traffic  by polling a  particular  machine.
+1.   Network  detection  tools  listen  for  the  beacons  sent  by wireless  access points,  and  display  information  such  as  the  network  name,  received signal  strength,  and  channel.
+2.  Spot   check   tools   are  designed  for   troubleshooting  and   normally   run 
+interactively  for  short  periods  of  time.  A  program  such  as  ping  may  be considered  an  active  spot  check  tool,  since  it  generates  traffic  by polling a particular  machine.
+3.  Passive  spot  check  tools  include  protocol  analysers,  which  inspect  every packet  on the  network  and  provide  complete  detail  about  any  network conversation    (including  source   and    destination    addresses,    protocol information,  and  even  application  data).
+4. Trending  tools  perform  unattended  monitoring  over  long  periods,  and typically plot the results on a  graph.
+5.  Throughput   testing   tools   tell   you   the   actual   bandwidth   available between  two points  on a  network.
+6.    Realtime   monitoring   tools   perform  similar   monitoring,   but  notify administrators   immediately   if   they   detect   a   problem.    Intrusion detection  tools  watch  for  undesirable  or  unexpected  network  traffic, and    take    appropriate    action    (typically   denying    access    and/or notifying  a  network administrator).
 
-3.     Passive  spot  check  tools  include  protocol  analysers,  which  inspect  every packet  on 
- the  network  and  provide  complete  detail  about  any  network conversation    (including   
-source   and    destination    addresses,    protocol information,  and  even  application  data).
-‹ Trending  tools  perform  unattended  monitoring  over  long  periods,  and typically plot the 
-results on a  graph.
+##    Network  detection
 
-5.    Throughput   testing   tools   tell   you   the   actual   bandwidth   available between  two 
-points  on a  network.
+The   simplest   wireless   monitoring   tools   simply   provide   a   list   of   available networks,  along  with  basic  information  (such  as  signal  strength  and channel). They  let  you  quickly  detect   nearby   networks   and   determine   if   they   are   in range  or  are  causing  interference.
 
-6.    Realtime   monitoring   tools   perform  similar   monitoring,   but  notify administrators   
-immediately   if   they   detect   a   problem.    Intrusion detection  tools  watch  for  
-undesirable  or  unexpected  network  traffic, and    take    appropriate    action    (typically   
- denying    access    and/or notifying  a  network administrator).
+**The built-in client.**
 
-14              16. NETWORK  MONITORING
-
-6.      Network  detection
-The   simplest   wireless   monitoring   tools   simply   provide   a   list   of   available 
-networks,  along  with  basic  information  (such  as  signal  strength  and channel). They  let  
-you  quickly  detect   nearby   networks   and   determine   if   they   are   in range  or  are  
-causing  interference.
-
-Tire built-in client.
 All    modern    operating    systems    provide    built-in    support    for    wireless 
 networking.     Tits    typically    includes    the   ability   to   scan    for   available 
-networks,    allowing   the   user   to   choose   a   network   from   a   list.   While virtually 
-  all   wireless   devices   are   guaranteed   to  have   a   simple   scanning utility,  
-functionality  can  vary  widely  between  implementations. These  tools are  typically  only  
-useful  for  configuring   a  computer  in  a  home  or  ofhce setting.
-They  tend  to  provide  little  information  apart  from  network  names  and  the
+networks,    allowing   the   user   to   choose   a   network   from   a   list.   While virtually   all   wireless   devices   are   guaranteed   to  have   a   simple   scanning utility,  functionality  can  vary  widely  between  implementations. These  tools are  typically  only  useful  for  configuring   a  computer  in  a  home  or  office setting. They  tend  to  provide  little  information  apart  from  network  names  and  the
 available  signal  to  the  access  point  currently  in  use.
 
-Netstumbler (http://www.wirelessdefence.org/Contents/NetstumblerMain.htm).   This   is the   most   
-popular   tool   for   detecting   wireless   networks   using   Microsoft Windows.  It  supports  
-a  variety  of  wireless  cards,  and  is  very  easy  to  use.  It will   detect   open   and   
-encrypted   networks,   but   cannot   detect   “closed” wireless   networks.   It   also   
-features   a   signal/noise   meter   that   plots   radio receiver  data  as  a  graph  over  
-time.  It  also  integrates  with  a  variety  of  GPS devices,  for  logging  precise  location  
-and  signal  strength  information.
-This  makes Netstumbler  a handy  tool  to have  for  an  informal  site  survey. Macstumbler  
-(http://www.macstumbler.com/). While  not  directly  related  to the  Netstumbler,   Macstumbler   
-provides   much  of  the  same  functionality   but for  the Mac OS  X  platform.  It works  with  
-all Apple  Airport  cards.
+**Netstumbler**
 
-7.    Spot check tools
-What  do  you  do when  the  network  breaks?  If you  can't  access  a  web  page or  email  
-server,  and  clicking  the  reload  button  doesn't  fix  the  problem, then  you'll  need  to  be 
-able  to isolate  the exact location  of the problem.
+(http://www.wirelessdefence.org/Contents/NetstumblerMain.htm).   This   is the   most   popular   tool   for   detecting   wireless   networks   using   Microsoft Windows.  It  supports  a  variety  of  wireless  cards,  and  is  very  easy  to  use.  It will   detect   open   and   encrypted   networks,   but   cannot   detect   “closed” wireless   networks.   It   also  features   a   signal/noise   meter   that   plots   radio receiver  data  as  a  graph  over  time.  It  also  integrates  with  a  variety  of  GPS devices,  for  logging  precise  location  and  signal  strength  information.
+
+This  makes Netstumbler  a handy  tool  to have  for  an  informal  site  survey. Macstumbler  (http://www.macstumbler.com/). While  not  directly  related  to the  Netstumbler,   Macstumbler   provides   much  of  the  same  functionality   but for  the Mac OS  X  platform.  It works  with  all Apple  Airport  cards.
+
+##    Spot check tools
+
+What  do  you  do when  the  network  breaks?  If you  can't  access  a  web  page or  email  server,  and  clicking  the  reload  button  doesn't  fix  the  problem, then  you'll  need  to  be able  to isolate  the exact location  of the problem.
 
 These  tools  will  help  you  to  determine  just  where  a  connection  problem
 exists.
 
-7. Spot check tools  15
+This  section  is  simply  an  introduction   to  commonly  used  troubleshooting tools. For  more  discussion  of  common  network  problems  and  how  to  diagnose them,  see  the chapter  called  **Maintenance  and Troubleshooting**.
 
-This  section  is  simply  an  introduction   to  commonly  used  troubleshooting tools.
-For  more  discussion  of  common  network  problems  and  how  to  diagnose
-them,  see  the chapter  called  Maintenance  and Troubleshooting.
+**ping**
 
-ping
-Just  about  every  operating  system  (including  Windows,  Mac  OS  X,  and  of course   Linux   
-and   BSD)   includes   a   version   of   the   ping   utility.   It  uses ICMP  packets  to  
-attempt  to  contact   a  specified  host,  and  tells  you  how long  it  takes  to get  a  
-response.
+Just  about  every  operating  system  (including  Windows,  Mac  OS  X,  and  of course   Linux   and   BSD)   includes   a   version   of   the   ping   utility.   It  uses ICMP  packets  to  attempt  to  contact   a  specified  host,  and  tells  you  how long  it  takes  to get  a  response.
 
-Knowing  what   to  ping  is  just   as  important   as  knowing  how  to  ping.  If you  find   
-that   you  cannot   connect   to   a   particular   service   in   your   web browser  (say,  
-http://yahoo.com/), you could  try  to  ping  it:
+Knowing  what   to  ping  is  just   as  important   as  knowing  how  to  ping.  If you find  that   you  cannot   connect   to   a   particular   service   in   your   web browser  (say, http://yahoo.com/), you could  try  to  ping  it:
 
-$  ping yahoo.com
-
-PING  yahoo. com  (G€.94.234. 13).  5€ data  bytes
-
-
-
-
-
-
----    yahoo. com ping statistics
-
-3 pdck6tS  transmitted,  3 packets  received,  0%  packet  loss
-
-round-trip  min/avg/maxlstddev  ——  29.3Z5I33. 000135. 46Z/2. G18  me
+![](imageserver/uploadimages/image145.png)
 
 Hit   control-C  when  you are  finished  collecting  data.
+
 If    packets   take   a   long   time   to   come   back,    there   may   be   network 
-congestion.
-If  return  ping  packets  have  an  unusually   low  Time  To  Live  (TTL),  you may  have  
-routing  problems  between  your  machine   and  the  remote  end. But what  if  the ping  doesn't  
-return  any  data at  ally
-If   you  are  pinging  a  name  instead  of  an  IP  address,  you  may  be  running into DNS   
-problems.
+congestion.  If  return  ping  packets  have  an  unusually   low  Time  To  Live  (TTL),  you may  have  routing  problems  between  your  machine   and  the  remote  end. But what  if  the ping  doesn't  return  any  data at all?
 
-16              16. NETWORK  MONITORING
+If   you  are  pinging  a  name  instead  of  an  IP  address,  you  may  be  running into DNS   problems.
 
-Try  pinging  an  IP  address  on  the  Internet.  If  you  can't  reach  it,  it's  a  good idea  
-to see  if  you can  ping  your  default  router:
+Try  pinging  an  IP  address  on  the  Internet.  If  you  can't  reach  it,  it's  a  good idea  to see  if  you can  ping  your  default  router:
 
 
+![](imageserver/uploadimages/image146.png)
 
 
+If   you can't  ping  your  default  router,  then  chances  are  you won't  be  able  to get  to  the  Internet  either.  If  you can't  even  ping  other  IP  addresses  on your local   LAN,   then   it's   time   to   check   your   connection.   If   you're   using Ethernet,  is  it plugged  in? If  you're  using  wireless,  are  you connected  to  the proper wireless  network,  and  is  it  in range?
 
-G4 bytes  from  G9.90.235.230:  icmpqseq ——0  ttl——12a time——12. 991    me
-€4 bytes  frOlTl  69.90.235.230.  icmp   Seq——1  ttl——126  time——14. 8G9  me
-G4 bytes from  G9.90.2Gh.2A0:  icmpqseq -—2  ttl-—12€  time-—13. 897 Tf7S
-^C
+While   it  is  generally   accurate   to  assume   that   a  machine   that   does   not respond  to  a  ping  is  likely  to  be  down  or  cut  off from  the  network  this  is not  always  100%  the case.  Particularly  on  a  WAN   or  the  Internet  itself,  it  is  also  possible  that  some  router/firewall  between  you  and   the  target   host(even   the  target  itself)   is blocking   pings.   If   you  find  a   machine   is  not   responding   to  pings,   try another  well-known  service  like ssh or http.
 
---  21a.231.38.1 ping  stattSttCS  ---
+If  you can  reach  the  target  through  either  of  these  services  then  you know the  machine  is  up  and  simply  blocking  pings.  It  is  also  worth  noting  that different  systems  treat  ping  differently.  The classic  UNIX ping  utility  sends an   ICMP   ECHO   protocol   packet  to   the   target   host.   Some   network devices  will  respond  to  a  ping  automatically   regardless  of  whether  ICMP is  being  blocked  further  up the protocol  stack.  This  can   also  be   misleading   because   it  can   indicate   a  host   is  up  when actually  all  that's  really  going  on is  that  the NIC    (Network  Interface Card)  is  powered  and  the  machine  itself  is  not  actually  up  and  running.  As  we stated     above,    it's   always    good    to   check    connectivity    with   multiple methods.  Network   debugging  with  ping  is  a  bit  of  an  art,  but  it  is  useful to  learn.  Since  you  will  likely  find  ping  on  just   about  any  machine  you will work on,  it's  a  good idea  to learn how  to  use  it well.
 
-3  packets  transmitted,  3 packets  received,  0%  packet   fOSS
+**traceroute and mtr **
 
+http://www.bitwizard.nl/mtr/  
 
+As  with  ping,  traceroute  is  found  on  most  operating  systems  (it's  called tracert  in   some  versions  of  Microsoft  Windows).  By  running  traceroute, you can  find  the  location  of  problems  between  your  computer  and  any point on the Internet:
 
-If   you can't  ping  your  default  router,  then  chances  are  you won't  be  able  to get  to  
-the  Internet  either.  If  you can't  even  ping  other  IP  addresses  on your local   LAN,   
-then   it's   time   to   check   your   connection.   If   you're   using Ethernet,  is  it 
-plugged  in? If  you're  using  wireless,  are  you connected  to  the proper wireless  network,  
-and  is  it  in range?
+![](imageserver/uploadimages/image147.png)
 
-While   it  is  generally   accurate   to  assume   that   a  machine   that   does   not respond  
-to  a  ping  is  likely  to  be  down  or  cut  off from  the  network  this  is not  always  100%  
-the case.
-Particularly  on  a  WAN   or  the  Internet  itself,  it  is  also  possible  that  some 
-router/firewall  between  you  and   the  target   host(even   the  target  itself)   is blocking   
-pings.   If   you  find  a   machine   is  not   responding   to  pings,   try another  well-known  
-service  like ssh or http.
-If  you can  reach  the  target  through  either  of  these  services  then  you know the  machine  
-is  up  and  simply  blocking  pings.  It  is  also  worth  noting  that different  systems  treat  
-ping  differently.  The classic  UNIX ping  utility  sends an   ICMP   ECHO   protocol   packet   
-to   the   target   host.   Some   network devices  will  respond  to  a  ping  automatically   
-regardless  of  whether  ICMP is  being  blocked  further  up the protocol  stack.
-This  can   also  be   misleading   because   it  can   indicate   a  host   is  up  when actually  
-all  that's  really  going  on is  that  the NIC    (Network  Interface Card)
+The -n switch  tells  traceroute  not  to  bother  resolving  names  in  DNS,  and makes  the  trace  run  more  quickly.  You  can  see  that  at  hop  seven,  the round  trip  time  shoots  up to  more  than  two  seconds,  while  packets  seem to  be discarded  at hop eight. This  might  indicate a problem  at that point in the network. If  this  part  of  the  network  is  in  your  control,  it  might  be  worth  starting your  troubleshooting effort  there.
 
-7. Spot check tools  17
+My   TraceRoute   (mtr)   is   a   handy   program   that   combines   ping   and traceroute  into  a  single  tool.  By  running  mtr,  you  can  get  an  ongoing average   of   latency   and   packet   loss   to   a   single   host,   instead   of   the momentary snapshot  that ping and  traceroute  provide.
 
-is  powered  and  the  machine  itself  is  not  actually  up  and  running.  As  we stated    
-above,    it's   always    good    to   check    connectivity    with   multiple methods.  Network  
-debugging  with  ping  is  a  bit  of  an  art,  but  it  is  useful to  learn.  Since  you  will  
-likely  find  ping  on  just   about  any  machine  you will work on,  it's  a  good idea  to learn 
-how  to  use  it well.
-traceroute and mtr http://www.bitwizard.nl/mtr/
-As  with  ping,  traceroute  is  found  on  most  operating  systems  (it's  called tracert  in  
-some  versions  of  Microsoft  Windows).  By  running  traceroute, you  can  find  the  location  
-of  problems  between  your  computer  and  any point on the Internet:
+**My traceroute [v0.69]**
 
-$ traceroute  -n  google. com
+![](imageserver/uploadimages/image148.png)
 
-traceroute  to  google. com  (Z2. 14.207.99),  G4 hope  max,  40 byte packets
-
-
-
-
-
-
-
-
-
-5  198.32.17€.31 40.Z88 ms 28.160 ms 28.115 ms
-
-
-
-
-
-
-
-The -n switch  tells  traceroute  not  to  bother  resolving  names  in  DNS,  and makes  the  
-trace  run  more  quickly.  You  can  see  that  at  hop  seven,  the round  trip  time  shoots  up 
- to  more  than  two  seconds,  while  packets  seem to  be discarded  at hop eight.
-This  might  indicate a problem  at that point in the network.
-If  this  part  of  the  network  is  in  your  control,  it  might  be  worth  starting your  
-troubleshooting effort  there.
-
-18            16. NETWORK MONITORING
-
-My   TraceRoute   (mtr)   is   a   handy   program   that   combines   ping   and traceroute  into  
-a  single  tool.  By  running  mtr,  you  can  get  an  ongoing average   of   latency   and   
-packet   loss   to   a   single   host,   instead   of   the momentary snapshot  that ping and  
-traceroute  provide.
-
-My traceroute [v0.69]
-
-t€Sla. FOb.swn  (0. 0.0.0) (toe ——0x0 psize—— G4 bitpat  Sun  Jan 8 20:01.2G 200a)
-
-Keys.’  Help  Display  mode RPStDrt  StDtlStlci  Order    f  fGl  S tffflt
-
-
-
-
-Host
-1. gremlin.rob.swn
-Packets                                 Pings
-Loss%   Snt    Last    Avg     Best   Wrst   Stoev'
-0.0%      4        1.9      2.0      1.7      2.6      0.4
-
-2. er1.sea1.speakeasy.net      0.0%      4        15.5     14.0    12.7    15.5     I.3
-
-3. 220.ge-0-1-0. cr2.sea1.      0.0%      4        11.0    11.7    10.7    14.0    1.6
-Speakeasy.net
-
-4. be-0-3-0.cr2.sfo1.
-speakeasy.net
-0.0%      4        36.0    34.7    28.7    38.1    4.1
-5. bas1-m.pao.yahoo.com     0.0%      4        27.9    29.6    27.9    33.0    2.4
-
-
-6. so-1-1-0.pat1.dce. yahoo.com
-0.0%      4        89.7    91.0    89.7    93.0    1.4
-7. ae1.p400.msr1.dcn.          0.0%      4        91.2    93.1    90.8    99.2    4.1
-yahoo.com
-8. ge5-2.bas1-m.dcn.            0.0%      4        89.3    91.0    89.3    93.4    1.9
-yahoo.com
-9.w2.rc.vip.dcn.yahoo.com    0.0%      3        91.2    93.1    90.8    99.2    4.1
-
-
-The data will  be  continuously  updated  and  averaged  over  time.
-As  with  ping,  you  should  hit  control-C  when  you  are  finished  looking  at
-the data.  Note  that  you must  have  root  privileges  to  run  mtr.
-While  these  tools  will not  reveal  precisely  what  is wrong  with  the  network, they   can   
+The data will  be  continuously  updated  and  averaged  over  time. As  with  ping,  you  should  hit  control-C  when  you  are  finished  looking  at the data.  Note  that  you must  have  root  privileges  to  run  mtr. While  these  tools  will not  reveal  precisely  what  is wrong  with  the  network, they   can   
 give   you   enough    information    to   know   where    to   continue troubleshooting.
 
 
-8.    Protocol  analysers
-8. Protocol analysers            19
+##    Protocol  analysers
+
 Network    protocol    analysers    provide    a    great    deal    of    detail    about 
-information   flowing   through   a   network,   by   allowing   you   to   inspect individual  
-packets.   For  wired   networks,  you  can  inspect   packets  at  the data-link    layer    or    
-above.    For    wireless    networks,    you    can    inspect information   all  the   way   down 
-  to   individual   802.11  frames.   Here   are several  popular  (and  free)  network  protocol  
-analysers:
-Kismet http://www.kismetwireless.net/
-Kismet    is   a   powerful   wireless    protocol    analyser    for   many   platforms including  
-Linux,  Mac  OS   X,   and  even  the  embedded  OpenWRT  Linux distribution.  It  works  with  any 
- wireless  card  that  supports  passive  monitor mode.  In  addition  to  basic  network  
-detection,  Kismet  will  passively  log  all
-802.11  frames  to  disk  or  to  the  network  in  standard  PCAP  format,  for later   analysis   
-with  tools   like  Wireshark.   Kismet   also   features   associated client   information,   AP   
-hardware   fingerprinting,  Netstumbler   detection, and  GPS    integration.  Since  it  is  a  
-passive   network   monitor,   it  can  even detect   “closed”   wireless   networks   by   
-analysing    traffic   sent   by   wireless clients.  You  can  run  Kismet  on  several  machines  
-at  once,  and  have  them all report  over  the  network  back  to  a  central  user  interface.  
-This  allows  for wireless  monitoring   over   a  large  area,   such  as   a   university  or   
-corporate campus.  Since  Kismet  uses  the  radio  card's  passive  monitor  mode,  it  does all 
-of  this  without  transmitting  any  data.
-Kismet  is  an  invaluable  tool  for diagnosing  wireless  network  problems.
+information   flowing   through   a   network,   by   allowing   you   to   inspect individual  packets.   For  wired   networks,  you  can  inspect   packets  at  the data-link    layer    or    above.    For    wireless    networks,    you    can    inspect information   all  the   way   down to   individual   802.11  frames.   Here   are several  popular  (and  free)  network  protocol  analysers:
 
-KisMAC
+**Kismet**
+
+http://www.kismetwireless.net/ Kismet    is   a   powerful   wireless    protocol   analyser    for   many   platforms including  Linux,  Mac  OS   X,   and  even  the  embedded  OpenWRT  Linux distribution.  It  works  with  any  wireless  card  that  supports  passive  monitor mode.  In  addition  to  basic  network  detection, Kismet  will  passively  log  all 802.11  frames  to  disk  or  to  the  network  in  standard  PCAP  format,  for later   analysis   with  tools   like  Wireshark.   Kismet   also   features   associated client   information,   AP   hardware   fingerprinting,  Netstumbler   detection, and  GPS    integration.  Since  it  is  a  passive   network   monitor,   it  can  even detect   “closed”   wireless   networks   by   analysing    traffic   sent   by   wireless clients.  You  can  run  Kismet  on  several  machines  at  once,  and  have  them all report  over  the  network  back  to  a  central  user interface.   This  allows  for wireless  monitoring   over   a  large  area,   such  as   a   university  or   corporate campus.  Since  Kismet  uses  the  radio  card's  passive  monitor  mode,  it  does all of  this  without  transmitting  any  data. Kismet  is  an  invaluable  tool  for diagnosing  wireless  network  problems.
+
+**KisMAC**
+
 http://kismac-ng.org
-Exclusively  for  the  Mac  OS  X  platform,   KisMAC  does  much  of  what Kismet   can  do,  but  
-with  a  slick  Mac  OS  X  graphical  interface.  It  is  a passive  scanner  that will log  data  
-to disk in  PCAP  format  compatible  with Wireshark.  It supports  passive  scanning with  
-AirportExtreme  cards  as  well as  a variety  of USB  wireless  adapters.
 
-tcpdump
+Exclusively  for  the  Mac  OS  X  platform,   KisMAC  does  much  of  what Kismet   can  do,  but  with  a  slick  Mac  OS  X  graphical  interface.  It  is  a passive  scanner  that will log  data  to disk in  PCAP  format  compatible  with Wireshark.  It supports  passive  scanning with  AirportExtreme  cards  as  well as  a variety  of USB  wireless  adapters.
+
+**tcpdump**
+
 help://www.tcpdump.org/
-tcpdump  is a  command-line  tool for  monitoring  network  trafhc.
 
-20              16. NETWORK  MONITORING
+tcpdump  is a  command-line  tool for  monitoring  network  traffic. It  does  not  have  all  the  bells   and  whistles  of  wireshark   but  it  does   use fewer resources.  Tcpdump   can  capture   and  display   all  network  protocol information  down  to  the  link  layer.  It  can  show  all  of  the  packet  headers and  data  received,  or just  the packets  that  match  particular  criteria. Packets  captured   with  tcpdump  can   be  loaded  into  wireshark   for  visual analysis  and  further  diagnostics.  This  is  very  useful  if  you wish  to  monitor an   interface  on  a   remote   system  and   bring   the  file   back   to  your   local machine  for  analysis.  The  tcpdump tool  is  available  as  a  standard  tool  in Unix  derivatives  (Linux,  BSD,  and Mac  OS  X).  There  is  also  a  Windows port  called  WinDump  available  at   http://www.winpcap.org/windump/
 
-It  does  not  have  all  the  bells   and  whistles  of  wireshark   but  it  does   use fewer  
-resources.  Tcpdump   can  capture   and  display   all  network  protocol information  down  to  
-the  link  layer.  It  can  show  all  of  the  packet  headers and  data  received,  or  just  the 
-packets  that  match  particular  criteria.
-Packets  captured   with  tcpdump  can   be  loaded  into  wireshark   for  visual analysis  and  
-further  diagnostics.  This  is  very  useful  if  you wish  to  monitor an   interface  on  a   
-remote   system  and   bring   the  file   back   to  your   local machine  for  analysis.  The  
-tcpdump  tool  is  available  as  a  standard  tool  in Unix  derivatives  (Linux,  BSD,  and  Mac  
-OS  X).  There  is  also  a  Windows port  called  WinDump  available  at  
-http://www.winpcap.org/windump/
+**Wireshark**
 
-Wireshark
 http://www.wireshark.org/
-Formerly known  as  Ethereal,  Wireshark  is a free network  protocol  analyser for  Unix and 
-Windows.
+
+Formerly known  as  Ethereal,  Wireshark  is a free network  protocol  analyser for Unix and Windows.
+
+![](imageserver/uploadimages/image149.png)
+
+Wireshark  allows  you  to  examine   data  from   a  live  network  or  from   a capture  file  on  disk,  and  interactively  browse  and  sort  the  captured  data. Both   summary   and   detailed   information   is   available   for   each   packet, including  the full  header  and  data portions.
 
 
+Wireshark   has   several   powerful   features,   including   a   rich   display   filter language  and   the   ability   to   view   the   reconstructed   stream   of   a   TCP session.
 
+It  can  be  daunting  to  use  for  first  time  users  or  those  that  are  not  familiar with  the OSI   layers. It  is  typically  used  to  isolate  and  analyse  specific  traffic  to  or  from  an  IP address,  but  it can  be  also  used  as  a  general  purpose  fault  finding  tool.  For example, a   machine   infected   with   a   network   worm   or   virus   can   be identified  by  looking  for  the  machine  that  is  sending  out  the  same  sort  of TCP/IP  packets  to large  groups  of IP  addresses.
 
+##     Trending  tools
 
+Trending   tools   are   used   to  see   how  your   network   is  used   over   a  long period   of   time.   They   work   by   periodically   monitoring    your   network activity,  and  displaying  a  summary  in  a  human-readable  form  (such  as  a graph).  Trending  tools  collect data as  well  as  analyse  and  report  on it.
 
+Below  are  some examples  of trending  tools.  Some  of  them need  to  be  used in conjunction  with  each  other,  as  they  are  not  stand-alone  programs.
 
+**MRTG**
 
-
-
-
-
-
-
-
-
-
-
-Figure  PM   6: Wireshark  (formerly  Ethereal)  IS a powerful network  protocol analyzer  that can 
- Show you  aS  T/fffch detail aS you  like about any  packet.
-Wireshark  allows  you  to  examine   data  from   a  live  network  or  from   a capture  file  on 
- disk,  and  interactively  browse  and  sort  the  captured  data. Both   summary   and   detailed 
-  information   is   available   for   each   packet, including  the full  header  and  data 
-portions.
-
-8. Protocol analysers            21
-
-Wireshark   has   several   powerful   features,   including   a   rich   display   filter language 
-  and   the   ability   to   view   the   reconstructed   stream   of   a   TCP session.
-
-It  can  be  daunting  to  use  for  first  time  users  or  those  that  are  not  familiar with  
-the OSI   layers.
-It  is  typically  used  to  isolate  and  analyse  specific  traffic  to  or  from  an  IP 
-address,  but  it can  be  also  used  as  a  general  purpose  fault  finding  tool.  For example, 
-  a   machine   infected   with   a   network   worm   or   virus   can   be identified  by  
-looking  for  the  machine  that  is  sending  out  the  same  sort  of TCP/IP  packets  to large  
-groups  of IP  addresses.
-
-9.     Trending  tools
-Trending   tools   are   used   to  see   how  your   network   is  used   over   a  long period   
-of   time.   They   work   by   periodically   monitoring    your   network activity,  and  
-displaying  a  summary  in  a  human-readable  form  (such  as  a graph).  Trending  tools  collect 
- data as  well  as  analyse  and  report  on it.
-
-Below  are  some examples  of trending  tools.  Some  of  them need  to  be  used in conjunction  
-with  each  other,  as  they  are  not  stand-alone  programs.
-
-MRTG
 http://oss.oetiker.ch/mrtg/
-The  Multi  Router  Traffic  Grapher  (MRTG)  monitors  the  traffic  load  on network  links  
-using  SNMP.  MRTG  generates  graphs  that  provide  a  visual representation   of   inbound    
-and    outbound    traffic.    Use       are    typically displayed  on a web page.
 
-MRTG  can  be  a little  confusing  to set  up, especially if you are  not familiar with   SNMP.   
-But   once   it   is   installed,    MRTG   requires   virtually   no maintenance,   unless  you  
-change  something  on  the  system  that  is  being monitored  (such  as its IP address).
+The  Multi  Router  Traffic  Grapher  (MRTG)  monitors  the  traffic  load  on network  links  using  SNMP.  MRTG  generates  graphs  that  provide  a  visual representation   of   inbound    and    outbound    traffic.    Use       are    typically displayed  on a web page.
 
-22             16. NETWORK  MONITORING
+MRTG  can  be  a little  confusing  to set  up, especially if you are  not familiar with   SNMP.    But   once   it   is   installed,    MRTG   requires   virtually   no maintenance,   unless  you  change  something  on  the  system  that  is  being monitored  (such  as its IP address).
 
+![](imageserver/uploadimages/image150.png)
 
-680 . 0  k
+**RRDtool**
 
-o   510 . 0  k
+RRD  is  short  for  Round  Robin  Database.  RRD  is  a  database  that  stores information   in   a   very   compact   way  that   does   not   expand   over   time. RRDtool  refers  to  a  suite  of  tools  that  allow  you  to  create  and  modify RRD databases,  as well as generate  useful  graphs  to  present  the data. It  is  used  to  keep  track  of  time-series  data  (such  as  network  bandwidth, machine  room   temperature,  or  server  load  average)  and  can  display  that data as  an  average over  time.
 
-340 .0   K
-
-^.   170 . 0  k
-
-
-0 . 0   k
-
-Tue            Thu     Fri     Sat     Sun
-
-Mon     Tue     bed
-Figure PM   7.- MRTG is pro
-grapher
-
-RRDtool
-RRD  is  short  for  Round  Robin  Database.  RRD  is  a  database  that  stores information   in   
-a   very   compact   way  that   does   not   expand   over   time. RRDtool  refers  to  a  suite  
-of  tools  that  allow  you  to  create  and  modify RRD databases,  as well as generate  useful  
-graphs  to  present  the data.
-It  is  used  to  keep  track  of  time-series  data  (such  as  network  bandwidth, machine  room  
-temperature,  or  server  load  average)  and  can  display  that data as  an  average over  time.
-
-Note   that   RRDtool   itself  does   not   contact   network   devices   to  retrieve data.  It 
-is merely  a database  manipulation  tool.
-You  can  use  a  simple  wrapper  script  (typically  in  shell  or  Perl)  to  do  that work  for 
- you.  RRDtool  is  also  used  by many  full  featured  front-ends  that present   you  with  a  
+Note   that   RRDtool   itself  does   not   contact   network   devices   to  retrieve data.  It is merely  a database  manipulation  tool. You  can  use  a  simple  wrapper  script  (typically  in  shell  or  Perl)  to  do  that work  for you.  RRDtool  is  also  used  by many  full  featured  front-ends  that present   you  with  a  
 friendly  web  interface  for  configuration   and  display. RRD    graphs  give  you  more  
 control  over  display  options  and  the  number of items available  on a  graph  as  compared  to 
 MRTG.

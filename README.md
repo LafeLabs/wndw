@@ -4,12 +4,7 @@
 
 ### Links
 
- - [geometron raspberry pi main repository](https://github.com/lafelabs/pi)
- - [dnagenerator.php](dnagenerator.php)
- - [editor.php](editor.php)
- - [global pi replicator link](https://raw.githubusercontent.com/LafeLabs/pi/main/php/replicator.txt)
- - [global replicator link](https://raw.githubusercontent.com/LafeLabs/wndw/main/php/replicator.txt)
- - [replicator.php](replicator.php)
+
 
 #  [Wireless Networking in the Developing World](http://wndw.net/book.html#readBook)
 
